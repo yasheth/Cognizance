@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_events"
+        android:icon="@drawable/ic_events"
+        android:title="Events" />
+    <item
+        android:id="@+id/menu_user"
+        android:icon="@drawable/ic_user"
+        android:title="KnowIt" />
+    <item
+        android:id="@+id/menu_query"
+        android:icon="@drawable/ic_query"
+        android:title="Query" />
+    <item
+        android:id="@+id/menu_team"
+        android:icon="@drawable/ic_team"
+        android:title="TeamCZ" />
+</menu>
