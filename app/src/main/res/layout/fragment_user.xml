@@ -21,11 +21,37 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/et_czid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your CZ ID"
+                android:inputType="number" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_cz_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Registered Email ID"
+                android:inputType="textEmailAddress" />
+        </android.support.design.widget.TextInputLayout>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/shape_oval_prime"
-            android:text="KnowIt User"
+            android:text="Know Your CZ Status"
             android:textColor="@color/colorWhite" />
 
     </LinearLayout>
