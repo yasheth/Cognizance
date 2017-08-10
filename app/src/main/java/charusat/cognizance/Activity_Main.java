@@ -8,6 +8,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import charusat.cognizance.events.EventsFragment;
+import charusat.cognizance.events.EventsInsideFragment;
+
 public class Activity_Main extends AppCompatActivity {
 
     @Override

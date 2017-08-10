@@ -3,8 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.0"
-    defaultConfig {
-        applicationId "charusat.cognizance"
+    defaultConfig
+            {
+                vectorDrawables {
+                    useSupportLibrary = true
+                }
+
+                applicationId "charusat.cognizance"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -29,5 +34,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.github.bluejamesbond:textjustify-android:2.1.6'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.andkulikov:transitionseverywhere:1.7.4'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
     testCompile 'junit:junit:4.12'
 }

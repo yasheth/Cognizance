@@ -6,7 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="charusat.cognizance.EventsFragment">
+    tools:context="charusat.cognizance.events.EventsInsideFragment"
+    android:id="@+id/content_main"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,8 +52,9 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/comp2"
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imageview_ce"
+                        app:srcCompat="@drawable/ic_computer"
                         android:layout_width="wrap_content"
                         android:layout_height="106dp"
                         android:visibility="invisible" />
@@ -125,7 +128,7 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:id="@+id/ee2"
+                        android:id="@+id/imageview_ee"
                         android:layout_height="106dp"
                         android:visibility="invisible"/>
 
@@ -205,12 +208,7 @@
 
     </LinearLayout>
 
-
-
-
-
-
-
+</android.support.v4.widget.NestedScrollView>
 
 
 
@@ -225,5 +223,3 @@
             android:textColor="@color/colorWhite" />
     -->
 
-    </LinearLayout>
-</android.support.v4.widget.NestedScrollView>
