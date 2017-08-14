@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatDelegate;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,12 +67,22 @@ public class EventsFragment extends Fragment
             }
         });*/
 
+        final LinearLayout ll_ce = (LinearLayout) view.findViewById(R.id.onclick_ce);
+        final LinearLayout ll_it = (LinearLayout) view.findViewById(R.id.onclick_it);
+        final LinearLayout ll_ec = (LinearLayout) view.findViewById(R.id.onclick_ec);
+        final LinearLayout ll_ee = (LinearLayout) view.findViewById(R.id.onclick_electrical);
+        final LinearLayout ll_me= (LinearLayout) view.findViewById(R.id.onclick_mechanical);
+        final LinearLayout ll_cl = (LinearLayout) view.findViewById(R.id.onclick_civil);
+        final LinearLayout ll_nt = (LinearLayout) view.findViewById(R.id.onclick_nontech);
+
         final ImageView iv_comp = (ImageView) view.findViewById(R.id.imageview_ce);
         final ImageView iv_it   = (ImageView) view.findViewById(R.id.imageview_it);
         final ImageView iv_ec   = (ImageView) view.findViewById(R.id.imageview_ec);
         final ImageView iv_ee   = (ImageView) view.findViewById(R.id.imageview_ee);
         final ImageView iv_me   = (ImageView) view.findViewById(R.id.imageview_me);
         final ImageView iv_cl   = (ImageView) view.findViewById(R.id.imageview_cl);
+        final ImageView iv_nt   = (ImageView) view.findViewById(R.id.imageview_nontech);
+
 
         Handler handler = new Handler();
 
@@ -79,8 +90,8 @@ public class EventsFragment extends Fragment
         handler.postDelayed(new Runnable()
         {
             TransitionSet set = new TransitionSet()
-                    .addTransition(new Scale(0.0f))
-                    .addTransition(new Fade())
+                    //.addTransition(new Scale(0.0f))
+                    .addTransition(new Fade(0))
                     .setInterpolator(new LinearInterpolator());
 
             @Override
@@ -155,6 +166,18 @@ public class EventsFragment extends Fragment
                     }
                 });
 
+                Picasso.with(getContext()).load(R.drawable.computer).into(iv_nt, new Callback() {
+                    @Override
+                    public void onSuccess() {
+
+                        animate(iv_comp);
+                    }
+                    @Override
+                    public void onError() {
+                        Log.wtf("Error loading Image", "Error");
+                    }
+                });
+
 
             }
             public void animate(ImageView iv)
@@ -164,11 +187,11 @@ public class EventsFragment extends Fragment
                 iv.setVisibility(View.VISIBLE);
 
             }
-        }, 150);
+        }, 0);
 
 
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Events");
+        getActivity().setTitle("EVENTS");
 
 
     }

@@ -7,18 +7,25 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import charusat.cognizance.events.EventsFragment;
-import charusat.cognizance.events.EventsInsideFragment;
+import charusat.cognizance.home.HomeFragment;
 
 public class Activity_Main extends AppCompatActivity {
 
+    TextView current_title;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
+        current_title = (TextView) findViewById(R.id.current_title);
+
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -55,5 +62,12 @@ public class Activity_Main extends AppCompatActivity {
 
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
+    }
+
+    @Override
+    public void setTitle(CharSequence title)
+    {
+        super.setTitle(title);
+        current_title.setText(title);
     }
 }

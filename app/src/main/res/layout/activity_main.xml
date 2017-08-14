@@ -22,7 +22,8 @@
             android:text="COGNIZANCE"
             android:textColor="@color/colorWhite"
             android:textSize="23sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/current_title"/>
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout

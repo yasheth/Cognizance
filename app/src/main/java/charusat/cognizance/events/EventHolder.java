@@ -32,4 +32,5 @@ public class EventHolder
     String time;
     String fees;
     String photo;
+    
 }
