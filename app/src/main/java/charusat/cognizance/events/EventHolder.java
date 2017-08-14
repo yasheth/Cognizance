@@ -6,31 +6,17 @@ package charusat.cognizance.events;
 
 public class EventHolder
 {
-    String name;
-    String desctiption;
+    public String name;
+    public String dept;
+    public String one_line_description;
+    public String detail_description;
+    public String date_time;
+    public String venue;
+    public String rules;
+    public String number_of_participants;
+    public String fees;
 
-    public String getName() {
-        return name;
-    }
+    //String photo;
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
-    public String getDesctiption() {
-        return desctiption;
-    }
-
-    public void setDesctiption(String desctiption) {
-        this.desctiption = desctiption;
-    }
-
-    String details;
-    String rules;
-    String additional_info;
-    String date;
-    String time;
-    String fees;
-    String photo;
-    
 }

@@ -1,5 +1,6 @@
 package charusat.cognizance.events;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -20,16 +21,17 @@ import com.squareup.picasso.Picasso;
 import com.transitionseverywhere.Fade;
 import com.transitionseverywhere.TransitionManager;
 import com.transitionseverywhere.TransitionSet;
-import com.transitionseverywhere.extra.Scale;
 
+import charusat.cognizance.Activity_Main;
 import charusat.cognizance.R;
+import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 
 
 /**
  * Created by Yash on 8/10/2017.
  */
 
-public class EventsFragment extends Fragment
+public class EventsFragment extends Fragment implements LinearLayout.OnClickListener
 {
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -75,6 +77,14 @@ public class EventsFragment extends Fragment
         final LinearLayout ll_cl = (LinearLayout) view.findViewById(R.id.onclick_civil);
         final LinearLayout ll_nt = (LinearLayout) view.findViewById(R.id.onclick_nontech);
 
+        ll_ce.setOnClickListener(this);
+        ll_it.setOnClickListener(this);
+        ll_ec.setOnClickListener(this);
+        ll_ee.setOnClickListener(this);
+        ll_me.setOnClickListener(this);
+        ll_cl.setOnClickListener(this);
+        ll_nt.setOnClickListener(this);
+
         final ImageView iv_comp = (ImageView) view.findViewById(R.id.imageview_ce);
         final ImageView iv_it   = (ImageView) view.findViewById(R.id.imageview_it);
         final ImageView iv_ec   = (ImageView) view.findViewById(R.id.imageview_ec);
@@ -86,7 +96,6 @@ public class EventsFragment extends Fragment
 
         Handler handler = new Handler();
 
-
         handler.postDelayed(new Runnable()
         {
             TransitionSet set = new TransitionSet()
@@ -94,83 +103,13 @@ public class EventsFragment extends Fragment
                     .addTransition(new Fade(0))
                     .setInterpolator(new LinearInterpolator());
 
-            @Override
-            public void run()
+            void ppp(int drawable, final ImageView into)
             {
-
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_comp, new Callback() {
+                Picasso.with(getContext()).load(drawable).into(into, new Callback() {
                     @Override
                     public void onSuccess() {
 
-                        animate(iv_comp);
-                    }
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_it, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        animate(iv_it);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_ec, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        animate(iv_ec);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_ee, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        animate(iv_ee);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_me, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        animate(iv_me);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_cl, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        animate(iv_cl);
-                    }
-
-                    @Override
-                    public void onError() {
-
-                    }
-                });
-
-                Picasso.with(getContext()).load(R.drawable.computer).into(iv_nt, new Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                        animate(iv_comp);
+                        animate(into);
                     }
                     @Override
                     public void onError() {
@@ -178,9 +117,20 @@ public class EventsFragment extends Fragment
                     }
                 });
 
+            }
+            @Override
+            public void run()
+            {
+                ppp(R.drawable.computer, iv_comp);
+                ppp(R.drawable.computer, iv_it);
+                ppp(R.drawable.computer, iv_ec);
+                ppp(R.drawable.computer, iv_ee);
+                ppp(R.drawable.computer, iv_me);
+                ppp(R.drawable.computer, iv_cl);
+                ppp(R.drawable.computer, iv_nt);
 
             }
-            public void animate(ImageView iv)
+            void animate(ImageView iv)
             {
 
                 TransitionManager.beginDelayedTransition(transitionsContainer, set);
@@ -194,5 +144,48 @@ public class EventsFragment extends Fragment
         getActivity().setTitle("EVENTS");
 
 
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        Activity_Main am = (Activity_Main) getActivity();
+
+        EventsListViewDepartmentFragment ff = new EventsListViewDepartmentFragment();
+
+        //Intent i = new Intent();
+        //i.setClass(getContext(), EventsListViewDepartmentFragment.class);
+
+        String dep = "";
+
+        switch (v.getId())
+        {
+            case R.id.onclick_ce:
+                dep = "ce";
+                break;
+            case R.id.onclick_it:
+                dep = "it";
+                break;
+            case R.id.onclick_mechanical:
+                dep = "me";
+                break;
+            case R.id.onclick_electrical:
+                dep = "ee";
+                break;
+            case R.id.onclick_civil:
+                dep = "cl";
+                break;
+            case R.id.onclick_ec:
+                dep = "ec";
+                break;
+            case R.id.onclick_nontech:
+                dep = "nt";
+                break;
+        }
+        ff.setDept(dep);
+        am.setFragment(ff);
+
+        //i.putExtra("department", dep);
+        //startActivity(i);
     }
 }

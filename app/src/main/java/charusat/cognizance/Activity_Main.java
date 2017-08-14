@@ -12,11 +12,13 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import charusat.cognizance.events.EventsFragment;
+import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 import charusat.cognizance.home.HomeFragment;
 
 public class Activity_Main extends AppCompatActivity {
 
     TextView current_title;
+    public Fragment cur_fragment;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -29,7 +31,8 @@ public class Activity_Main extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+                    {
                         Fragment selectedFragment = null;
                         switch (item.getItemId()) {
                             case R.id.menu_home:
@@ -48,17 +51,13 @@ public class Activity_Main extends AppCompatActivity {
                                 selectedFragment = new TeamFragment();
                                 break;
                         }
-                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_layout, selectedFragment);
-                        transaction.commit();
+                        setFragment(selectedFragment);
                         return true;
                     }
                 });
 
+        setFragment(new HomeFragment());
         //Manually displaying the first fragment - one time only
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, new HomeFragment());
-        transaction.commit();
 
         //Used to select an item programmatically
         //bottomNavigationView.getMenu().getItem(2).setChecked(true);
@@ -69,5 +68,26 @@ public class Activity_Main extends AppCompatActivity {
     {
         super.setTitle(title);
         current_title.setText(title);
+    }
+
+    public void setFragment(Fragment f)
+    {
+        cur_fragment = f;
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_layout, f);
+        transaction.commit();
+
+    }
+    @Override
+    public void onBackPressed()
+    {
+        if(cur_fragment instanceof EventsListViewDepartmentFragment)
+        {
+            setFragment(new EventsFragment());
+        }
+        else
+        {
+            super.onBackPressed();
+        }
     }
 }

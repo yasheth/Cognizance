@@ -1,4 +1,4 @@
-package charusat.cognizance.events;
+package charusat.cognizance.events.listview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -12,20 +12,21 @@ import com.bluejamesbond.text.DocumentView;
 import java.util.ArrayList;
 
 import charusat.cognizance.R;
+import charusat.cognizance.events.EventHolder;
 
 /**
- * Created by Yash on 8/10/2017.
+ * Created by Yash on 8/14/2017.
  */
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder>
+public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterDepartment.ViewHolder>
 {
     private ArrayList<EventHolder> events;
     private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
+    private EventsAdapterDepartment.ItemClickListener mClickListener;
 
 
     // data is passed into the constructor
-    public EventsAdapter(Context context, ArrayList<EventHolder> events)
+    public EventsAdapterDepartment(Context context, ArrayList<EventHolder> events)
     {
         this.mInflater = LayoutInflater.from(context);
         this.events = events;
@@ -33,16 +34,16 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
 
     // inflates the cell layout from xml when needed
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    public EventsAdapterDepartment.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = mInflater.inflate(R.layout.events_show, parent, false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        View view = mInflater.inflate(R.layout.events_department_show, parent, false);
+        EventsAdapterDepartment.ViewHolder viewHolder = new EventsAdapterDepartment.ViewHolder(view);
         return viewHolder;
     }
 
     // binds the data to the textview in each cell
     @Override
-    public void onBindViewHolder(EventsAdapter.ViewHolder holder, int position)
+    public void onBindViewHolder(EventsAdapterDepartment.ViewHolder holder, int position)
     {
         EventHolder event = events.get(position);
 
@@ -63,13 +64,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
         private TextView title;
-        private DocumentView desc;
+        private TextView desc;
 
         private ViewHolder(View itemView)
         {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
-            desc = (DocumentView) itemView.findViewById(R.id.description);
+            desc = (TextView) itemView.findViewById(R.id.description);
             itemView.setOnClickListener(this);
         }
 
@@ -86,13 +87,14 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener)
+    void setClickListener(EventsAdapterDepartment.ItemClickListener itemClickListener)
     {
         this.mClickListener = itemClickListener;
     }
 
     // parent activity will implement this method to respond to click events
-    interface ItemClickListener {
+    interface ItemClickListener
+    {
         void onItemClick(View view, int position);
     }
 }

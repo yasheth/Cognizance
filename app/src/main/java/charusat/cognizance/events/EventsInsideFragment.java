@@ -74,8 +74,8 @@ public class EventsInsideFragment extends Fragment implements EventsAdapter.Item
         for (int i = 0; i < 10; i++)
         {
             EventHolder eh = new EventHolder();
-            eh.setName("Name " + i);
-            eh.setDesctiption(s + "  " + i);
+            eh.name = "Name " + i;
+            eh.detail_description=s + "  " + i;
 
             events.add(eh);
 
