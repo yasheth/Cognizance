@@ -4,6 +4,8 @@ import android.app.usage.UsageEvents;
 
 import java.util.ArrayList;
 
+import charusat.cognizance.R;
+import charusat.cognizance.events.DepartmentHolder;
 import charusat.cognizance.events.EventHolder;
 
 /**
@@ -371,5 +373,65 @@ public class GetEvents
             case "gl" : return "Guest Lectures";
         }
         return "Events";
+    }
+
+    public static ArrayList<DepartmentHolder> getDepartments()
+    {
+        ArrayList<DepartmentHolder> dh = new ArrayList<>();
+
+        DepartmentHolder d = new DepartmentHolder();
+        d.dept = "Non-Tech";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+        d = new DepartmentHolder();
+        d.dept = "Guest Lectures";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+         d = new DepartmentHolder();
+        d.dept = "Computer Engineering";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+        d = new DepartmentHolder();
+        d.dept = "Information Technology";
+        d.sf = "it";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+
+        d = new DepartmentHolder();
+        d.dept = "Electronics and Communication";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+
+        d = new DepartmentHolder();
+        d.dept = "Electrical Engineering";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+
+        d = new DepartmentHolder();
+        d.dept = "Mechanical Engineering";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+
+        d = new DepartmentHolder();
+        d.dept = "Civil Engineering";
+        d.sf = "ce";
+        d.drawable_id = R.drawable.computer;
+        dh.add(d);
+
+
+        return dh;
     }
 }

@@ -1,6 +1,7 @@
 package charusat.cognizance.events.listview;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     @Override
     public EventsAdapterDepartment.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = mInflater.inflate(R.layout.events_department_show, parent, false);
+        View view = mInflater.inflate(R.layout.evets_department_material, parent, false);
         EventsAdapterDepartment.ViewHolder viewHolder = new EventsAdapterDepartment.ViewHolder(view);
         return viewHolder;
     }
@@ -65,6 +66,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     {
         private TextView title;
         private TextView desc;
+        //private CardView cv;
 
         private ViewHolder(View itemView)
         {

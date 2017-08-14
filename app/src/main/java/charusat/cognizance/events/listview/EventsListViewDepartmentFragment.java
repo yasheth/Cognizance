@@ -18,7 +18,7 @@ import charusat.cognizance.helpers.events.GetEvents;
  * Created by Yash on 8/14/2017.
  */
 
-public class EventsListViewDepartmentFragment extends Fragment
+public class EventsListViewDepartmentFragment extends Fragment implements EventsAdapterDepartment.ItemClickListener
 {
     String dept;
     @Nullable
@@ -38,12 +38,20 @@ public class EventsListViewDepartmentFragment extends Fragment
 
         EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(),GetEvents.get(dept));
 
+        adapter.setClickListener(this);
         rv.setAdapter(adapter);
+
 
         getActivity().setTitle(GetEvents.getFullForm(dept));
     }
     public void setDept(String dept)
     {
         this.dept = dept;
+    }
+
+    @Override
+    public void onItemClick(View view, int position)
+    {
+
     }
 }
