@@ -28,7 +28,59 @@
             android:text="Events"
             android:textSize="25sp"
             android:textStyle="bold" /-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:orientation="horizontal"
+            android:weightSum="1">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/onclick_nontech">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="105dp"
+                    android:id="@+id/imageview_nt"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Non-Tech" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:orientation="vertical"
+
+                android:id="@+id/onclick_guestlectures">
+
+                <ImageView
+                    android:id="@+id/imageview_gl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="105dp"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Guest Lectures" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -205,27 +257,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="vertical"
-                android:weightSum="1"
-                android:id="@+id/onclick_nontech">
 
-                    <ImageView
-                        android:id="@+id/imageview_nontech"
-                        android:layout_width="match_parent"
-                        android:layout_height="130dp"
-                        android:visibility="visible"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Non-Tech" />
-
-
-            </LinearLayout>
 
         </LinearLayout>
 

@@ -76,6 +76,7 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
         final LinearLayout ll_me= (LinearLayout) view.findViewById(R.id.onclick_mechanical);
         final LinearLayout ll_cl = (LinearLayout) view.findViewById(R.id.onclick_civil);
         final LinearLayout ll_nt = (LinearLayout) view.findViewById(R.id.onclick_nontech);
+        final LinearLayout ll_gl = (LinearLayout) view.findViewById(R.id.onclick_guestlectures);
 
         ll_ce.setOnClickListener(this);
         ll_it.setOnClickListener(this);
@@ -84,6 +85,8 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
         ll_me.setOnClickListener(this);
         ll_cl.setOnClickListener(this);
         ll_nt.setOnClickListener(this);
+        ll_gl.setOnClickListener(this);
+
 
         final ImageView iv_comp = (ImageView) view.findViewById(R.id.imageview_ce);
         final ImageView iv_it   = (ImageView) view.findViewById(R.id.imageview_it);
@@ -91,7 +94,8 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
         final ImageView iv_ee   = (ImageView) view.findViewById(R.id.imageview_ee);
         final ImageView iv_me   = (ImageView) view.findViewById(R.id.imageview_me);
         final ImageView iv_cl   = (ImageView) view.findViewById(R.id.imageview_cl);
-        final ImageView iv_nt   = (ImageView) view.findViewById(R.id.imageview_nontech);
+        final ImageView iv_nt   = (ImageView) view.findViewById(R.id.imageview_nt);
+        final ImageView iv_gl   = (ImageView) view.findViewById(R.id.imageview_gl);
 
 
         Handler handler = new Handler();
@@ -108,7 +112,6 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
                 Picasso.with(getContext()).load(drawable).into(into, new Callback() {
                     @Override
                     public void onSuccess() {
-
                         animate(into);
                     }
                     @Override
@@ -128,22 +131,17 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
                 ppp(R.drawable.computer, iv_me);
                 ppp(R.drawable.computer, iv_cl);
                 ppp(R.drawable.computer, iv_nt);
-
+                ppp(R.drawable.computer, iv_gl);
             }
             void animate(ImageView iv)
             {
-
                 TransitionManager.beginDelayedTransition(transitionsContainer, set);
                 iv.setVisibility(View.VISIBLE);
-
             }
         }, 0);
 
-
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("EVENTS");
-
-
     }
 
     @Override
@@ -180,6 +178,9 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
                 break;
             case R.id.onclick_nontech:
                 dep = "nt";
+                break;
+            case R.id.onclick_guestlectures:
+                dep = "gl";
                 break;
         }
         ff.setDept(dep);

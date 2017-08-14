@@ -114,7 +114,7 @@ public class GetEvents
 
         /* ALL EC EVENTS */
         EventHolder e3 = new EventHolder();
-        e3.name = "C++ Coding Event";
+        e3.name = "EC Event 1";
         e3.one_line_description = "Here, participants will have to code and code and code whole day";
         e3.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e3.dept = "ec";
@@ -127,7 +127,7 @@ public class GetEvents
 
 
         e3 = new EventHolder();
-        e3.name = "C++ Coding Event";
+        e3.name = "EC Event 2";
         e3.one_line_description = "Here, participants will have to code and code and code whole day";
         e3.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e3.dept = "ec";
@@ -139,7 +139,7 @@ public class GetEvents
         AL.add(e3);
 
         e3 = new EventHolder();
-        e3.name = "C++ Coding Event";
+        e3.name = "EC Event 3";
         e3.one_line_description = "Here, participants will have to code and code and code whole day";
         e3.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e3.dept = "ec";
@@ -156,7 +156,7 @@ public class GetEvents
 
         /* ALL ME EVENTS */
         EventHolder e4 = new EventHolder();
-        e4.name = "C++ Coding Event";
+        e4.name = "Mechanical Event 1";
         e4.one_line_description = "Here, participants will have to code and code and code whole day";
         e4.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e4.dept = "me";
@@ -168,7 +168,7 @@ public class GetEvents
         AL.add(e4);
 
         e4 = new EventHolder();
-        e4.name = "C++ Coding Event";
+        e4.name = "Mechanical Event 2";
         e4.one_line_description = "Here, participants will have to code and code and code whole day";
         e4.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e4.dept = "me";
@@ -180,7 +180,7 @@ public class GetEvents
         AL.add(e4);
 
         e4 = new EventHolder();
-        e4.name = "C++ Coding Event";
+        e4.name = "Mechanical Event 2";
         e4.one_line_description = "Here, participants will have to code and code and code whole day";
         e4.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e4.dept = "me";
@@ -196,7 +196,7 @@ public class GetEvents
 
         /* ALL CIVIL EVENTS */
         EventHolder e5 = new EventHolder();
-        e5.name = "C++ Coding Event";
+        e5.name = "Civil Event 1";
         e5.one_line_description = "Here, participants will have to code and code and code whole day";
         e5.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e5.dept = "cl";
@@ -209,7 +209,7 @@ public class GetEvents
 
 
         e5 = new EventHolder();
-        e5.name = "C++ Coding Event";
+        e5.name = "Civil Event 1";
         e5.one_line_description = "Here, participants will have to code and code and code whole day";
         e5.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e5.dept = "cl";
@@ -221,7 +221,7 @@ public class GetEvents
         AL.add(e5);
 
         e5 = new EventHolder();
-        e5.name = "C++ Coding Event";
+        e5.name = "Civil Event 1";
         e5.one_line_description = "Here, participants will have to code and code and code whole day";
         e5.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
         e5.dept = "cl";
@@ -233,7 +233,6 @@ public class GetEvents
         AL.add(e5);
 
         /* ALL CIVIL EVENTS END */
-
 
 
         /* ALL EE EVENTS */
@@ -315,7 +314,47 @@ public class GetEvents
         e7.venue = "CE Building, 306";
         AL.add(e7);
 
-        /* ALL CE EVENTS END */
+        /* ALL NON-TECH EVENTS END */
+
+        /* ALL GUEST LECTURES START */
+        EventHolder e8 = new EventHolder();
+        e8.name = "Elon Musk";
+        e8.one_line_description = "Elon Musk will personally share with you his journey.";
+        e8.detail_description = "Here is a more detailed description for this Guest Lecture. Thank you for reanding this full desription. I hope i have not bored you.";
+        e8.dept = "gl";
+        e8.fees = "100";
+        e8.number_of_participants = "2";
+        e8.rules = "Internet access not allowed";
+        e8.date_time = "14th September 2016";
+        e8.venue = "CE Building, 306";
+        AL.add(e8);
+
+
+        e8 = new EventHolder();
+        e8.name = "Sandeep Maheshwari";
+        e8.one_line_description = "Finally, somebody here to motivate us Engineers to do something productive in life";
+        e8.detail_description = "Here is a more detailed description for this Guest Lecture. Thank you for reanding this full desription. I hope i have not bored you.";
+        e8.dept = "gl";
+        e8.fees = "100";
+        e8.number_of_participants = "2";
+        e8.rules = "Internet access not allowed";
+        e8.date_time = "14th September 2016";
+        e8.venue = "CE Building, 306";
+        AL.add(e8);
+
+        e8 = new EventHolder();
+        e8.name = "Technical Guruji";
+        e8.one_line_description = "Aapka swagat hai is Guest Lecture me. Chaliye shuru karte hain";
+        e8.detail_description = "Here is a more detailed description for this event e1. Thank you for reanding this full desription. I hope i have not bored you.";
+        e8.dept = "gl";
+        e8.fees = "100";
+        e8.number_of_participants = "2";
+        e8.rules = "Internet access not allowed";
+        e8.date_time = "14th September 2016";
+        e8.venue = "CE Building, 306";
+        AL.add(e8);
+
+        /* ALL GUEST LECTURES END */
 
     }
     public static String getFullForm(String shortForm)
@@ -329,7 +368,7 @@ public class GetEvents
             case "ee" : return "Electrical Engineering";
             case "cl" : return "Civil Engineering";
             case "nt" : return "Non-Tech";
-            case "ws" : return "Workshops";
+            case "gl" : return "Guest Lectures";
         }
         return "Events";
     }
