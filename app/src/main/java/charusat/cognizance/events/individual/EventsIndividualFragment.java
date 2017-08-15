@@ -28,7 +28,7 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.events, container, false);
+        return inflater.inflate(R.layout.events_individual_parent, container, false);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
         helper.attachToRecyclerView(rv);
 
         ALEH = GetEvents.get(dept);
-        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(),ALEH, R.layout.events_department_material_long);
+        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(),ALEH, R.layout.events_individual_child_material);
 
         adapter.setClickListener(this);
         rv.setAdapter(adapter);

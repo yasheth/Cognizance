@@ -31,7 +31,7 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.events_listview_department, container, false);
+        return inflater.inflate(R.layout.events_department_listview_parent, container, false);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ALEH = GetEvents.get(dept);
-        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_material);
+        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);
 
         adapter.setClickListener(this);
         rv.setAdapter(adapter);

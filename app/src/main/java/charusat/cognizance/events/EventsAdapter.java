@@ -87,13 +87,13 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
         return events.get(id);
     }
 
-    // allows clicks events to be caught
+    // allows clicks events_individual_parent to be caught
     void setClickListener(ItemClickListener itemClickListener)
     {
         this.mClickListener = itemClickListener;
     }
 
-    // parent activity will implement this method to respond to click events
+    // parent activity will implement this method to respond to click events_individual_parent
     interface ItemClickListener {
         void onItemClick(View view, int position);
     }

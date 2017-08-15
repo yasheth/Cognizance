@@ -1,25 +1,24 @@
 package charusat.cognizance.events;
 
 import android.content.Context;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 import charusat.cognizance.Activity_Main;
 import charusat.cognizance.R;
-import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
+import charusat.cognizance.helpers.events.GetEvents;
 
 /**
  * Created by Yash on 8/14/2017.
@@ -44,12 +43,13 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
     {
         public TextView title;
         public ImageView thumbnail;
-
+        public TextView count;
         public MyViewHolder(final View view)
         {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
+            count = (TextView) view.findViewById(R.id.count);
 
             View.OnClickListener vvv = new View.OnClickListener() {
                 @Override
@@ -57,7 +57,8 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
                     // Triggers click upwards to the adapter on click
                     if (listener != null) {
                         int position = getAdapterPosition();
-                        if (position != RecyclerView.NO_POSITION) {
+                        if (position != RecyclerView.NO_POSITION)
+                        {
                             listener.onItemClick(view, position);
                         }
                     }
@@ -80,7 +81,7 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.department_card, parent, false);
+                .inflate(R.layout.department_names_child, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -91,6 +92,8 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
         DepartmentHolder department = deptList.get(position);
         holder.title.setText(department.dept);
         picasso_load(department.drawable_id, holder.thumbnail);
+        String size = GetEvents.get(deptList.get(position).sf).size() + " events";
+        holder.count.setText(size);
     }
     private void picasso_load(int drawable, final ImageView into)
     {
