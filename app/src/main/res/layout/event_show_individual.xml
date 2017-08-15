@@ -7,7 +7,6 @@
     android:layout_margin="8dp"
     >
 
-
     <TextView
         android:id="@+id/title"
         android:layout_width="203dp"

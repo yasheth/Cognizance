@@ -24,20 +24,22 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     private ArrayList<EventHolder> events;
     private LayoutInflater mInflater;
     private EventsAdapterDepartment.ItemClickListener mClickListener;
+    int layout;
 
 
     // data is passed into the constructor
-    public EventsAdapterDepartment(Context context, ArrayList<EventHolder> events)
+    public EventsAdapterDepartment(Context context, ArrayList<EventHolder> events, int layout)
     {
         this.mInflater = LayoutInflater.from(context);
         this.events = events;
+        this.layout = layout;
     }
 
     // inflates the cell layout from xml when needed
     @Override
     public EventsAdapterDepartment.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = mInflater.inflate(R.layout.evets_department_material, parent, false);
+        View view = mInflater.inflate(layout, parent, false);
         EventsAdapterDepartment.ViewHolder viewHolder = new EventsAdapterDepartment.ViewHolder(view);
         return viewHolder;
     }
@@ -89,7 +91,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     }
 
     // allows clicks events to be caught
-    void setClickListener(EventsAdapterDepartment.ItemClickListener itemClickListener)
+    public void setClickListener(EventsAdapterDepartment.ItemClickListener itemClickListener)
     {
         this.mClickListener = itemClickListener;
     }

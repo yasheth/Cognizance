@@ -12,6 +12,7 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import charusat.cognizance.events.EventsFragment;
+import charusat.cognizance.events.individual.EventsIndividualFragment;
 import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 import charusat.cognizance.home.HomeFragment;
 
@@ -81,7 +82,11 @@ public class Activity_Main extends AppCompatActivity {
     @Override
     public void onBackPressed()
     {
-        if(cur_fragment instanceof EventsListViewDepartmentFragment)
+        if(cur_fragment instanceof EventsIndividualFragment)
+        {
+            setFragment(new EventsListViewDepartmentFragment());
+        }
+        else if(cur_fragment instanceof EventsListViewDepartmentFragment)
         {
             setFragment(new EventsFragment());
         }

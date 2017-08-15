@@ -381,13 +381,13 @@ public class GetEvents
 
         DepartmentHolder d = new DepartmentHolder();
         d.dept = "Non-Tech";
-        d.sf = "ce";
+        d.sf = "nt";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 
         d = new DepartmentHolder();
         d.dept = "Guest Lectures";
-        d.sf = "ce";
+        d.sf = "gl";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 
@@ -406,28 +406,28 @@ public class GetEvents
 
         d = new DepartmentHolder();
         d.dept = "Electronics and Communication";
-        d.sf = "ce";
+        d.sf = "ec";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 
 
         d = new DepartmentHolder();
         d.dept = "Electrical Engineering";
-        d.sf = "ce";
+        d.sf = "ee";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 
 
         d = new DepartmentHolder();
         d.dept = "Mechanical Engineering";
-        d.sf = "ce";
+        d.sf = "me";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 
 
         d = new DepartmentHolder();
         d.dept = "Civil Engineering";
-        d.sf = "ce";
+        d.sf = "cl";
         d.drawable_id = R.drawable.computer;
         dh.add(d);
 

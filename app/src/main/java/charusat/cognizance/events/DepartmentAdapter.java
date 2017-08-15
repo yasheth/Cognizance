@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -29,21 +30,44 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
     private Context mContext;
     private List<DepartmentHolder> deptList;
     private Activity_Main am;
+    private OnItemClickListener listener;
+    // Define the listener interface
+
+    public interface OnItemClickListener {
+        void onItemClick(View itemView, int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
         public TextView title;
         public ImageView thumbnail;
-        public LinearLayout mll;
 
-        public MyViewHolder(View view)
+        public MyViewHolder(final View view)
         {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
-            mll = (LinearLayout) view.findViewById(R.id.main_linear_layout);
+
+            View.OnClickListener vvv = new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Triggers click upwards to the adapter on click
+                    if (listener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            listener.onItemClick(view, position);
+                        }
+                    }
+                }
+            };
+
+            view.setOnClickListener(vvv);
+            thumbnail.setOnClickListener(vvv);
         }
     }
-
 
     public DepartmentAdapter(Context mContext, List<DepartmentHolder> deptList, Activity_Main am)
     {
@@ -66,16 +90,6 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
     {
         DepartmentHolder department = deptList.get(position);
         holder.title.setText(department.dept);
-
-        holder.mll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                EventsListViewDepartmentFragment ff = new EventsListViewDepartmentFragment();
-                ff.setDept(deptList.get(position).sf);
-                am.setFragment(ff);
-            }
-        });
         picasso_load(department.drawable_id, holder.thumbnail);
     }
     private void picasso_load(int drawable, final ImageView into)

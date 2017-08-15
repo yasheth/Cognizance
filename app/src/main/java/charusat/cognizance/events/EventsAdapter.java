@@ -22,20 +22,22 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
     private ArrayList<EventHolder> events;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+    int layout;
 
 
     // data is passed into the constructor
-    public EventsAdapter(Context context, ArrayList<EventHolder> events)
+    public EventsAdapter(Context context, ArrayList<EventHolder> events, int layout)
     {
         this.mInflater = LayoutInflater.from(context);
         this.events = events;
+        this.layout = layout;
     }
 
     // inflates the cell layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        View view = mInflater.inflate(R.layout.event_show_individual, parent, false);
+        View view = mInflater.inflate(layout, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

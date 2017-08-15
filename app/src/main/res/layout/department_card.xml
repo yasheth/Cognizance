@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/main_linear_layout">
+    android:id="@+id/main_linear_layout"
+    >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:clipToPadding="false"
         android:layout_margin="@dimen/card_margin"
         card_view:cardCornerRadius="@dimen/card_album_radius"
-        android:elevation="0dp"
+        android:elevation="10dp"
         card_view:cardUseCompatPadding="true"
         tools:targetApi="lollipop">
 
@@ -27,8 +28,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:clickable="true"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:clickable="true"/>
 
             <TextView
                 android:id="@+id/title"

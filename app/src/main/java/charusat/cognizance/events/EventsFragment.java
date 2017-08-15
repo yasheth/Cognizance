@@ -40,7 +40,7 @@ import charusat.cognizance.helpers.events.GetEvents;
  * Created by Yash on 8/10/2017.
  */
 
-public class EventsFragment extends Fragment implements LinearLayout.OnClickListener
+public class EventsFragment extends Fragment/* implements LinearLayout.OnClickListener*/
 {
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -68,10 +68,21 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
 
         departments = GetEvents.getDepartments();
 
-
         adapter = new DepartmentAdapter(getContext(), departments, (Activity_Main) getActivity());
 
+        adapter.setOnItemClickListener(new DepartmentAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int position)
+            {
+                DepartmentHolder dh = departments.get(position);
 
+                EventsListViewDepartmentFragment ff = new EventsListViewDepartmentFragment();
+                ff.setDept(dh.sf);
+                Log.i("DEPT", dh.sf);
+                ((Activity_Main)getActivity()).setFragment(ff);
+
+            }
+        });
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
@@ -83,8 +94,6 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
 
         handler.postDelayed(new Runnable()
         {
-
-
             @Override
             public void run()
             {
@@ -97,14 +106,16 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
         getActivity().setTitle("EVENTS");
     }
 
-    private int dpToPx(int dp) {
+    private int dpToPx(int dp)
+    {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
     /**
      * RecyclerView item decoration - give equal margin around grid item
      */
-    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration {
+    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration
+    {
 
         private int spanCount;
         private int spacing;
@@ -150,7 +161,7 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
         TransitionManager.beginDelayedTransition(transitionsContainer, set);
         iv.setVisibility(View.VISIBLE);
     }*/
-    @Override
+    /*@Override
     public void onClick(View v)
     {
         Activity_Main am = (Activity_Main) getActivity();
@@ -165,5 +176,5 @@ public class EventsFragment extends Fragment implements LinearLayout.OnClickList
 
         //i.putExtra("department", dep);
         //startActivity(i);
-    }
+    }*/
 }
