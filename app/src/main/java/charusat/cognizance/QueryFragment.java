@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class QueryFragment extends Fragment {
-
+public class QueryFragment extends Fragment
+{
 
     public QueryFragment() {
         // Required empty public constructor

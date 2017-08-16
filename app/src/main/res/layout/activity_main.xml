@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="charusat.cognizance.Activity_Main">
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -22,7 +22,8 @@
             android:text="COGNIZANCE"
             android:textColor="@color/colorWhite"
             android:textSize="23sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:id="@+id/current_title"/>
     </android.support.v7.widget.Toolbar>
 
 
@@ -41,7 +42,8 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
         android:layout_below="@+id/toolbar"
-        android:animateLayoutChanges="true">
+        android:animateLayoutChanges="true"
+        >
 
 
     </FrameLayout>

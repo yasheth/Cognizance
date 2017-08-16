@@ -1,4 +1,4 @@
-package charusat.cognizance;
+package charusat.cognizance.home;
 
 
 import android.content.ActivityNotFoundException;
@@ -16,13 +16,18 @@ import android.widget.Button;
 import java.net.URL;
 import java.util.Vector;
 
+import charusat.cognizance.R;
+import charusat.cognizance.VideoAdapter;
+import charusat.cognizance.VideoAdapter2;
+import charusat.cognizance.YoutubeVideo;
+import charusat.cognizance.YoutubeVideo2;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
 
-`
     //RECYCLER VIEW FIELD
     RecyclerView recyclerView,recyclerView2;
 
@@ -43,7 +48,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         //Load Videos of Youtube
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
@@ -124,9 +128,9 @@ public class HomeFragment extends Fragment {
         });
 
 
-
-
          return v;
+        //getActivity().setTitle("COGNIZANCE");
+       // return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
 }
