@@ -85,8 +85,6 @@ android:text="Above video was made in aftermovie. This is all about our event. P
             android:textSize="15sp"
             />
 
-
-        <>
         <Button
             android:layout_margin="5dp"
             android:layout_width="match_parent"
@@ -121,7 +119,6 @@ android:text="Above video was made in aftermovie. This is all about our event. P
             android:textColor="@color/colorWhite"
             android:textSize="20dp" />
 
-        </android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>
