@@ -62,7 +62,7 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
 
         super.onViewCreated(view, savedInstanceState);
 
-        final NestedScrollView transitionsContainer = (NestedScrollView) view.findViewById(R.id.content_main);
+        //final NestedScrollView transitionsContainer = (NestedScrollView) view.findViewById(R.id.content_main);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
