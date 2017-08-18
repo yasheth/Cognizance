@@ -79,7 +79,10 @@
             android:text="Above video was made in aftermovie. This is all about our event. Please participate in this event. It will be the best experience of yours."
             android:textSize="15sp" />
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 72408aea05e1f41b9c7c1b5f595a908e16bf1508
         <Button
             android:layout_margin="5dp"
             android:layout_width="match_parent"
