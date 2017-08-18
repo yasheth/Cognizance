@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
-            android:text="Charusat Univercity welcomes you in this great event.We hope that your experience will became  best experience then anyother college's event "
+            android:text="Charusat University welcomes you in this great event.We hope that your experience will became  best experience then anyother college's event "
             android:textSize="15sp"
             android:textStyle="bold"
 
@@ -53,11 +53,11 @@
         </WebView>
 
         <TextView
-            android:layout_width="match_parent"
+              android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
-            android:text="So, that was the video of Cognizance which was celebrated by Charusat Univercity before one year ago. We hope you like that video."
+            android:text="So, that was the video of Cognizance which was celebrated by Charusat University before one year ago. We hope you like that video."
             android:textSize="15sp"
             />
 
@@ -101,7 +101,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="0.26"
             android:gravity="center"
             android:weightSum="1">
