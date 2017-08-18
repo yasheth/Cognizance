@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardElevation="4dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/cardview_bg"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <charusat.cognizance.helpers.customview.Textview_lato
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Event Title"
+                android:id="@+id/title"
+                android:textColor="@color/colorGray"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:gravity="center_vertical">
+
+                <View
+                    android:layout_width="7dp"
+                    android:layout_height="7dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/gree_circle"></View>
+
+                <!--charusat.cognizance.helpers.customview.Textview_lato
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="CONFIRMED"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" /-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginTop="3dp"
+                android:orientation="horizontal">
+
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="15th Sep: 10 am"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:id="@+id/date_and_time"/>
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="7dp"
+                    android:src="@drawable/placeholder" />
+
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="Lab 306"
+                    android:id="@+id/venue_of_event"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout">
+
+                <!--charusat.cognizance.helpers.customview.Textview_lato
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/roun_rect_lightgray"
+                    android:gravity="center"
+                    android:text="job"
+                    android:textColor="@color/colorGray"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <charusat.cognizance.helpers.customview.Textview_lato
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/roun_rect_lightgray"
+                    android:gravity="center"
+                    android:text="family"
+                    android:textColor="@color/colorGray"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <charusat.cognizance.helpers.customview.Textview_lato
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/roun_rect_lightgray"
+                    android:gravity="center"
+                    android:text="update"
+                    android:textColor="@color/colorGray"
+                    android:textSize="10sp"
+                    android:textStyle="bold" /-->
+
+            </LinearLayout>
+
+            <charusat.cognizance.helpers.customview.Textview_lato
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="into"
+                android:textColor="@color/colorGray"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/linear" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
