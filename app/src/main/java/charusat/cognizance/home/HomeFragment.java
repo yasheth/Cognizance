@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,6 +17,8 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.Vector;
 
@@ -32,8 +36,6 @@ public class HomeFragment extends Fragment {
 
     //VECTOR FOR VIDEO URLS
     WebView webView, webView2;
-
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -62,6 +64,18 @@ public class HomeFragment extends Fragment {
 
         webView.loadData(html1, "text/html", "utf-8");
         webView2.loadData(html2, "text/html", "utf-8");
+
+
+        //SLIDE SHOW
+        CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
+        ViewPager mViewPager = (ViewPager) v.findViewById(R.id.pager);
+        mViewPager.setAdapter(mCustomPagerAdapter);
+
+        DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
+        dotsIndicator.setViewPager(mViewPager);
+
+        /*TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(mViewPager, true);*/
 
         //Twitter button implementation
         ImageButton twittbutton = (ImageButton) v.findViewById(R.id.twitter);
