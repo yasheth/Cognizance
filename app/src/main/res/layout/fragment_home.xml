@@ -46,16 +46,13 @@
             android:textStyle="bold"
 
             />
-
-          <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        <WebView
+            android:id="@+id/webVideoView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
+            android:layout_height="200dp"
             android:layout_weight="0.11">
 
-        </android.support.v7.widget.RecyclerView>
+        </WebView>
 
         <TextView
             android:layout_width="match_parent"
@@ -66,25 +63,26 @@
             android:textSize="15sp"
             />
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerView2"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        <WebView
+            android:id="@+id/webVideoView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:layout_weight="0.14">
-
-        </android.support.v7.widget.RecyclerView>
+            android:layout_height="200dp"
+            android:layout_weight="0.11">
+        </WebView>
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
-android:text="Above video was made in aftermovie. This is all about our event. Please participate in this event. It will be the best experience of yours."
-            android:textSize="15sp"
-            />
+            android:text="Above video was made in aftermovie. This is all about our event. Please participate in this event. It will be the best experience of yours."
+            android:textSize="15sp" />
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 72408aea05e1f41b9c7c1b5f595a908e16bf1508
         <Button
             android:layout_margin="5dp"
             android:layout_width="match_parent"
@@ -109,10 +107,10 @@ android:text="Above video was made in aftermovie. This is all about our event. P
 
 
         <Button
-            android:id="@+id/rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:id="@+id/rateapp"
             android:background="@drawable/shape_oval_prime"
             android:onClick="rateapp"
             android:text="Rate us"
@@ -120,6 +118,39 @@ android:text="Above video was made in aftermovie. This is all about our event. P
             android:textSize="20dp" />
 
 
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.3"
+            android:gravity="center|bottom" >
+
+                <ImageButton
+                    android:id="@+id/twitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/twitter" />
+
+                <ImageButton
+                    android:id="@+id/rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/rate" />
+
+                <ImageButton
+                    android:id="@+id/share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="0.3"
+                    android:src="@drawable/share" />
+
+        </LinearLayout>
+        -->
 
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

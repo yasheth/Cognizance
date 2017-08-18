@@ -1,8 +1,8 @@
 package charusat.cognizance.home;
 
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,16 +11,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 
-import java.net.URL;
 import java.util.Vector;
 
 import charusat.cognizance.R;
-import charusat.cognizance.VideoAdapter;
-import charusat.cognizance.VideoAdapter2;
-import charusat.cognizance.YoutubeVideo;
-import charusat.cognizance.YoutubeVideo2;
 
 
 /**
@@ -28,14 +26,12 @@ import charusat.cognizance.YoutubeVideo2;
  */
 public class HomeFragment extends Fragment {
 
-    //RECYCLER VIEW FIELD
+    //RECYCLER VIEW FIELDS
     RecyclerView recyclerView,recyclerView2;
 
 
     //VECTOR FOR VIDEO URLS
-    Vector<YoutubeVideo> youtubeVideos = new Vector<>();
-    Vector<YoutubeVideo2> youtubeVideos2 = new Vector<>();
-
+    WebView webView, webView2;
 
 
 
@@ -52,25 +48,23 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        webView = (WebView) v.findViewById(R.id.webVideoView);
+        webView2 = (WebView) v.findViewById(R.id.webVideoView2);
 
-        //Load video List
-        youtubeVideos.add( new YoutubeVideo("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>"));
+        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+        String html2 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tT_IwZftGx8\" frameborder=\"0\" allowfullscreen></iframe>";
 
-        recyclerView2 = (RecyclerView) v.findViewById(R.id.recyclerView2);
-        recyclerView2.setHasFixedSize(true);
-        recyclerView2.setLayoutManager(new LinearLayoutManager(getContext()));
-        youtubeVideos2.add( new YoutubeVideo2("<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tT_IwZftGx8\" frameborder=\"0\" allowfullscreen></iframe>") );
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.setWebChromeClient(new WebChromeClient() {});
 
-        VideoAdapter videoAdapter = new VideoAdapter(youtubeVideos);
-        VideoAdapter2 videoAdapter2 = new VideoAdapter2(youtubeVideos2);
-        recyclerView.setAdapter(videoAdapter);
-        recyclerView2.setAdapter(videoAdapter2);
+        webView2.getSettings().setJavaScriptEnabled(true);
+        webView2.setWebChromeClient(new WebChromeClient() {});
+
+        webView.loadData(html1, "text/html", "utf-8");
+        webView2.loadData(html2, "text/html", "utf-8");
 
         //Twitter button implementation
-        Button twittbutton = (Button) v.findViewById(R.id.twitt);
+        ImageButton twittbutton = (ImageButton) v.findViewById(R.id.twitter);
         twittbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +77,7 @@ public class HomeFragment extends Fragment {
         });
 
         //Share app button implementation
-        Button sharebutton = (Button) v.findViewById(R.id.shareapp);
+        ImageButton sharebutton = (ImageButton) v.findViewById(R.id.share);
         sharebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,7 +91,7 @@ public class HomeFragment extends Fragment {
         });
 
         //Rate app button implement
-        Button ratebutton = (Button) v.findViewById(R.id.rate);
+        ImageButton ratebutton = (ImageButton) v.findViewById(R.id.rate);
         ratebutton.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,9 +121,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-
+        getActivity().setTitle("COGNIZANCE");
          return v;
-        //getActivity().setTitle("COGNIZANCE");
+
        // return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
