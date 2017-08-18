@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import charusat.cognizance.Activity_Main;
 import charusat.cognizance.R;
 import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
+import charusat.cognizance.helpers.customview.PreCachingLayoutManager;
 import charusat.cognizance.helpers.events.GetEvents;
 
 
@@ -83,12 +84,15 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
 
             }
         });
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
-        recyclerView.setLayoutManager(mLayoutManager);
+        //RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
+
+        PreCachingLayoutManager pc = new PreCachingLayoutManager(getContext(), 2);
+
+        //recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setLayoutManager(pc);
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-
 
         Handler handler = new Handler();
 

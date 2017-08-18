@@ -16,6 +16,7 @@ import org.w3c.dom.Text;
 import charusat.cognizance.events.EventsFragment;
 import charusat.cognizance.events.individual.EventsIndividualFragment;
 import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
+import charusat.cognizance.helpers.events.GetEvents;
 import charusat.cognizance.home.HomeFragment;
 
 import java.util.Vector;
@@ -32,7 +33,7 @@ public class Activity_Main extends AppCompatActivity
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         current_title = (TextView) findViewById(R.id.current_title);
-
+        GetEvents.c = getApplicationContext();
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override

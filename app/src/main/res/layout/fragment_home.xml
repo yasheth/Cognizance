@@ -89,9 +89,6 @@
                     />
         </FrameLayout>
 
-
-
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
@@ -141,7 +138,7 @@
                     android:scaleType="centerCrop"
                     android:src="@drawable/share" />
         </LinearLayout>
-
+x
 
 </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

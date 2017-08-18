@@ -20,9 +20,10 @@ import charusat.cognizance.helpers.events.GetEvents;
  * Created by Yash on 8/15/2017.
  */
 
-public class EventsIndividualFragment extends EventsListViewDepartmentFragment
+public class EventsIndividualFragment extends EventsListViewDepartmentFragment implements EventsAdapterIndividual.ItemClickListener
 {
     public int starting_position=0;
+    private EventsAdapterIndividual adapter;
 
     @Nullable
     @Override
@@ -44,8 +45,8 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
         helper.attachToRecyclerView(rv);
 
         ALEH = GetEvents.get(dept);
-        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(),ALEH, R.layout.events_individual_child_material);
 
+        adapter = new EventsAdapterIndividual(getContext(),ALEH, R.layout.events_individual_child_material);
         adapter.setClickListener(this);
         rv.setAdapter(adapter);
         rv.scrollToPosition(starting_position);
@@ -57,38 +58,5 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
     {
 
     }
-
-    /*class SnappingGridLayoutManager extends GridLayoutManager {
-
-        public SnappingGridLayoutManager(Context context, int spanCount) {
-            super(context, spanCount);
-        }
-
-        @Override
-        public void smoothScrollToPosition(RecyclerView recyclerView, RecyclerView.State state,
-                                           int position) {
-            RecyclerView.SmoothScroller smoothScroller = new TopSnappedSmoothScroller(recyclerView.getContext());
-            smoothScroller.setTargetPosition(position);
-            startSmoothScroll(smoothScroller);
-        }
-
-        private class TopSnappedSmoothScroller extends LinearSmoothScroller {
-            public TopSnappedSmoothScroller(Context context) {
-                super(context);
-
-            }
-
-            @Override
-            public PointF computeScrollVectorForPosition(int targetPosition) {
-                return SnappingGridLayoutManager.this
-                        .computeScrollVectorForPosition(targetPosition);
-            }
-
-            @Override
-            protected int getVerticalSnapPreference() {
-                return SNAP_TO_START;
-            }
-        }
-    }*/
 
 }

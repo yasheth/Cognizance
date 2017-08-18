@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.bluejamesbond.text.DocumentView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import charusat.cognizance.R;
@@ -23,7 +25,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
 {
     private ArrayList<EventHolder> events;
     private LayoutInflater mInflater;
-    private EventsAdapterDepartment.ItemClickListener mClickListener;
+    public EventsAdapterDepartment.ItemClickListener mClickListener;
     int layout;
 
 
@@ -52,7 +54,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
 
         holder.title.setText(event.name);
         holder.desc.setText(event.one_line_description);
-
+        holder.date.setText(event.date_time);
         //holder.myTextView.setText(animal);
     }
 
@@ -68,6 +70,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     {
         private TextView title;
         private TextView desc;
+        private TextView date;
         //private CardView cv;
 
         private ViewHolder(View itemView)
@@ -75,6 +78,8 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
             desc = (TextView) itemView.findViewById(R.id.description);
+            date = (TextView) itemView.findViewById(R.id.date_and_time);
+
             itemView.setOnClickListener(this);
         }
 

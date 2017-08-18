@@ -32,13 +32,14 @@ public class DepartmentAdapter extends RecyclerView.Adapter<DepartmentAdapter.My
     private OnItemClickListener listener;
     // Define the listener interface
 
-    public interface OnItemClickListener {
+    public interface OnItemClickListener
+    {
         void onItemClick(View itemView, int position);
     }
-    public void setOnItemClickListener(OnItemClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener)
+    {
         this.listener = listener;
     }
-
     public class MyViewHolder extends RecyclerView.ViewHolder
     {
         public TextView title;

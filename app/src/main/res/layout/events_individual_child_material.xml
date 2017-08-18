@@ -8,6 +8,11 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +22,7 @@
         <View
             android:layout_width="5dp"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary"/>
+            android:background="@color/colorPrimaryDark"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -45,7 +50,7 @@
                     android:layout_width="7dp"
                     android:layout_height="7dp"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/gree_circle"></View>
+                    android:background="@drawable/gree_circle"/>
 
                 <!--charusat.cognizance.helpers.customview.Textview_lato
 
@@ -70,6 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="4dp"
                     android:text="15th Sep: 10 am"
                     android:textColor="@color/colorLightGray"
                     android:textSize="14sp"
@@ -80,9 +86,12 @@
                     android:layout_width="14dp"
                     android:layout_height="14dp"
                     android:layout_marginLeft="7dp"
-                    android:src="@drawable/placeholder" />
+                    android:src="@drawable/placeholder"
+                    android:layout_marginTop="4dp"
+                    />
 
                 <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_marginTop="4dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
@@ -91,28 +100,96 @@
                     android:textColor="@color/colorLightGray"
                     android:textSize="12dp"
                     android:textStyle="bold" />
+
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Number of participants"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:id="@+id/number_of_participants"/>
+
+                <TextView
+
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="\u20B9" />
+
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rupees"
+                    android:id="@+id/fees"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <charusat.cognizance.helpers.customview.Textview_lato
+                android:id="@+id/description_one_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="Description One Line"
+                android:textColor="@color/colorGray"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/linear2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linear"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
+                android:layout_below="@+id/description_one_line"
+                android:layout_marginTop="13dp"
+                android:orientation="vertical"
                 android:id="@+id/linearLayout">
 
-                <!--charusat.cognizance.helpers.customview.Textview_lato
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/roun_rect_lightgray"
-                    android:gravity="center"
-                    android:text="job"
-                    android:textColor="@color/colorGray"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Event Descripton Long. Event Descrition Long. Event Descrition Long. Event Descrition Long. Event Descrition Long. Event Descrition Long. Event Descrition Long. "
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="15sp"
+                    android:id="@+id/detail_description"/>
 
                 <charusat.cognizance.helpers.customview.Textview_lato
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="Rules "
+                    android:textStyle="bold"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="15sp"/>
+
+                <charusat.cognizance.helpers.customview.Textview_lato_thin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Rules of the event"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="15sp"
+                    android:id="@+id/rules"/>
+
+                <!--charusat.cognizance.helpers.customview.Textview_lato
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="10dp"
@@ -136,19 +213,8 @@
 
             </LinearLayout>
 
-            <charusat.cognizance.helpers.customview.Textview_lato
-                android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="20dp"
-                android:gravity="center"
-                android:text="into"
-                android:textColor="@color/colorGray"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:layout_below="@+id/linear" />
         </RelativeLayout>
     </LinearLayout>
+    </ScrollView>
 
 </android.support.v7.widget.CardView>
