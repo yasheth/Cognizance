@@ -107,7 +107,7 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
         }, 0);
 
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("EVENTS");
+        //getActivity().setTitle("EVENTS");
     }
 
     private int dpToPx(int dp)

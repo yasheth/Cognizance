@@ -2,10 +2,13 @@ package charusat.cognizance.events.individual;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.bluejamesbond.text.DocumentView;
 
 import org.w3c.dom.Text;
 
@@ -52,11 +55,11 @@ public class EventsAdapterIndividual extends RecyclerView.Adapter<EventsAdapterI
         EventHolder event = events.get(position);
 
         holder.title.setText(event.name);
-        holder.one_line_description.setText(event.one_line_description);
+        holder.one_line_description.setText(Html.fromHtml(event.one_line_description));
         holder.date_time.setText(event.date_time);
-        holder.detail_description.setText(event.detail_description);
+        holder.detail_description.setText(Html.fromHtml(event.detail_description));
         holder.venue.setText(event.venue);
-        holder.rules.setText(event.rules);
+        holder.rules.setText(Html.fromHtml(event.rules));
         holder.number_of_participants.setText(event.number_of_participants);
         holder.fees.setText(event.fees);
 
@@ -76,7 +79,7 @@ public class EventsAdapterIndividual extends RecyclerView.Adapter<EventsAdapterI
         private TextView title; //name
         private TextView one_line_description;
         private TextView date_time;
-        private TextView detail_description;
+        private DocumentView detail_description;
         private TextView venue;
         private TextView rules;
         private TextView number_of_participants;
@@ -101,7 +104,7 @@ public class EventsAdapterIndividual extends RecyclerView.Adapter<EventsAdapterI
             title = (TextView) itemView.findViewById(R.id.title);
             one_line_description = (TextView) itemView.findViewById(R.id.description_one_line);
             date_time = (TextView) itemView.findViewById(R.id.date_and_time);
-            detail_description = (TextView) itemView.findViewById(R.id.detail_description);
+            detail_description = (DocumentView) itemView.findViewById(R.id.detail_description);
             venue = (TextView) itemView.findViewById(R.id.venue_of_event);
             rules = (TextView) itemView.findViewById(R.id.rules);
             number_of_participants = (TextView) itemView.findViewById(R.id.number_of_participants);
