@@ -48,7 +48,9 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
         adapter.setClickListener(this);
         rv.setAdapter(adapter);
 
-        getActivity().setTitle(GetEvents.getFullForm(dept));
+        String fullform = GetEvents.getFullForm(dept);
+        //Set Department Full Form.
+        //getActivity().setTitle(GetEvents.getFullForm(dept));
     }
     public void setDept(String dept)
     {

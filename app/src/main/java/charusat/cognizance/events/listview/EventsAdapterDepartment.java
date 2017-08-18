@@ -3,6 +3,7 @@ package charusat.cognizance.events.listview;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
         EventHolder event = events.get(position);
 
         holder.title.setText(event.name);
-        holder.desc.setText(event.one_line_description);
+        holder.desc.setText(Html.fromHtml(event.one_line_description));
         holder.date.setText(event.date_time);
         //holder.myTextView.setText(animal);
     }
