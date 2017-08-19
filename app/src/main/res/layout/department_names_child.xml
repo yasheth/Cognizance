@@ -2,20 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/main_linear_layout"
     >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:outlineProvider="bounds"
-        android:clipToPadding="false"
         android:layout_margin="@dimen/card_margin"
-        card_view:cardCornerRadius="@dimen/card_album_radius"
+        android:clipToPadding="false"
         android:elevation="10dp"
+        android:outlineProvider="bounds"
+        card_view:cardCornerRadius="@dimen/card_album_radius"
         card_view:cardUseCompatPadding="true"
         tools:targetApi="lollipop">
 
@@ -29,18 +29,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/album_cover_height"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:scaleType="fitXY"
-                android:clickable="true"/>
+                android:clickable="true"
+                android:padding="4dp"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/thumbnail"
+                android:gravity="center"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
-                android:gravity="center"
                 android:textColor="@color/album_title"
                 android:textSize="@dimen/album_title" />
 
@@ -49,11 +50,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
+                android:gravity="center"
                 android:paddingBottom="@dimen/songs_count_padding_bottom"
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
-                android:textSize="@dimen/songs_count"
-                android:text="6 events"/>
+                android:text="6 events"
+                android:textSize="@dimen/songs_count" />
 
              <!--ImageView
                 android:id="@+id/overflow"

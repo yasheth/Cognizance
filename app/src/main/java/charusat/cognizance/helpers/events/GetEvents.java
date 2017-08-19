@@ -1,11 +1,9 @@
 package charusat.cognizance.helpers.events;
 
-import android.app.usage.UsageEvents;
 import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -22,8 +20,8 @@ import charusat.cognizance.events.EventHolder;
 
 public class GetEvents
 {
-    static ArrayList<EventHolder> AL;
     public static Context c;
+    static ArrayList<EventHolder> AL;
 
     public static ArrayList<EventHolder> get(String dept)
     {
@@ -85,7 +83,8 @@ public class GetEvents
             case "me" : return "Mechanical \nEngineering";
             case "ee" : return "Electrical \nEngineering";
             case "cl" : return "Civil \nEngineering";
-            case "nt" : return "Non-Tech \nEvents";
+            case "nt":
+                return "Non-Tech \nFun";
             case "gl" : return "Guest \nLectures";
         }
         return "Events";

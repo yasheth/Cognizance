@@ -1,15 +1,15 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="charusat.cognizance.home.HomeFragment">
 
-<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,8 +21,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/shape_oval_prime"
             android:text="Welcome to Cognizance"
-            android:textSize="20dp"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:textSize="20dp" />
 
         <!--
         <TextView
@@ -44,49 +44,50 @@
             android:textStyle="bold"
 
             />
+
         <WebView
             android:id="@+id/webVideoView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_weight="0.11">
+            android:layout_weight="0.11"
+            android:scrollbars="none">
 
         </WebView>
 
         <TextView
-              android:layout_width="match_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
             android:text="So, that was the video of Cognizance which was celebrated by Charusat University before one year ago. We hope you like that video."
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
 
         <WebView
             android:id="@+id/webVideoView2"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_weight="0.11">
-        </WebView>
+            android:layout_weight="0.11"
+            android:scrollbars="none"></WebView>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="250dp">
-                </android.support.v4.view.ViewPager>
-                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
-                    android:id="@+id/dots_indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="bottom|center_horizontal"
-                    app:dotsColor="@color/colorPrimary"
-                    android:paddingBottom="30dp"
-                    app:dotsSize="8dp"
-                    app:dotsWidthFactor="2.5"
-                    />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"></android.support.v4.view.ViewPager>
+
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingBottom="30dp"
+                app:dotsColor="@color/colorPrimary"
+                app:dotsSize="8dp"
+                app:dotsWidthFactor="2.5" />
         </FrameLayout>
 
         <TextView
@@ -106,39 +107,38 @@
             android:gravity="center"
             android:weightSum="1">
 
-                <ImageButton
-                    android:id="@+id/twitter"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginRight="40dp"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/twitter" />
+            <ImageButton
+                android:id="@+id/twitter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="40dp"
+                android:background="@android:color/transparent"
+                android:paddingLeft="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/twitter" />
 
-                <ImageButton
-                    android:id="@+id/rate"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginLeft="40dp"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/rate" />
+            <ImageButton
+                android:id="@+id/rate"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@android:color/transparent"
+                android:paddingLeft="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/rate" />
 
-                <ImageButton
-                    android:id="@+id/share"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="right"
-                    android:layout_marginLeft="40dp"
-                    android:background="@android:color/transparent"
-                    android:paddingLeft="0dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/share" />
+            <ImageButton
+                android:id="@+id/share"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="40dp"
+                android:background="@android:color/transparent"
+                android:paddingLeft="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/share" />
         </LinearLayout>
-x
 
-</LinearLayout>
+    </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

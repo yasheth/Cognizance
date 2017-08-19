@@ -1,12 +1,6 @@
 package charusat.cognizance.events;
 
-import android.content.Context;
-
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * Created by Yash on 8/10/2017.
@@ -38,7 +32,7 @@ public class EventHolder
         this.date_time = ggg("date_time");
         this.venue = ggg("venue");
         this.rules = ggg("rules");
-        this.number_of_participants = ggg("number_of_participants");
+        this.number_of_participants = ggg("number_of_participants") + " Participants";
         this.fees = ggg("fees");
     }
     private String ggg(String ss)
