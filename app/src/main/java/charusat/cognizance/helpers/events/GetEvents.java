@@ -79,14 +79,14 @@ public class GetEvents
     {
         switch (shortForm)
         {
-            case "ce" : return "Computer Engineering";
-            case "it" : return "Information Technology";
-            case "ec" : return "Electronics and Communication";
-            case "me" : return "Mechanical Engineering";
-            case "ee" : return "Electrical Engineering";
-            case "cl" : return "Civil Engineering";
-            case "nt" : return "Non-Tech";
-            case "gl" : return "Guest Lectures";
+            case "ce" : return "Computer \nEngineering";
+            case "it" : return "Information \nTechnology";
+            case "ec" : return "Electronics and \nCommunication";
+            case "me" : return "Mechanical \nEngineering";
+            case "ee" : return "Electrical \nEngineering";
+            case "cl" : return "Civil \nEngineering";
+            case "nt" : return "Non-Tech \nEvents";
+            case "gl" : return "Guest \nLectures";
         }
         return "Events";
     }
@@ -96,54 +96,54 @@ public class GetEvents
         ArrayList<DepartmentHolder> dh = new ArrayList<>();
 
         DepartmentHolder d = new DepartmentHolder();
-        d.dept = "Non-Tech";
         d.sf = "nt";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.nt1;
         dh.add(d);
 
         d = new DepartmentHolder();
-        d.dept = "Guest Lectures";
         d.sf = "gl";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.gl1;
         dh.add(d);
 
          d = new DepartmentHolder();
-        d.dept = "Computer Engineering";
         d.sf = "ce";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.ce1;
         dh.add(d);
 
         d = new DepartmentHolder();
-        d.dept = "Information Technology";
         d.sf = "it";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.it1;
         dh.add(d);
 
 
         d = new DepartmentHolder();
-        d.dept = "Electronics and Communication";
         d.sf = "ec";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.ec1;
         dh.add(d);
 
 
         d = new DepartmentHolder();
-        d.dept = "Electrical Engineering";
         d.sf = "ee";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.ee1;
         dh.add(d);
 
 
         d = new DepartmentHolder();
-        d.dept = "Mechanical Engineering";
         d.sf = "me";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.me1;
         dh.add(d);
 
 
         d = new DepartmentHolder();
-        d.dept = "Civil Engineering";
         d.sf = "cl";
+        d.dept = getFullForm(d.sf);
         d.drawable_id = R.drawable.cl1;
         dh.add(d);
 

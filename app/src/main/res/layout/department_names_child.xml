@@ -21,7 +21,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
 
             <ImageView
                 android:id="@+id/thumbnail"
@@ -39,6 +40,7 @@
                 android:paddingLeft="@dimen/album_title_padding"
                 android:paddingRight="@dimen/album_title_padding"
                 android:paddingTop="@dimen/album_title_padding"
+                android:gravity="center"
                 android:textColor="@color/album_title"
                 android:textSize="@dimen/album_title" />
 
