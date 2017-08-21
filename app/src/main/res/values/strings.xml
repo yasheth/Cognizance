@@ -2,7 +2,7 @@
     <string name="app_name">Cognizance</string>
     <string name="app_team_label">App Team</string>
     <string name="council_team_label">Council Members</string>
-    <string name="web_team_team">Web Team</string>
+    <string name="web_team_label">Web Team</string>
     <string name="sample_member_label">Sample Name\nTitle\nDepartment</string>
 
 </resources>
