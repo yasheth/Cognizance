@@ -17,7 +17,9 @@
     <color name="colorAccent">#455A64</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
-
+    <color name="colorFB">#3B5998</color>
+    <color name="colorT">#4099ff</color>
+    <color name="colorIG">#125688</color>
 
 
     <color name="viewBg">#f1f5f8</color>

@@ -12,62 +12,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:orientation="vertical">
 
-
-        <Button
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_oval_prime"
-            android:text="Welcome to Cognizance"
-            android:textColor="@color/colorWhite"
-            android:textSize="20dp" />
+            android:layout_height="100dp"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/cognizance4" />
 
-        <!--
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Welcome to Cognizance"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-        -->
+        <include layout="@layout/darkbar"></include>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="left"
-            android:text="Charusat University welcomes you in this great event.We hope that your experience will became  best experience then anyother college's event "
-            android:textSize="15sp"
-            android:textStyle="bold"
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
-            />
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content1"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_wordSpacingMultiplier="1.4" />
 
-        <WebView
-            android:id="@+id/webVideoView"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="0.11"
-            android:scrollbars="none">
-
-        </WebView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="left"
-            android:text="So, that was the video of Cognizance which was celebrated by Charusat University before one year ago. We hope you like that video."
-            android:textSize="15sp" />
-
-        <WebView
-            android:id="@+id/webVideoView2"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="0.11"
-            android:scrollbars="none"></WebView>
+        <include layout="@layout/darkbar"></include>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -90,55 +61,112 @@
                 app:dotsWidthFactor="2.5" />
         </FrameLayout>
 
+        <include layout="@layout/darkbar"></include>
+
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content2"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_wordSpacingMultiplier="1.4" />
+
+        <include layout="@layout/darkbar"></include>
+
+        <WebView
+            android:id="@+id/webVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="5dp"
+            android:scrollbars="none">
+
+        </WebView>
+
+        <include layout="@layout/darkbar"></include>
+
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content3"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_wordSpacingMultiplier="1.4" />
+
+        <include layout="@layout/darkbar"></include>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:padding="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/paroma" />
+
+        <include layout="@layout/darkbar"></include>
+
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content4"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_wordSpacingMultiplier="1.4" />
+
+        <include layout="@layout/darkbar"></include>
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
-            android:text="Above video was made in aftermovie. This is all about our event. Please participate in this event. It will be the best experience of yours."
+            android:text="Follow us On:"
             android:textSize="15sp" />
 
-        <LinearLayout
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="0.26"
-            android:gravity="center"
-            android:weightSum="1">
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_oval_facebook"
+            android:text="Facebook"
+            android:textColor="@color/colorWhite" />
 
-            <ImageButton
-                android:id="@+id/twitter"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginRight="40dp"
-                android:background="@android:color/transparent"
-                android:paddingLeft="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/twitter" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_oval_twitter"
+            android:text="Twitter"
+            android:textColor="@color/colorWhite" />
 
-            <ImageButton
-                android:id="@+id/rate"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:background="@android:color/transparent"
-                android:paddingLeft="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/rate" />
 
-            <ImageButton
-                android:id="@+id/share"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="right"
-                android:layout_marginLeft="40dp"
-                android:background="@android:color/transparent"
-                android:paddingLeft="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/share" />
-        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/shape_oval_instagram"
+            android:text="Instagram"
+            android:textColor="@color/colorWhite" />
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

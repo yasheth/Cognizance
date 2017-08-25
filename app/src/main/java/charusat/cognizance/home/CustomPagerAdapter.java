@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import charusat.cognizance.R;
 
@@ -23,12 +22,9 @@ class CustomPagerAdapter extends PagerAdapter
     LayoutInflater mLayoutInflater;
 
     int[] mResources = {
-            R.drawable.first,
-            R.drawable.second,
-            R.drawable.third,
-            R.drawable.fourth,
-            R.drawable.fifth,
-            R.drawable.sixth
+            R.drawable.ss1,
+            R.drawable.ss2,
+
     };
 
     public CustomPagerAdapter(Context context) {
@@ -43,7 +39,7 @@ class CustomPagerAdapter extends PagerAdapter
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((AppCompatImageView) object);
+        return view == object;
     }
 
     @Override
