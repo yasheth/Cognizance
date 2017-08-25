@@ -115,6 +115,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/paroma" />
 
+        
         <include layout="@layout/darkbar"></include>
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
