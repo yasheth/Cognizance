@@ -31,30 +31,36 @@ public class GetEvents
     public static Context c;
     static ArrayList<EventHolder> AL;
 
+    static String jj = "";
 
     static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    static DatabaseReference databaseReference = database.getReference().child("events_json");
-    static {
+    static DatabaseReference databaseReference;
+    static
+    {
+        jj = readJSONFromAsset("events.json");
         database.setPersistenceEnabled(true);
+        databaseReference = database.getReference().child("events_json");
         databaseReference.keepSynced(true);
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addValueEventListener(new ValueEventListener()
+        {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String s = dataSnapshot.getValue().toString();
                 Log.wtf("H", s);
             }
-
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError)
+            {
 
             }
         });
     }
+
     public static ArrayList<EventHolder> get(String dept)
     {
         dept = dept.toLowerCase();
 
-        if(AL==null) init();
+        init();
 
         ArrayList<EventHolder> TEMP = new ArrayList<>();
 
@@ -66,18 +72,10 @@ public class GetEvents
         }
         return TEMP;
     }
-    public static String readJSONFromFirebase(String ff)
-    {
-        String json = null;
-
-
-
-        return json;
-    }
 
     public static String readJSONFromAsset(String filename)
     {
-        String json = null;
+        jj = null;
         try
         {
             InputStream is = c.getAssets().open(filename);
@@ -85,15 +83,15 @@ public class GetEvents
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            json = new String(buffer, "UTF-8");
+            jj = new String(buffer, "UTF-8");
         }
         catch (IOException ex)
         {
             ex.printStackTrace();
             return null;
         }
-        Log.i("JSON", json);
-        return json;
+        Log.i("JSON", jj);
+        return jj;
     }
     public static void init()
     {
@@ -101,7 +99,7 @@ public class GetEvents
 
         try
         {
-            String JSON = readJSONFromAsset("events.json");
+            String JSON = jj;
 
             JSONObject jo = new JSONObject(JSON);
             Iterator<String> keys = jo.keys();
