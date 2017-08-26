@@ -18,6 +18,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import charusat.cognizance.events.EventHolder;
+import charusat.cognizance.helpers.events.GetEvents;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +34,7 @@ public class UserFragment extends Fragment {
     final String TAG = "Firebase";
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = database.getReference();
+    DatabaseReference participantRefer;
     EditText czid;
     EditText mobile;
     Button status;
@@ -56,10 +64,29 @@ public class UserFragment extends Fragment {
             public void onClick(View view) {
                 String cz_id;
                 String cz_mobile;
+                String eventStr = "Events";
                 cz_id = czid.getText().toString();
                 cz_mobile = mobile.getText().toString();
                 final String participant = cz_id+"_"+cz_mobile;
                 Log.d(TAG, participant);
+
+                participantRefer = databaseReference.child("participant").child(participant).child(eventStr);;
+                ValueEventListener Listener = new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String re = dataSnapshot.getValue().toString();
+                        String[] regEvents = re.split(",");
+                        ArrayList<EventHolder> eventDetails = GetEvents.getByID((ArrayList<String>) Arrays.asList(regEvents));
+                        Log.d(TAG, eventDetails.toString());
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                };
+                participantRefer.addValueEventListener(Listener);
+
             }
         });
 

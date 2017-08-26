@@ -17,6 +17,7 @@ public class EventHolder
     public String rules;
     public String number_of_participants;
     public String fees;
+    public String eventID;
 
     JSONObject c;
     //String photo;
@@ -34,6 +35,7 @@ public class EventHolder
         this.rules = ggg("rules");
         this.number_of_participants = ggg("number_of_participants") + " Participants";
         this.fees = ggg("fees");
+        this.eventID = ggg("eventid");
     }
     private String ggg(String ss)
     {
