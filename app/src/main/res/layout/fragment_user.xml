@@ -31,7 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Your CZ ID"
-                android:inputType="number" />
+                android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -39,11 +39,11 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/et_cz_email"
+                android:id="@+id/et_cz_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Your Registered Email ID"
-                android:inputType="textEmailAddress" />
+                android:inputType="number" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -52,7 +52,8 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/shape_oval_prime"
             android:text="Know Your CZ Status"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:id="@+id/bt_status"/>
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
