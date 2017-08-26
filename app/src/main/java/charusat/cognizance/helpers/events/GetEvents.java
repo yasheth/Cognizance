@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import charusat.cognizance.R;
 import charusat.cognizance.events.DepartmentHolder;
@@ -25,20 +26,26 @@ public class GetEvents
 
     public static ArrayList<EventHolder> get(String dept)
     {
+        dept = dept.toLowerCase();
+
         if(AL==null) init();
+
         ArrayList<EventHolder> TEMP = new ArrayList<>();
+
+        Log.i("Number", "" + AL.size());
         for (EventHolder eh: AL)
         {
+            eh.dept = eh.dept.toLowerCase();
             if(eh.dept.equals(dept)) TEMP.add(eh);
         }
         return TEMP;
     }
-    public static String readJSONFromAsset()
+    public static String readJSONFromAsset(String filename)
     {
         String json = null;
         try
         {
-            InputStream is = c.getAssets().open("events.json");
+            InputStream is = c.getAssets().open(filename);
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -57,14 +64,25 @@ public class GetEvents
     {
         AL = new ArrayList<>();
 
-        try {
-            String JSON = readJSONFromAsset();
-            JSONArray ja = new JSONArray(JSON);
+        try
+        {
+            String JSON = readJSONFromAsset("events.json");
 
-            for (int i = 0, size = ja.length(); i < size; i++)
+            JSONObject jo = new JSONObject(JSON);
+            Iterator<String> keys = jo.keys();
+
+            while(keys.hasNext() )
             {
-                JSONObject event = ja.getJSONObject(i);
-                AL.add(new EventHolder(event));
+                String key = keys.next();
+
+                if ( jo.get(key) instanceof JSONObject )
+                {
+                    AL.add(new EventHolder((JSONObject)jo.get(key)));
+                }
+                else
+                {
+                    Log.wtf("WTF", "Not instance of JSOBObject");
+                }
             }
         }
         catch (Exception e)
@@ -75,6 +93,7 @@ public class GetEvents
     }
     public static String getFullForm(String shortForm)
     {
+        shortForm = shortForm.toLowerCase();
         switch (shortForm)
         {
             case "ce" : return "Computer \nEngineering";
@@ -83,8 +102,7 @@ public class GetEvents
             case "me" : return "Mechanical \nEngineering";
             case "ee" : return "Electrical \nEngineering";
             case "cl" : return "Civil \nEngineering";
-            case "nt":
-                return "Non-Tech \nFun";
+            case "nt":  return "Non-Tech \nFun";
             case "gl" : return "Guest \nLectures";
         }
         return "Events";
