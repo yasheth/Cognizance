@@ -67,6 +67,22 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
+
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                departments.clear();
+                departments.addAll(GetEvents.getDepartments());
+                adapter.notifyDataSetChanged();
+            }
+        };
+
+        GetEvents ge = new GetEvents(onChangeListener);
+
+
+
         departments = GetEvents.getDepartments();
 
         adapter = new DepartmentAdapter(getContext(), departments, (Activity_Main) getActivity());

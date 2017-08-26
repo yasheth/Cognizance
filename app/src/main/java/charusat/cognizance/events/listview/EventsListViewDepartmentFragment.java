@@ -3,6 +3,7 @@ package charusat.cognizance.events.listview;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ScaleGestureDetectorCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,6 +27,7 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
 {
     public static String dept;
     public ArrayList<EventHolder> ALEH;
+    EventsAdapterDepartment adapter;
 
     @Nullable
     @Override
@@ -43,12 +45,32 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ALEH = GetEvents.get(dept);
-        EventsAdapterDepartment adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);
+
+        adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);
+
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                ALEH.clear();
+                ALEH.addAll(GetEvents.get(dept));
+                adapter.notifyDataSetChanged();
+
+                Log.i("Onccc", "OnChange in Depart ListView");
+            }
+        };
+
+        new GetEvents(onChangeListener);
+
+        /*ALEH = GetEvents.get(dept);
+
+        adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);*/
 
         adapter.setClickListener(this);
         rv.setAdapter(adapter);
 
-        String fullform = GetEvents.getFullForm(dept);
+        //String fullform = GetEvents.getFullForm(dept);
         //Set Department Full Form.
         //getActivity().setTitle(GetEvents.getFullForm(dept));
     }
@@ -62,11 +84,19 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
     @Override
     public void onItemClick(View view, int position)
     {
-        EventHolder eh = ALEH.get(position);
-        EventsIndividualFragment eif = new EventsIndividualFragment();
-        eif.setDept(dept);
-        eif.starting_position = position;
-        Activity_Main am = (Activity_Main) getActivity();
-        am.setFragment(eif);
+        try
+        {
+            EventHolder eh = ALEH.get(position);
+            EventsIndividualFragment eif = new EventsIndividualFragment();
+            eif.setDept(dept);
+            eif.starting_position = position;
+            Activity_Main am = (Activity_Main) getActivity();
+            am.setFragment(eif);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 }

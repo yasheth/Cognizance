@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import charusat.cognizance.R;
@@ -30,36 +31,38 @@ public class GetEvents
 {
     public static Context c;
     static ArrayList<EventHolder> AL;
-
     static String jj = "";
 
     static FirebaseDatabase database = FirebaseDatabase.getInstance();
     static DatabaseReference databaseReference;
 
-    public static void start()
+    public EventOnChangeListener ocl;
+
+    public GetEvents(final EventOnChangeListener ocl)
     {
-        jj = readJSONFromAsset("events.json");
-        database.setPersistenceEnabled(true);
-        databaseReference = database.getReference().child("events_json");
-        databaseReference.keepSynced(true);
+        //this.ocl = ocl;
         databaseReference.addValueEventListener(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                String s = "";
+                String s;
                 try
                 {
                     s= dataSnapshot.getValue().toString();
                     s = s.substring(1, s.length()-1);
                     jj = s;
+                    Log.i("ABC", "Loading from Firebase");
+                    init();
                 }
                 catch (Exception e)
                 {
                     jj = readJSONFromAsset("events.json");
+                    Log.i("ABC", "Loading from Asset");
                 }
+                ocl.onChange();
+                //Log.wtf("H", s);
 
-                Log.wtf("H", s);
             }
             @Override
             public void onCancelled(DatabaseError databaseError)
@@ -68,12 +71,35 @@ public class GetEvents
             }
         });
     }
+    public interface EventOnChangeListener
+    {
+        void onChange();
+    }
+
+   /* public void setOcl(EventOnChangeListener ocl)
+    {
+        this.ocl = ocl;
+    }*/
+    public static void start()
+    {
+        jj = readJSONFromAsset("events.json");
+        try
+        {
+            database.setPersistenceEnabled(true);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        databaseReference = database.getReference().child("events_json");
+        databaseReference.keepSynced(true);
+    }
 
     public static ArrayList<EventHolder> get(String dept)
     {
         dept = dept.toLowerCase();
 
-        init();
+        if(AL==null) init();
 
         ArrayList<EventHolder> TEMP = new ArrayList<>();
 
@@ -114,18 +140,17 @@ public class GetEvents
         {
             String JSON = jj;
             Log.wtf("jj", jj);
-
             JSONObject jo = new JSONObject(JSON);
-
             Iterator<String> keys = jo.keys();
 
             while(keys.hasNext() )
             {
                 String key = keys.next();
-
                 if ( jo.get(key) instanceof JSONObject )
                 {
-                    AL.add(new EventHolder((JSONObject)jo.get(key)));
+                    EventHolder eh = new EventHolder((JSONObject)jo.get(key));
+                    Log.i("Name", eh.name);
+                    AL.add(eh);
                 }
                 else
                 {
