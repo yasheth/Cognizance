@@ -35,7 +35,8 @@ public class GetEvents
 
     static FirebaseDatabase database = FirebaseDatabase.getInstance();
     static DatabaseReference databaseReference;
-    static
+
+    public static void start()
     {
         jj = readJSONFromAsset("events.json");
         database.setPersistenceEnabled(true);
@@ -44,8 +45,20 @@ public class GetEvents
         databaseReference.addValueEventListener(new ValueEventListener()
         {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String s = dataSnapshot.getValue().toString();
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                String s = "";
+                try
+                {
+                    s= dataSnapshot.getValue().toString();
+                    s = s.substring(1, s.length()-1);
+                    jj = s;
+                }
+                catch (Exception e)
+                {
+                    jj = readJSONFromAsset("events.json");
+                }
+
                 Log.wtf("H", s);
             }
             @Override
@@ -100,8 +113,10 @@ public class GetEvents
         try
         {
             String JSON = jj;
+            Log.wtf("jj", jj);
 
             JSONObject jo = new JSONObject(JSON);
+
             Iterator<String> keys = jo.keys();
 
             while(keys.hasNext() )
