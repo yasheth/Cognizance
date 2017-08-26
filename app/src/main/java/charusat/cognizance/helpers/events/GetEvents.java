@@ -3,6 +3,13 @@ package charusat.cognizance.helpers.events;
 import android.content.Context;
 import android.util.Log;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -24,6 +31,25 @@ public class GetEvents
     public static Context c;
     static ArrayList<EventHolder> AL;
 
+
+    static FirebaseDatabase database = FirebaseDatabase.getInstance();
+    static DatabaseReference databaseReference = database.getReference().child("events_json");
+    static {
+        database.setPersistenceEnabled(true);
+        databaseReference.keepSynced(true);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String s = dataSnapshot.getValue().toString();
+                Log.wtf("H", s);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
     public static ArrayList<EventHolder> get(String dept)
     {
         dept = dept.toLowerCase();
@@ -40,6 +66,15 @@ public class GetEvents
         }
         return TEMP;
     }
+    public static String readJSONFromFirebase(String ff)
+    {
+        String json = null;
+
+
+
+        return json;
+    }
+
     public static String readJSONFromAsset(String filename)
     {
         String json = null;
