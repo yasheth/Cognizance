@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "577136270178",
+    "firebase_url": "https://cognizance-34b63.firebaseio.com",
+    "project_id": "cognizance-34b63",
+    "storage_bucket": "cognizance-34b63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577136270178:android:cac9d2ea436f9581",
+        "android_client_info": {
+          "package_name": "charusat.cognizance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577136270178-u80la1taj42rtec2od3jgku5ocpfb70o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDIkc653GaPOYiwqxxpiWTy_7_DwZZw9M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
