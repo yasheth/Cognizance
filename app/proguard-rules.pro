@@ -24,6 +24,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--dontwarn com.squareup.okhttp.**
--keep class com.squareup.okhttp.* { ;}
--dontwarn okio.
+
