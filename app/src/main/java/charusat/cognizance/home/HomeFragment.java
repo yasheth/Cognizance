@@ -1,6 +1,8 @@
 package charusat.cognizance.home;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.widget.ImageButton;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
@@ -60,6 +63,40 @@ public class HomeFragment extends Fragment {
         DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager(mViewPager);
 
+
+
+        ImageButton fbbutton = (ImageButton) v.findViewById(R.id.fb);
+        fbbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.facebook.com/czCHARUSAT/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        ImageButton webbutton = (ImageButton) v.findViewById(R.id.web);
+        webbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.cognizance17.com/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
+
+        ImageButton instabutton = (ImageButton) v.findViewById(R.id.insta);
+        instabutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://www.instagram.com/cognizance_charusat/";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
         /*TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(mViewPager, true);*/
 
