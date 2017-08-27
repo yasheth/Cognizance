@@ -55,7 +55,7 @@ class IndividualEventPagerAdapter extends PagerAdapter
     private TextView date_time;
     private DocumentView detail_description;
     private TextView venue;
-    private TextView rules;
+    private TextView coor;
     private TextView number_of_participants;
     private TextView fees;
 
@@ -70,7 +70,7 @@ class IndividualEventPagerAdapter extends PagerAdapter
         date_time = (TextView) itemView.findViewById(R.id.date_and_time);
         detail_description = (DocumentView) itemView.findViewById(R.id.detail_description);
         venue = (TextView) itemView.findViewById(R.id.venue_of_event);
-        rules = (TextView) itemView.findViewById(R.id.rules);
+        coor = (TextView) itemView.findViewById(R.id.coor);
         number_of_participants = (TextView) itemView.findViewById(R.id.number_of_participants);
         fees = (TextView) itemView.findViewById(R.id.fees);
 
@@ -81,7 +81,7 @@ class IndividualEventPagerAdapter extends PagerAdapter
         date_time.setText(event.date_time);
         detail_description.setText(Html.fromHtml(event.detail_description));
         venue.setText(event.venue);
-        rules.setText(Html.fromHtml(event.rules));
+        coor.setText(Html.fromHtml(event.coor));
         number_of_participants.setText(event.number_of_participants);
         fees.setText(Html.fromHtml(event.fees));
 

@@ -193,7 +193,7 @@
                         ext:documentView_textSize="12sp"
                         ext:documentView_textSubPixel="true"
                         ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-                        ext:documentView_wordSpacingMultiplier="1.4" />
+                        ext:documentView_wordSpacingMultiplier="1.3"/>
 
                     <!--charusat.cognizance.helpers.customview.Textview_lato_thin
                         android:layout_width="wrap_content"
@@ -203,25 +203,23 @@
                         android:textColor="@color/colorLightGray"
                         android:textSize="15sp"/-->
 
-                    <charusat.cognizance.helpers.customview.Textview_lato
+                    <charusat.cognizance.helpers.customview.Textview_lato_thin
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
-
-                        android:text="Rules "
-                        android:textColor="@color/colorLightGray"
+                        android:text="Coordinator(s):- "
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <charusat.cognizance.helpers.customview.Textview_lato_thin
-                        android:id="@+id/rules"
+                        android:id="@+id/coor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:text="Rules of the event"
-                        android:textColor="@color/colorLightGray"
-                        android:textSize="15sp" />
+                        android:text="Coordinators of the event"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
 
                     <!--charusat.cognizance.helpers.customview.Textview_lato
                         android:layout_width="wrap_content"

@@ -3,10 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="8dp"
     tools:context="charusat.cognizance.home.HomeFragment">
 
     <LinearLayout
@@ -21,12 +18,14 @@
             android:scaleType="fitXY"
             android:src="@drawable/cognizance4" />
 
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-
             android:layout_width="fill_parent"
+
             android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
@@ -36,9 +35,10 @@
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" />
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
 
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"></android.support.v4.view.ViewPager>
+                android:layout_height="250dp"/>
 
             <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                 android:id="@+id/dots_indicator"
@@ -63,7 +63,26 @@
 
         <include layout="@layout/darkbar"></include>
 
+
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content2"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
+
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -75,8 +94,9 @@
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" />
+            ext:documentView_wordSpacingMultiplier="1.4" /-->
 
         <include layout="@layout/darkbar"></include>
 
@@ -91,7 +111,26 @@
 
         <include layout="@layout/darkbar"></include>
 
+
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+
+            android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content3"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -104,21 +143,39 @@
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" />
+            ext:documentView_wordSpacingMultiplier="1.4" /-->
 
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_height="fill_parent"
             android:padding="8dp"
             android:scaleType="fitXY"
             android:src="@drawable/paroma" />
 
-        
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
+
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+
+            android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content4"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -131,9 +188,9 @@
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" />
+            ext:documentView_wordSpacingMultiplier="1.4" /-->
 
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
         <TextView
             android:id="@+id/textView"

@@ -14,7 +14,7 @@ public class EventHolder
     public String detail_description;
     public String date_time;
     public String venue;
-    public String rules;
+    public String coor;
     public String number_of_participants;
     public String fees;
 
@@ -31,7 +31,7 @@ public class EventHolder
         this.detail_description = ggg("detail_description");
         this.date_time = ggg("date_time");
         this.venue = ggg("venue");
-        this.rules = ggg("rules");
+        this.coor = ggg("coordinator");
         this.number_of_participants = ggg("number_of_participants") + " Participants";
         this.fees = ggg("fees");
     }
