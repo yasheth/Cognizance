@@ -347,18 +347,18 @@ public class TeamFragment extends Fragment {
     }
 
     private void addCouncilTeamMembers() {
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_harsh_shah_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_karan_paruthi));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_keval_varoteriya_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_niraj_gohel_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_ronak_katariya_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.girl, R.string.cc_shalini_mishra_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_sagar_joshi_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_ronit_sarkar_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_rajan_joshi_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.girl, R.string.cc_neha_rajput_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_karunaya_parmanik_label));
-        mCouncilTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.cc_darshan_pandey_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.it_harsh_shah, R.string.cc_harsh_shah_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.it_karan_paruchi, R.string.cc_karan_paruthi));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ce_keval_vatoria, R.string.cc_keval_varoteriya_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ce_niraj_gohil, R.string.cc_niraj_gohel_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ec_ronak_kataria, R.string.cc_ronak_katariya_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ec_shalini_mishra, R.string.cc_shalini_mishra_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ee_sagar_joshi, R.string.cc_sagar_joshi_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.ee_ronit_sarkar, R.string.cc_ronit_sarkar_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.cl_rajan_joshi, R.string.cc_rajan_joshi_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.cl_neha_rajput, R.string.cc_neha_rajput_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.me_karunya_pramanik, R.string.cc_karunaya_parmanik_label));
+        mCouncilTeamMembersList.add(new MemberInfo(R.raw.me_darshan_pandya, R.string.cc_darshan_pandey_label));
     }
 
     private void addWebTeamMembers() {
