@@ -1,4 +1,4 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -73,9 +73,7 @@
                         android:id="@+id/app_team_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fadeScrollbars="false"
-                        android:scrollbarSize="4dp"
-                        android:scrollbars="vertical"
+                        android:isScrollContainer="false"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -134,10 +132,7 @@
                         android:id="@+id/council_team_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fadeScrollbars="false"
-                        android:scrollbarSize="4dp"
-                        android:scrollbarThumbVertical="@color/colorPrimaryDark"
-                        android:scrollbars="vertical"
+                        android:isScrollContainer="false"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -196,10 +191,8 @@
                         android:id="@+id/web_team_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fadeScrollbars="false"
-                        android:scrollbarSize="4dp"
-                        android:scrollbarThumbVertical="@color/colorPrimaryDark"
-                        android:scrollbars="vertical"
+                        android:nestedScrollingEnabled="false"
+                        android:isScrollContainer="false"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -258,10 +251,7 @@
                         android:id="@+id/adhyay_team_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fadeScrollbars="false"
-                        android:scrollbarSize="4dp"
-                        android:scrollbarThumbVertical="@color/colorPrimaryDark"
-                        android:scrollbars="vertical"
+                        android:isScrollContainer="false"
                         android:visibility="gone"
                         tools:visibility="visible" />
 
@@ -337,4 +327,4 @@
     </LinearLayout>
 
 
-</ScrollView>
+</android.support.v4.widget.NestedScrollView>
