@@ -4,6 +4,8 @@ package charusat.cognizance;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +25,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import charusat.cognizance.events.EventHolder;
+import charusat.cognizance.events.listview.EventsAdapterDepartment;
+import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 import charusat.cognizance.helpers.events.GetEvents;
 
 
@@ -38,57 +42,93 @@ public class UserFragment extends Fragment {
     EditText czid;
     EditText mobile;
     Button status;
+    EventsAdapterDepartment adapter;
 
-    public UserFragment() {
+    static String ccc_id = "";
+    static String ccc_mobile = "";
+    View v;
+    ArrayList<EventHolder> eventDetails;
+
+    public UserFragment()
+    {
         // Required empty public constructor
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
+    {
         super.onViewCreated(view, savedInstanceState);
 
+        v = view;
         czid = (EditText) view.findViewById(R.id.et_czid);
         mobile = (EditText) view.findViewById(R.id.et_cz_mobile);
         status = (Button) view.findViewById(R.id.bt_status);
 
-        status.setOnClickListener(new View.OnClickListener() {
+        if(!ccc_id.equals(""))
+        {
+            czid.setText(ccc_id);
+        }
+        if(!ccc_mobile.equals(""))
+        {
+            mobile.setText(ccc_mobile);
+        }
+
+        status.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
-                String cz_id;
-                String cz_mobile;
+            public void onClick(View view)
+            {
                 String eventStr = "Events";
-                cz_id = czid.getText().toString();
-                cz_mobile = mobile.getText().toString();
-                final String participant = cz_id+"_"+cz_mobile;
+
+                ccc_id = czid.getText().toString();
+                ccc_mobile = mobile.getText().toString();
+
+                final String participant = ccc_id + "_" + ccc_mobile;
+
                 Log.d(TAG, participant);
 
-                participantRefer = databaseReference.child("participant").child(participant).child(eventStr);;
+                participantRefer = databaseReference.child("participant").child(participant).child(eventStr);
+
                 ValueEventListener Listener = new ValueEventListener() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(DataSnapshot dataSnapshot)
+                    {
                         String re = dataSnapshot.getValue().toString();
                         String[] regEvents = re.split(",");
-                        ArrayList<EventHolder> eventDetails = GetEvents.getByID((ArrayList<String>) Arrays.asList(regEvents));
+                        Log.i("Events", Arrays.toString(regEvents));
+                        ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(regEvents));
+                        eventDetails = GetEvents.getByID(arrayList);
+
+                        UserFragmentEvent ufe = new UserFragmentEvent();
+
+                        ufe.aaa = eventDetails;
+
+                        ((Activity_Main)getActivity()).setFragment(ufe);
+
                         Log.d(TAG, eventDetails.toString());
+
                     }
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(DatabaseError databaseError)
+                    {
 
                     }
                 };
                 participantRefer.addValueEventListener(Listener);
 
             }
+
+
         });
 
     }
+
 }

@@ -15,7 +15,10 @@ import android.view.ViewGroup;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
+import java.util.ArrayList;
+
 import charusat.cognizance.R;
+import charusat.cognizance.events.EventHolder;
 import charusat.cognizance.events.listview.EventsAdapterDepartment;
 import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 import charusat.cognizance.helpers.events.GetEvents;
@@ -28,6 +31,8 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
 {
     public int starting_position=0;
     IndividualEventPagerAdapter mCustomPagerAdapter;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
@@ -35,26 +40,18 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
         return inflater.inflate(R.layout.events_individual_parent, container, false);
     }
 
-    @Override
-    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState)
+    public ArrayList<EventHolder> getal()
     {
         ALEH = GetEvents.get(dept);
 
-        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
-        {
-            @Override
-            public void onChange()
-            {
-                ALEH.clear();
-                ALEH.addAll(GetEvents.get(dept));
-                mCustomPagerAdapter.notifyDataSetChanged();
-                Log.i("Onccc", "OnChange in Individual ListView");
-            }
-        };
+        return ALEH;
+    }
+    @Override
+    public void onViewCreated(final View view, @Nullable Bundle savedInstanceState)
+    {
 
-        new GetEvents(onChangeListener);
-
-        mCustomPagerAdapter = new IndividualEventPagerAdapter(getContext(), ALEH, R.layout.events_individual_child_material);
+        fb();
+        mCustomPagerAdapter = new IndividualEventPagerAdapter(getContext(), getal(), R.layout.events_individual_child_material);
         ViewPager mViewPager = (ViewPager) view.findViewById(R.id.pager);
         mViewPager.setAdapter(mCustomPagerAdapter);
 
@@ -80,6 +77,25 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
 
         //getActivity().setTitle();
     }
+
+    public void fb()
+    {
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                ALEH.clear();
+                ALEH.addAll(GetEvents.get(dept));
+                mCustomPagerAdapter.notifyDataSetChanged();
+                Log.i("Onccc", "OnChange in Individual ListView");
+            }
+        };
+
+        new GetEvents(onChangeListener);
+
+    }
+
     @Override
     public void onItemClick(View view, int position)
     {

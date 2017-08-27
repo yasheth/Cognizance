@@ -95,6 +95,20 @@ public class GetEvents
         databaseReference.keepSynced(true);
     }
 
+    public static ArrayList<EventHolder> getByID(ArrayList id) {
+
+        if(AL==null) init();
+
+        ArrayList<EventHolder> TEMP = new ArrayList<>();
+
+        Log.i("Number", "" + AL.size());
+        for (EventHolder eh: AL)
+        {
+            if(id.contains(eh.eventID)) TEMP.add(eh);
+        }
+        return TEMP;
+    }
+
     public static ArrayList<EventHolder> get(String dept)
     {
         dept = dept.toLowerCase();

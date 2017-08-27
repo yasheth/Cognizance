@@ -87,7 +87,15 @@ public class Activity_Main extends AppCompatActivity
     @Override
     public void onBackPressed()
     {
-        if(cur_fragment instanceof EventsIndividualFragment)
+        if(cur_fragment instanceof UserFragmentDetail)
+        {
+            setFragment(new UserFragmentEvent());
+        }
+        else if(cur_fragment instanceof UserFragmentEvent)
+        {
+            setFragment(new UserFragment());
+        }
+        else if(cur_fragment instanceof EventsIndividualFragment)
         {
             setFragment(new EventsListViewDepartmentFragment());
         }

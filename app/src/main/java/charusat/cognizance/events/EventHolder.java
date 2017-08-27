@@ -1,5 +1,7 @@
 package charusat.cognizance.events;
 
+import android.util.Log;
+
 import org.json.JSONObject;
 
 /**
@@ -29,6 +31,7 @@ public class EventHolder
         this.name = ggg("name");
         this.dept = ggg("dept");
         this.one_line_description = ggg("one_line_description");
+        Log.i("OLD", one_line_description);
         this.detail_description = ggg("detail_description");
         this.date_time = ggg("date_time");
         this.venue = ggg("venue");
@@ -51,6 +54,7 @@ public class EventHolder
 
             }
         }
+        if(str.equals("null")) str="";
         return str;
     }
 

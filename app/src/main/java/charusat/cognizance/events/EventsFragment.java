@@ -57,6 +57,7 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
         return inflater.inflate(R.layout.fragment_events, container, false);
     }
 
+
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState)
     {

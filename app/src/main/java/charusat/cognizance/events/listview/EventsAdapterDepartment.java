@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,15 +56,22 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
 
         holder.title.setText(event.name);
         holder.desc.setText(Html.fromHtml(event.one_line_description));
+        Log.i("Setting Descc1", event.one_line_description);
+        Log.i("Setting Descc2", holder.desc.getText().toString());
+
         holder.date.setText(event.date_time);
         holder.venue.setText(event.venue);
-        //holder.myTextView.setText(animal);
+        Log.i("Setting Eventsss", event.name);
+        Log.i("Setting Descc1", event.one_line_description);
+        Log.i("Setting Descc2", holder.desc.getText().toString());
+
     }
 
     // total number of cells
     @Override
     public int getItemCount()
     {
+        Log.i("Size", "" + events.size());
         return events.size();
     }
 

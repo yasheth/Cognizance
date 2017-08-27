@@ -29,12 +29,25 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
     public ArrayList<EventHolder> ALEH;
     EventsAdapterDepartment adapter;
 
+    public ArrayList<EventHolder> getArrayList()
+    {
+        ALEH = GetEvents.get(dept);
+        return ALEH;
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
         return inflater.inflate(R.layout.events_department_listview_parent, container, false);
     }
+
+   /* public ArrayList<EventHolder> getArrayList()
+    {
+        ALEH = GetEvents.get(dept);
+
+        return ALEH;
+    }*/
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState)
@@ -44,28 +57,10 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
 
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ALEH = GetEvents.get(dept);
 
-        adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);
+        adapter = new EventsAdapterDepartment(getContext(), getArrayList(), R.layout.events_department_listview_child_material);
 
-        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
-        {
-            @Override
-            public void onChange()
-            {
-                ALEH.clear();
-                ALEH.addAll(GetEvents.get(dept));
-                adapter.notifyDataSetChanged();
-
-                Log.i("Onccc", "OnChange in Depart ListView");
-            }
-        };
-
-        new GetEvents(onChangeListener);
-
-        /*ALEH = GetEvents.get(dept);
-
-        adapter = new EventsAdapterDepartment(getContext(), ALEH, R.layout.events_department_listview_child_material);*/
+        setUpFireBaseOnChange();
 
         adapter.setClickListener(this);
         rv.setAdapter(adapter);
@@ -74,11 +69,28 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
         //Set Department Full Form.
         //getActivity().setTitle(GetEvents.getFullForm(dept));
     }
+
+    public void setUpFireBaseOnChange()
+    {
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                ALEH.clear();
+                ALEH.addAll(GetEvents.get(dept));
+                adapter.notifyDataSetChanged();
+                Log.i("Onccc", "OnChange in Depart ListView");
+            }
+        };
+
+        new GetEvents(onChangeListener);
+    }
+
     public void setDept(String dept)
     {
         EventsListViewDepartmentFragment.dept = dept;
         Log.i("DEPT set", dept);
-
     }
 
     @Override
