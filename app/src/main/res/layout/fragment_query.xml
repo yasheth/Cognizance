@@ -107,14 +107,14 @@
 
 
     <Button
-        android:id="@+id/make_call_saurastra"
+        android:id="@+id/make_call_saurashtra"
         android:layout_weight="0.5"
         android:layout_marginRight="5dp"
         android:layout_width="174dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/shape_oval_prime"
-        android:text="Saurastra"
+        android:text="Saurashtra"
         android:textColor="@color/colorWhite" />
 
     <Button
@@ -171,7 +171,7 @@
 
             <Button
                 android:id="@+id/make_call_vadodara"
-                android:layout_marginRight="" r="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="0.5"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"

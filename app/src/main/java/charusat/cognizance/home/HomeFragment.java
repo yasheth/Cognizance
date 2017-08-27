@@ -211,13 +211,13 @@ public class HomeFragment extends Fragment {
         DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager(mViewPager);
 
-        Timer timer;
+        /*Timer timer;
         final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
-        final long PERIOD_MS = 5000; // time in milliseconds between successive task executions.
+        final long PERIOD_MS = 5000; // time in milliseconds between successive task executions.*/
 
 
         /*After setting the adapter use the timer */
-        final Handler handler = new Handler();
+       /* final Handler handler = new Handler();
         final int NUM_PAGES = mCustomPagerAdapter.getCount();
         Log.i("NUM_PAGES", "" +NUM_PAGES);
         final int[] currentPage = {0};
@@ -245,7 +245,7 @@ public class HomeFragment extends Fragment {
             public void run() {
                 handler.post(Update);
             }
-        }, DELAY_MS, PERIOD_MS);
+        }, DELAY_MS, PERIOD_MS);*/
 
     }
 

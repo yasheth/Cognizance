@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class SplashScreen extends Activity {
-    private static int SPLASH_TIME_OUT = 3000;
+    private static int SPLASH_TIME_OUT = 500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,9 @@ public class SplashScreen extends Activity {
 
                 Intent i = new Intent(SplashScreen.this, Activity_Main.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
                 finish();
+
             }
         }, SPLASH_TIME_OUT);
     }

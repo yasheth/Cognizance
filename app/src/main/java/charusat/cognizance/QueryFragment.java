@@ -46,7 +46,7 @@ public class QueryFragment extends Fragment
 
         call_ahmedabad = (Button) view.findViewById(R.id.make_call_ahmedabad);
         call_north = (Button) view.findViewById(R.id.make_call_north);
-        call_saurastra = (Button) view.findViewById(R.id.make_call_saurastra);
+        call_saurastra = (Button) view.findViewById(R.id.make_call_saurashtra);
         call_anand = (Button) view.findViewById(R.id.make_call_anand);
         call_vadodara = (Button) view.findViewById(R.id.make_call_vadodara);
         call_surat = (Button) view.findViewById(R.id.make_call_surat);

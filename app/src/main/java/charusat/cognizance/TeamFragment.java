@@ -340,11 +340,11 @@ public class TeamFragment extends Fragment {
 
 
     private void addAppTeamMembers() {
-        mAppTeamMembersList.add(new MemberInfo(R.drawable.captain, R.string.app_yash_sheth_label));
-        mAppTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.app_harsh_shah_label));
-        mAppTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.app_umang_patel_label));
-        mAppTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.app_yash_sodha_label));
-        mAppTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.app_mit_patel_label));
+        mAppTeamMembersList.add(new MemberInfo(R.raw.app_yash_sheth, R.string.app_yash_sheth_label));
+        mAppTeamMembersList.add(new MemberInfo(R.raw.app_harsh_shah, R.string.app_harsh_shah_label));
+        mAppTeamMembersList.add(new MemberInfo(R.raw.app_umang_patel, R.string.app_umang_patel_label));
+        mAppTeamMembersList.add(new MemberInfo(R.raw.app_yash_sodha, R.string.app_yash_sodha_label));
+        mAppTeamMembersList.add(new MemberInfo(R.raw.app_mitkumar_patel, R.string.app_mit_patel_label));
     }
 
     private void addCouncilTeamMembers() {
