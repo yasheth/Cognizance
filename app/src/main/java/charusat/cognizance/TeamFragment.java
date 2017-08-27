@@ -78,7 +78,7 @@ public class TeamFragment extends Fragment {
             public void onClick(View v) {
                 if (!isCouncilDetailExpanded && !isWebDetailExpanded && !isAdhyayDetailExpanded && !isCampZoneDetailExpanded) {
                     displayAppTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mAppTeamRecyclerView, mAppTeamRecyclerView);
                 } else {
 
                     if (isCouncilDetailExpanded) {
@@ -94,7 +94,7 @@ public class TeamFragment extends Fragment {
                         hideCampZoneTeamMembers();
                     }
                     displayAppTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mAppTeamRecyclerView, mAppTeamRecyclerView);
                 }
 
             }
@@ -104,7 +104,7 @@ public class TeamFragment extends Fragment {
             public void onClick(View v) {
                 if (!isAppDetailExpanded && !isWebDetailExpanded && !isAdhyayDetailExpanded && !isCampZoneDetailExpanded) {
                     displayCouncilTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mCouncilTeamRecyclerView, mCouncilTeamRecyclerView);
                 } else {
                     if (isAppDetailExpanded) {
                         hideAppTeamMembers();
@@ -119,7 +119,7 @@ public class TeamFragment extends Fragment {
                         hideCampZoneTeamMembers();
                     }
                     displayCouncilTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mCouncilTeamRecyclerView, mCouncilTeamRecyclerView);
                 }
             }
         });
@@ -128,7 +128,7 @@ public class TeamFragment extends Fragment {
             public void onClick(View v) {
                 if (!isAppDetailExpanded && !isCouncilDetailExpanded && !isAdhyayDetailExpanded && !isCampZoneDetailExpanded) {
                     displayWebTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mWebTeamRecyclerView, mWebTeamRecyclerView);
                 } else {
                     if (isAppDetailExpanded) {
                         hideAppTeamMembers();
@@ -143,7 +143,7 @@ public class TeamFragment extends Fragment {
                         hideCampZoneTeamMembers();
                     }
                     displayWebTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mWebTeamRecyclerView, mWebTeamRecyclerView);
                 }
             }
         });
@@ -152,7 +152,7 @@ public class TeamFragment extends Fragment {
             public void onClick(View v) {
                 if (!isAppDetailExpanded && !isCouncilDetailExpanded && !isWebDetailExpanded && !isCampZoneDetailExpanded) {
                     displayAdhyayTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mAdhyayTeamRecyclerView, mAdhyayTeamRecyclerView);
                 } else {
                     if (isAppDetailExpanded) {
                         hideAppTeamMembers();
@@ -167,7 +167,7 @@ public class TeamFragment extends Fragment {
                         hideCampZoneTeamMembers();
                     }
                     displayAdhyayTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mAdhyayTeamRecyclerView, mAdhyayTeamRecyclerView);
                 }
             }
         });
@@ -177,6 +177,7 @@ public class TeamFragment extends Fragment {
             public void onClick(View v) {
                 if (!isAppDetailExpanded && !isCouncilDetailExpanded && !isWebDetailExpanded && !isAdhyayDetailExpanded) {
                     displayCampZoneTeamMembers(view);
+                    v.getParent().getParent().requestChildFocus(mCampZoneTeamRecyclerView, mCampZoneTeamRecyclerView);
 
                 } else {
                     if (isAppDetailExpanded) {
@@ -192,7 +193,7 @@ public class TeamFragment extends Fragment {
                         hideAdhyayTeamMembers();
                     }
                     displayCampZoneTeamMembers(view);
-                    view.getParent().requestChildFocus(view, view.getRootView());
+                    v.getParent().getParent().requestChildFocus(mCampZoneTeamRecyclerView, mCampZoneTeamRecyclerView);
                 }
             }
         });
