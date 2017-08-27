@@ -29,11 +29,12 @@ public class Activity_Main extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        GetEvents.c = getApplicationContext();
+        GetEvents.start();
         setContentView(R.layout.activity_main);
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         current_title = (TextView) findViewById(R.id.current_title);
-        GetEvents.c = getApplicationContext();
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override

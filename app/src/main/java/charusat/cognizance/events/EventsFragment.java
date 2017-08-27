@@ -67,11 +67,26 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
 
+
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                departments.clear();
+                departments.addAll(GetEvents.getDepartments());
+                adapter.notifyDataSetChanged();
+            }
+        };
+
+        new GetEvents(onChangeListener);
+
         departments = GetEvents.getDepartments();
 
         adapter = new DepartmentAdapter(getContext(), departments, (Activity_Main) getActivity());
 
-        adapter.setOnItemClickListener(new DepartmentAdapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new DepartmentAdapter.OnItemClickListener()
+        {
             @Override
             public void onItemClick(View itemView, int position)
             {
@@ -81,9 +96,9 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
                 ff.setDept(dh.sf);
                 Log.i("DEPT", dh.sf);
                 ((Activity_Main)getActivity()).setFragment(ff);
-
             }
         });
+
         //RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getContext(), 2);
 
         PreCachingLayoutManager pc = new PreCachingLayoutManager(getContext(), 2);

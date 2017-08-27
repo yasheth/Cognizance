@@ -16,6 +16,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 
 import charusat.cognizance.R;
@@ -30,40 +31,68 @@ public class GetEvents
 {
     public static Context c;
     static ArrayList<EventHolder> AL;
-
+    static String jj = "";
 
     static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    static DatabaseReference databaseReference = database.getReference().child("events_json");
-    static {
-        database.setPersistenceEnabled(true);
-        databaseReference.keepSynced(true);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String s = dataSnapshot.getValue().toString();
-                Log.wtf("H", s);
-            }
+    static DatabaseReference databaseReference;
 
+    public EventOnChangeListener ocl;
+
+    public GetEvents(final EventOnChangeListener ocl)
+    {
+        //this.ocl = ocl;
+        databaseReference.addValueEventListener(new ValueEventListener()
+        {
             @Override
-            public void onCancelled(DatabaseError databaseError) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                String s;
+                try
+                {
+                    s= dataSnapshot.getValue().toString();
+                    s = s.substring(1, s.length()-1);
+                    jj = s;
+                    Log.i("ABC", "Loading from Firebase");
+                    init();
+                }
+                catch (Exception e)
+                {
+                    jj = readJSONFromAsset("events.json");
+                    Log.i("ABC", "Loading from Asset");
+                }
+                ocl.onChange();
+                //Log.wtf("H", s);
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
 
             }
         });
     }
+    public interface EventOnChangeListener
+    {
+        void onChange();
+    }
 
-
-    public static ArrayList<EventHolder> getByID(ArrayList<String> id) {
-        if(AL==null) init();
-
-        ArrayList<EventHolder> TEMP = new ArrayList<>();
-
-        Log.i("Number", "" + AL.size());
-        for (EventHolder eh: AL)
+   /* public void setOcl(EventOnChangeListener ocl)
+    {
+        this.ocl = ocl;
+    }*/
+    public static void start()
+    {
+        jj = readJSONFromAsset("events.json");
+        try
         {
-            if(id.contains(eh.eventID))
-                TEMP.add(eh);
+            database.setPersistenceEnabled(true);
         }
-        return TEMP;
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        databaseReference = database.getReference().child("events_json");
+        databaseReference.keepSynced(true);
     }
 
     public static ArrayList<EventHolder> get(String dept)
@@ -82,18 +111,10 @@ public class GetEvents
         }
         return TEMP;
     }
-    public static String readJSONFromFirebase(String ff)
-    {
-        String json = null;
-
-
-
-        return json;
-    }
 
     public static String readJSONFromAsset(String filename)
     {
-        String json = null;
+        jj = null;
         try
         {
             InputStream is = c.getAssets().open(filename);
@@ -101,15 +122,15 @@ public class GetEvents
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            json = new String(buffer, "UTF-8");
+            jj = new String(buffer, "UTF-8");
         }
         catch (IOException ex)
         {
             ex.printStackTrace();
             return null;
         }
-        Log.i("JSON", json);
-        return json;
+        Log.i("JSON", jj);
+        return jj;
     }
     public static void init()
     {
@@ -117,18 +138,19 @@ public class GetEvents
 
         try
         {
-            String JSON = readJSONFromAsset("events.json");
-
+            String JSON = jj;
+            Log.wtf("jj", jj);
             JSONObject jo = new JSONObject(JSON);
             Iterator<String> keys = jo.keys();
 
             while(keys.hasNext() )
             {
                 String key = keys.next();
-
                 if ( jo.get(key) instanceof JSONObject )
                 {
-                    AL.add(new EventHolder((JSONObject)jo.get(key)));
+                    EventHolder eh = new EventHolder((JSONObject)jo.get(key));
+                    Log.i("Name", eh.name);
+                    AL.add(eh);
                 }
                 else
                 {

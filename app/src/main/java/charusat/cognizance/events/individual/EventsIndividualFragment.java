@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.LinearSnapHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SnapHelper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,7 @@ import charusat.cognizance.helpers.events.GetEvents;
 public class EventsIndividualFragment extends EventsListViewDepartmentFragment
 {
     public int starting_position=0;
-
+    IndividualEventPagerAdapter mCustomPagerAdapter;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
@@ -39,7 +40,21 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
     {
         ALEH = GetEvents.get(dept);
 
-        IndividualEventPagerAdapter mCustomPagerAdapter = new IndividualEventPagerAdapter(getContext(), ALEH, R.layout.events_individual_child_material);
+        GetEvents.EventOnChangeListener onChangeListener= new GetEvents.EventOnChangeListener()
+        {
+            @Override
+            public void onChange()
+            {
+                ALEH.clear();
+                ALEH.addAll(GetEvents.get(dept));
+                mCustomPagerAdapter.notifyDataSetChanged();
+                Log.i("Onccc", "OnChange in Individual ListView");
+            }
+        };
+
+        new GetEvents(onChangeListener);
+
+        mCustomPagerAdapter = new IndividualEventPagerAdapter(getContext(), ALEH, R.layout.events_individual_child_material);
         ViewPager mViewPager = (ViewPager) view.findViewById(R.id.pager);
         mViewPager.setAdapter(mCustomPagerAdapter);
 

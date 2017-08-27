@@ -56,6 +56,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
         holder.title.setText(event.name);
         holder.desc.setText(Html.fromHtml(event.one_line_description));
         holder.date.setText(event.date_time);
+        holder.venue.setText(event.venue);
         //holder.myTextView.setText(animal);
     }
 
@@ -72,6 +73,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
         private TextView title;
         private TextView desc;
         private TextView date;
+        private TextView venue;
         //private CardView cv;
 
         private ViewHolder(View itemView)
@@ -80,7 +82,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
             title = (TextView) itemView.findViewById(R.id.title);
             desc = (TextView) itemView.findViewById(R.id.description);
             date = (TextView) itemView.findViewById(R.id.date_and_time);
-
+            venue = (TextView) itemView.findViewById(R.id.venue_of_event);
             itemView.setOnClickListener(this);
         }
 
