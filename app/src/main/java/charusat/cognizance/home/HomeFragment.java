@@ -1,20 +1,31 @@
 package charusat.cognizance.home;
 
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import charusat.cognizance.R;
 
@@ -29,9 +40,10 @@ public class HomeFragment extends Fragment {
 
 
     //VECTOR FOR VIDEO URLS
-    WebView webView, webView2;
+    WebView webView, webView1;
 
-    public HomeFragment() {
+    public HomeFragment()
+    {
         // Required empty public constructor
     }
 
@@ -45,24 +57,22 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         webView = (WebView) v.findViewById(R.id.webVideoView);
+        webView1 = (WebView) v.findViewById(R.id.webVideoView1);
 
-        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+        String html = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/0RoNxhYn404\" frameborder=\"0\" allowfullscreen></iframe>";
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient() {});
+        webView1.getSettings().setJavaScriptEnabled(true);
+        webView1.setWebChromeClient(new WebChromeClient() {
+        });
 
 
-        webView.loadData(html1, "text/html", "utf-8");
 
-
-        //SLIDE SHOW
-        CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
-        ViewPager mViewPager = (ViewPager) v.findViewById(R.id.pager);
-        mViewPager.setAdapter(mCustomPagerAdapter);
-
-        DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
-        dotsIndicator.setViewPager(mViewPager);
-
+        webView.loadData(html, "text/html", "utf-8");
+        webView1.loadData(html1, "text/html", "utf-8");
+        setUpPager(v);
 
 
         ImageButton fbbutton = (ImageButton) v.findViewById(R.id.fb);
@@ -80,7 +90,7 @@ public class HomeFragment extends Fragment {
         webbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.cognizance17.com/";
+                String url = "http://www.cognizance17.com/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
@@ -97,6 +107,7 @@ public class HomeFragment extends Fragment {
                 startActivity(i);
             }
         });
+
         /*TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(mViewPager, true);*/
 
@@ -164,6 +175,97 @@ public class HomeFragment extends Fragment {
          return v;
 
        // return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    public void setUpPager(View v)
+    {
+        //SLIDE SHOW
+        CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
+        final ViewPager mViewPager = (ViewPager) v.findViewById(R.id.pager);
+        mViewPager.setAdapter(mCustomPagerAdapter);
+
+        DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
+        dotsIndicator.setViewPager(mViewPager);
+
+        Timer timer;
+        final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
+        final long PERIOD_MS = 5000; // time in milliseconds between successive task executions.
+
+
+        /*After setting the adapter use the timer */
+        final Handler handler = new Handler();
+        final int NUM_PAGES = mCustomPagerAdapter.getCount();
+        Log.i("NUM_PAGES", "" +NUM_PAGES);
+        final int[] currentPage = {0};
+
+        final Runnable Update = new Runnable()
+        {
+
+            public void run()
+            {
+                Log.i("Inside run", "true");
+                Log.i("Current Page" , "" + currentPage[0]);
+                if (currentPage[0] == NUM_PAGES)
+                {
+                    currentPage[0] = 0;
+                }
+
+                mViewPager.setCurrentItem(currentPage[0]++, true);
+            }
+        };
+
+        timer = new Timer(); // This will create a new Thread
+        timer.schedule(new TimerTask() { // task to be scheduled
+
+            @Override
+            public void run() {
+                handler.post(Update);
+            }
+        }, DELAY_MS, PERIOD_MS);
+
+    }
+
+    public void setUpWebView()
+    {
+        /*final String offlineMessageHtml = "DEFINE THIS";
+        final String timeoutMessageHtml = "DEFINE THIS";
+
+        WebView browser = (WebView) findViewById(R.id.webview);
+        browser.setNetworkAvailable(isConnected);
+        browser.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                if (isConnected) {
+                    // return false to let the WebView handle the URL
+                    return false;
+                } else {
+                    // show the proper "not connected" message
+                    view.loadData(offlineMessageHtml, "text/html", "utf-8");
+                    // return true if the host application wants to leave the current
+                    // WebView and handle the url itself
+                    return true;
+                }
+            }
+            @Override
+            public void onReceivedError (WebView view, int errorCode,
+                                         String description, String failingUrl) {
+                if (errorCode == ERROR_TIMEOUT) {
+                    view.stopLoading();  // may not be needed
+                    view.loadData(timeoutMessageHtml, "text/html", "utf-8");
+                }
+            }
+        });*/
+        webView.setWebViewClient(new WebViewClient()
+        {
+            @Override
+            public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error)
+            {
+
+                super.onReceivedError(view, request, error);
+            }
+        });
+
+
     }
 
 }

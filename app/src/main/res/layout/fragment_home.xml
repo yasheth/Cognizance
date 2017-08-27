@@ -12,11 +12,28 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
             android:focusableInTouchMode="true"
             android:scaleType="fitXY"
-            android:src="@drawable/cognizance4" />
+            android:src="@drawable/cognizance" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/cognizance3" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/cognizance2" />
 
         <include layout="@layout/darkbar"/>
 
@@ -101,7 +118,7 @@
         <include layout="@layout/darkbar"></include>
 
         <WebView
-            android:id="@+id/webVideoView"
+            android:id="@+id/webVideoView1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="5dp"
@@ -122,7 +139,7 @@
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
             ext:documentView_reverse="false"
-            ext:documentView_text="@string/content3"
+            ext:documentView_text="@string/content5"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
@@ -148,11 +165,11 @@
         <include layout="@layout/darkbar"/>
 
         <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="450dp"
             android:padding="8dp"
             android:scaleType="fitXY"
-            android:src="@drawable/paroma"
-            android:layout_width="match_parent"
-            android:layout_height="500dp" />
+            android:src="@drawable/paroma" />
 
         <include layout="@layout/darkbar"/>
 
@@ -168,6 +185,37 @@
             ext:documentView_maxLines="100"
             ext:documentView_reverse="false"
             ext:documentView_text="@string/content4"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="15sp"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
+
+        <include layout="@layout/darkbar" />
+
+        <WebView
+            android:id="@+id/webVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="5dp"
+            android:scrollbars="none">
+
+        </WebView>
+
+        <include layout="@layout/darkbar" />
+
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+
+            android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/content3"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
@@ -243,17 +291,17 @@
                 android:layout_marginRight="40dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/facebook" />
+                android:src="@drawable/nfacebook" />
 
             <ImageButton
                 android:id="@+id/web"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:layout_marginRight="40dp"
                 android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/website" />
+                android:src="@drawable/nbrowser" />
 
             <ImageButton
                 android:id="@+id/insta"
@@ -263,7 +311,7 @@
                 android:layout_marginLeft="40dp"
                 android:background="@android:color/transparent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/instagram" />
+                android:src="@drawable/ninstagram" />
         </LinearLayout>
 
     </LinearLayout>
