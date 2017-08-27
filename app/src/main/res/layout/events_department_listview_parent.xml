@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:visibility="gone"
+        android:textSize="30sp"
         android:id="@+id/textAtTop"
         />
     <android.support.v7.widget.RecyclerView
