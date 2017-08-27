@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
 
 
     //VECTOR FOR VIDEO URLS
-    WebView webView, webView2;
+    WebView webView, webView1;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -45,14 +45,20 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         webView = (WebView) v.findViewById(R.id.webVideoView);
+        webView1 = (WebView) v.findViewById(R.id.webVideoView1);
 
-        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+        String html = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/0RoNxhYn404\" frameborder=\"0\" allowfullscreen></iframe>";
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient() {});
+        webView1.getSettings().setJavaScriptEnabled(true);
+        webView1.setWebChromeClient(new WebChromeClient() {
+        });
 
 
-        webView.loadData(html1, "text/html", "utf-8");
+        webView.loadData(html, "text/html", "utf-8");
+        webView1.loadData(html1, "text/html", "utf-8");
 
 
         //SLIDE SHOW
@@ -80,7 +86,7 @@ public class HomeFragment extends Fragment {
         webbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.cognizance17.com/";
+                String url = "http://www.cognizance17.com/";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
