@@ -12,19 +12,20 @@ import java.util.ArrayList;
 import charusat.cognizance.R;
 
 /**
- * Created by iharsh on 21/8/17.
+ * Created by umang on 21/8/17.
+ * TeamsRecyclerAdapter for displaying the detail layout in the specific card
  */
 
-public class TeamRecyclerAdapter extends RecyclerView.Adapter<TeamRecyclerAdapter.AppTeamHolder> {
+public class TeamRecyclerAdapter extends RecyclerView.Adapter<TeamRecyclerAdapter.TeamHolder> {
 
     private ArrayList<MemberInfo> mTeamMembersList;
 
-    static class AppTeamHolder extends RecyclerView.ViewHolder {
+    static class TeamHolder extends RecyclerView.ViewHolder {
 
         TextView mMemberLabelTextView;
         ImageView mMemberImageView;
 
-        AppTeamHolder(View itemView) {
+        TeamHolder(View itemView) {
             super(itemView);
             mMemberImageView = (ImageView) itemView.findViewById(R.id.member_image);
             mMemberLabelTextView = (TextView) itemView.findViewById(R.id.member_label);
@@ -36,13 +37,13 @@ public class TeamRecyclerAdapter extends RecyclerView.Adapter<TeamRecyclerAdapte
     }
 
     @Override
-    public TeamRecyclerAdapter.AppTeamHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TeamRecyclerAdapter.TeamHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflateView = LayoutInflater.from(parent.getContext()).inflate(R.layout.member_item_row, parent, false);
-        return new AppTeamHolder(inflateView);
+        return new TeamHolder(inflateView);
     }
 
     @Override
-    public void onBindViewHolder(TeamRecyclerAdapter.AppTeamHolder holder, int position) {
+    public void onBindViewHolder(TeamRecyclerAdapter.TeamHolder holder, int position) {
         MemberInfo currentMemberInfo = mTeamMembersList.get(position);
         holder.mMemberImageView.setImageResource(currentMemberInfo.getmMemberImageResourceId());
         holder.mMemberLabelTextView.setText(currentMemberInfo.getmMemberLabelResourceId());

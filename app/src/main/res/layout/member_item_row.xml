@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="?android:textAppearanceMedium"
+        android:textIsSelectable="true"
         tools:text="Name\nLabel\nDepartment" />
 
 </LinearLayout>

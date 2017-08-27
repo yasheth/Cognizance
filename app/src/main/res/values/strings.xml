@@ -3,7 +3,57 @@
     <string name="app_team_label">App Team</string>
     <string name="council_team_label">Council Members</string>
     <string name="web_team_label">Web Team</string>
-    <string name="sample_member_label">Sample Name\nTitle\nDepartment</string>
+    <string name="adhyay_team_label">Adhay Team</string>
+    <string name="camp_zone_team_label">Camp Zone Team</string>
+
+    <string name="app_yash_sheth_label">Yash Sheth\nLeader\nIT Dept.</string>
+    <string name="app_harsh_shah_label">Harsh Shah\nLeader\nIT Dept.</string>
+    <string name="app_umang_patel_label">Umang Patel\nTeam Member\nIT Dept.</string>
+    <string name="app_yash_sodha_label">Yash Sodha\nTeam Member\nCE Dept.</string>
+    <string name="app_mit_patel_label">Mit Patel\nTeam Member\nCE Dept.</string>
+
+    <string name="cc_harsh_shah_label">Harsh Shah\nCampaigning\nIT Dept.</string>
+    <string name="cc_karan_paruthi">Karan Paruthi\nGuest Lecturer\nIT Dept.</string>
+    <string name="cc_keval_varoteriya_label">Keval Varoteriya\nMedia &amp; Graphics\nCE Dept.</string>
+    <string name="cc_niraj_gohel_label">Niraj Gohel\nMedia &amp; Graphics\nCE Dept.</string>
+    <string name="cc_ronak_katariya_label">Harsh Shah\nSponsorship\nEC Dept</string>
+    <string name="cc_shalini_mishra_label">Shalini Mishra\nGuest Lecturer\nEC Dept.</string>
+    <string name="cc_sagar_joshi_label">Sagar Joshi\nNon-Tech Events\nEE Dept.</string>
+    <string name="cc_ronit_sarkar_label">Ronit Sarkar\nNon-Tech Events\nEE Dept.</string>
+    <string name="cc_rajan_joshi_label">Rajan Joshi\nCampaigning\nCL Dept.</string>
+    <string name="cc_neha_rajput_label">Neha Rajput\nDecoration\nCL Dept.</string>
+    <string name="cc_karunaya_parmanik_label">Karunaya Parmanik\nSponsorship\nME Dept.</string>
+    <string name="cc_darshan_pandey_label">Darshan Pandey\nDecoration\nME Dept.</string>
+
+    <string name="web_gaurav_joshi_label">Gaurav Joshi\nLeader\nCE Dept.</string>
+    <string name="web_dhruvil_bhat_label">Dhruvil Bhatt\nTeam Member\nIT Dept.</string>
+    <string name="web_shrey_dalwadi_label">Shrey Dalwadi\nTeam Member\nIT Dept.</string>
+    <string name="web_punya_kotecha_label">Punya Kotecha\nTeam Member\nIT Dept.</string>
+    <string name="web_vidhi_kokel_label">Vidhi Kokel\nTeam Member\nCE Dept.</string>
+    <string name="web_shweta_masrani_label">Shweta Masrani\nTeam Member\nCE Dept.</string>
+    <string name="web_chintan_maniyar_label">Chintan Maniyar\nTeam Member\nCE Dept.</string>
+
+    <string name="adhyay_hiteksha_patel_label">Hiteksha Patel\nLeader\nCE Dept.</string>
+    <string name="adhyay_sadhika_sajeev_label">Sadhika Sajeev\nTeam Member\nEC Dept.</string>
+    <string name="adhyay_parita_shukla_label">Parita Shukla\nTeam Member\nEC Dept.</string>
+    <string name="adhyay_kennita_sabu_label">Kennita Sabu\nTeam Member\nCL Dept.</string>
+    <string name="adhyay_sweta_samaddar_label">Sweta Samaddar\nTeam Member\nCE Dept.</string>
+    <string name="adhyay_agrima_goel_label">Agrima Goel\nTeam Member\nEE Dept.</string>
+    <string name="adhyay_sujay_modi_label">Sujay Modi\nTeam Member\nME Dept.</string>
+
+    <string name="camp_zone_lay_patel_label">Lay Patel\nAhmedabad\n9974360038\nCL Dept.</string>
+    <string name="camp_zone_chaitanya_mistry_label">Chaitanya Mistry\nAhmedabad\n9825826819\nCL Dept.</string>
+    <string name="camp_zone_jay_kotecha_label">Jay Kotecha\nAnand\n9033986515\nCE Dept.</string>
+    <string name="camp_zone_satyajitsinh_jhala_label">Satyajitsinh Jhala\nAnand\n9737302852\nEE Dept.</string>
+    <string name="camp_zone_him_patel_label">Him Patel\nNorth Gujarat\n9638539946\nCL Dept.</string>
+    <string name="camp_zone_dasharath_sagar_label">Dasharath Sagar\nNorth Gujarat\n9558417887\nCL Dept.</string>
+    <string name="camp_zone_diyvarajsinh_limbola_label">Divyarajsinh Limbola\nSaurashtra\n8866224551\nEE Dept.</string>
+    <string name="camp_zone_chirag_kalsariya_label">Chirag Kalsariya\Saurashtra\n9429838624\nCL Dept.</string>
+    <string name="camp_zone_yash_tejani_label">Yash Tejani\nSurat\n8460855981\nIT Dept.</string>
+    <string name="camp_zone_digant_limbani_label">Digant Limbani\nSurat\n8866732093\nCL Dept.</string>
+    <string name="camp_zone_rahul_ravichandran_label">Rahul Ravichandran\nVadodara\n9601574287\nEC Dept.</string>
+
+
     <string name="content1">COGNIZANCE is the most awaited annual tech gala for every budding engineer in Charusat.\nCognizance is a prism , where college students find an array of events and activities to participate and get valuable recognition. This time cognizance 2k17 is coming up with more exuberant experience like never before.
     </string>
     <string name="content2">Be it the enchanting guest lectures or learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from discovering a new yourself in the crowd to becoming one united soul on the DJ eve, COGNIZANCE has it all.
