@@ -1,14 +1,14 @@
 package charusat.cognizance.home;
 
 
-import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,6 +21,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
@@ -51,27 +52,50 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
         //Load Videos of Youtube
 
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        webView = (WebView) v.findViewById(R.id.webVideoView);
-        webView1 = (WebView) v.findViewById(R.id.webVideoView1);
+        if (connec != null && (
+                (connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) ||
+                        (connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED))) {
 
-        String html = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
-        String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/0RoNxhYn404\" frameborder=\"0\" allowfullscreen></iframe>";
+            //You are connected, do something online.
+            webView = (WebView) v.findViewById(R.id.webVideoView);
+            webView1 = (WebView) v.findViewById(R.id.webVideoView1);
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebChromeClient(new WebChromeClient() {});
-        webView1.getSettings().setJavaScriptEnabled(true);
-        webView1.setWebChromeClient(new WebChromeClient() {
-        });
+            webView.setVisibility(View.VISIBLE);
+            webView1.setVisibility(View.VISIBLE);
+            String html = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/tvIu6sjQwls\" frameborder=\"0\" allowfullscreen></iframe>";
+            String html1 = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/0RoNxhYn404\" frameborder=\"0\" allowfullscreen></iframe>";
+
+            webView.getSettings().setJavaScriptEnabled(true);
+            webView.setWebChromeClient(new WebChromeClient() {
+            });
+            webView1.getSettings().setJavaScriptEnabled(true);
+            webView1.setWebChromeClient(new WebChromeClient() {
+            });
+
+            webView.loadData(html, "text/html", "utf-8");
+            webView1.loadData(html1, "text/html", "utf-8");
+
+
+        } else if (connec != null && (
+                (connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.DISCONNECTED) ||
+                        (connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.DISCONNECTED))) {
+
+            //Not connected.
+            //Toast.makeText(getActivity().getApplicationContext(), "You must be connected to the internet to view Video", Toast.LENGTH_LONG).show();
+            ImageView iv = (ImageView) v.findViewById(R.id.video_TV);
+            ImageView iv1 = (ImageView) v.findViewById(R.id.video_TV1);
+            iv.setVisibility(View.VISIBLE);
+            iv1.setVisibility(View.VISIBLE);
+        }
 
 
 
-        webView.loadData(html, "text/html", "utf-8");
-        webView1.loadData(html1, "text/html", "utf-8");
         setUpPager(v);
 
 

@@ -122,10 +122,17 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="5dp"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:visibility="gone">
 
         </WebView>
 
+        <ImageView
+            android:id="@+id/video_TV1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/thumbnail"
+            android:visibility="gone" />
         <include layout="@layout/darkbar"></include>
 
 
@@ -199,9 +206,17 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_marginBottom="5dp"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:visibility="gone">
 
         </WebView>
+
+        <ImageView
+            android:id="@+id/video_TV"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/thumbnail"
+            android:visibility="gone" />
 
         <include layout="@layout/darkbar" />
 
