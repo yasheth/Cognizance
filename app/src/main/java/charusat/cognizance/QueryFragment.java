@@ -19,7 +19,8 @@ import android.widget.EditText;
  */
 public class QueryFragment extends Fragment
 {
-    Button sub;
+    Button sub, call_saurastra,call_ahmedabad, call_anand, call_vadodara, call_north,call_surat;
+
 
     public QueryFragment()
     {
@@ -42,6 +43,61 @@ public class QueryFragment extends Fragment
         sub = (Button) view.findViewById(R.id.send_query);
         final EditText et_subject = (EditText) view.findViewById(R.id.et_subject);
         final EditText et_query = (EditText) view.findViewById(R.id.et_query);
+
+        call_ahmedabad = (Button) view.findViewById(R.id.make_call_ahmedabad);
+        call_north = (Button) view.findViewById(R.id.make_call_north);
+        call_saurastra = (Button) view.findViewById(R.id.make_call_saurastra);
+        call_anand = (Button) view.findViewById(R.id.make_call_anand);
+        call_vadodara = (Button) view.findViewById(R.id.make_call_vadodara);
+        call_surat = (Button) view.findViewById(R.id.make_call_surat);
+
+        call_ahmedabad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +919974360038"));
+                startActivity(intent);
+            }
+        });
+
+        call_north.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +919638539946"));
+                startActivity(intent);
+            }
+        });
+
+        call_saurastra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +918866224551"));
+                startActivity(intent);
+            }
+        });
+
+        call_vadodara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +918320000751"));
+                startActivity(intent);
+            }
+        });
+
+        call_anand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +919737302852"));
+                startActivity(intent);
+            }
+        });
+
+        call_surat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(android.content.Intent.ACTION_CALL, Uri.parse("tel: +918460855981"));
+                startActivity(intent);
+            }
+        });
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,8 +1,12 @@
 package charusat.cognizance;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,8 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -85,34 +91,42 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View view)
             {
+
                 String eventStr = "Events";
 
                 ccc_id = czid.getText().toString();
                 ccc_mobile = mobile.getText().toString();
 
                 final String participant = ccc_id + "_" + ccc_mobile;
-
+                final String participantLowerCase = participant.toLowerCase();
                 Log.d(TAG, participant);
 
-                participantRefer = databaseReference.child("participant").child(participant).child(eventStr);
+                participantRefer = databaseReference.child("participant").child(participantLowerCase).child(eventStr);
 
                 ValueEventListener Listener = new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot)
                     {
-                        String re = dataSnapshot.getValue().toString();
-                        String[] regEvents = re.split(",");
-                        Log.i("Events", Arrays.toString(regEvents));
-                        ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(regEvents));
-                        eventDetails = GetEvents.getByID(arrayList);
+                        if(dataSnapshot.getValue() == null){
 
-                        UserFragmentEvent ufe = new UserFragmentEvent();
+                            Toast.makeText(getContext(),"Invalid CZ ID / Password is Invalid",Toast.LENGTH_LONG).show();
 
-                        ufe.aaa = eventDetails;
+                        } else{
+                            String re = dataSnapshot.getValue().toString();
+                            String[] regEvents = re.split(",");
+                            Log.i("Events", Arrays.toString(regEvents));
+                            ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(regEvents));
+                            eventDetails = GetEvents.getByID(arrayList);
 
-                        ((Activity_Main)getActivity()).setFragment(ufe);
+                            UserFragmentEvent ufe = new UserFragmentEvent();
 
-                        Log.d(TAG, eventDetails.toString());
+                            ufe.aaa = eventDetails;
+
+                            ((Activity_Main)getActivity()).setFragment(ufe);
+
+                            Log.d(TAG, eventDetails.toString());
+                        }
+
 
                     }
 

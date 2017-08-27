@@ -34,7 +34,7 @@ public class UserFragmentEvent extends EventsListViewDepartmentFragment
         View v = inflater.inflate(R.layout.events_department_listview_parent, container, false);
         TextView tv = (TextView) v.findViewById(R.id.textAtTop);
         tv.setVisibility(View.VISIBLE);
-        tv.setText("Events Participated :-");
+        tv.setText("Registered Events");
         return v;
     }
     @Override
