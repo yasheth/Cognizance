@@ -36,11 +36,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Send Query via Email"
             android:layout_marginTop="15dp"
+            android:text="Send Query via Email"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
+
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -73,20 +74,19 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
+            android:id="@+id/send_query"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/shape_oval_prime"
             android:text="Send Email"
-            android:textColor="@color/colorWhite"
-            android:id="@+id/send_query"
-            />
+            android:textColor="@color/colorWhite" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Resolve your Query via Call"
             android:layout_marginTop="15dp"
+            android:text="Resolve your Query via Call"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -94,48 +94,47 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Choice your nearest Zone"
             android:layout_marginTop="15dp"
+            android:text="Choose your nearest Zone"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-
-
-    <Button
-        android:id="@+id/make_call_saurashtra"
-        android:layout_weight="0.5"
-        android:layout_marginRight="5dp"
-        android:layout_width="174dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/shape_oval_prime"
-        android:text="Saurashtra"
-        android:textColor="@color/colorWhite" />
-
-    <Button
-        android:id="@+id/make_call_ahmedabad"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="0.5"
-        android:layout_width="179dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/shape_oval_prime"
-        android:text="Ahmedabad"
-        android:textColor="@color/colorWhite" />
-
-
-</LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/make_call_saurashtra"
+                android:layout_width="174dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/shape_oval_prime"
+                android:text="Saurashtra"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/make_call_ahmedabad"
+                android:layout_width="179dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/shape_oval_prime"
+                android:text="Ahmedabad"
+                android:textColor="@color/colorWhite" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/make_call_north"
@@ -150,43 +149,42 @@
 
             <Button
                 android:id="@+id/make_call_anand"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="0.5"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
                 android:background="@drawable/shape_oval_prime"
                 android:text="Anand"
                 android:textColor="@color/colorWhite" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
+            android:orientation="horizontal">
 
 
             <Button
                 android:id="@+id/make_call_vadodara"
-                android:layout_marginRight="5dp"
-                android:layout_weight="0.5"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
                 android:background="@drawable/shape_oval_prime"
                 android:text="Vadodara"
                 android:textColor="@color/colorWhite" />
 
             <Button
                 android:id="@+id/make_call_surat"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="0.5"
                 android:layout_width="179dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
                 android:background="@drawable/shape_oval_prime"
                 android:text="Surat"
                 android:textColor="@color/colorWhite" />
