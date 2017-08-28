@@ -36,19 +36,19 @@
             ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="0.9" />
 
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <EditText
                 android:id="@+id/et_czid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your CZ ID"
+                android:hint="Your CZ ID Ex. 02001"
                 android:inputType="text" />
         </android.support.design.widget.TextInputLayout>
 
@@ -72,6 +72,25 @@
             android:background="@drawable/shape_oval_prime"
             android:text="Know Your CZ Status"
             android:textColor="@color/colorWhite" />
+
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_antialias="true"
+            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_insetPadding="10dp"
+            ext:documentView_lineHeightMultiplier="1.0"
+            ext:documentView_maxLines="100"
+            ext:documentView_reverse="false"
+            ext:documentView_text="@string/user2"
+            ext:documentView_textAlignment="justified"
+            ext:documentView_textFormat="plain"
+            ext:documentView_textSize="12sp"
+            ext:documentView_textColor="@android:color/holo_red_dark"
+            ext:documentView_textSubPixel="true"
+            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
+            ext:documentView_wordSpacingMultiplier="1.1" />
+
 
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

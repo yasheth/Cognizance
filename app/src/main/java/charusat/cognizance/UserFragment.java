@@ -112,7 +112,9 @@ public class UserFragment extends Fragment {
 
                             Toast.makeText(getContext(),"Invalid CZ ID / Password is Invalid",Toast.LENGTH_LONG).show();
 
-                        } else{
+                        }
+                        else
+                        {
                             String re = dataSnapshot.getValue().toString();
                             String[] regEvents = re.split(",");
                             //Log.i("Events", Arrays.toString(regEvents));
@@ -130,7 +132,6 @@ public class UserFragment extends Fragment {
 
                             //Log.d(TAG, eventDetails.toString());
                         }
-
 
                     }
 
