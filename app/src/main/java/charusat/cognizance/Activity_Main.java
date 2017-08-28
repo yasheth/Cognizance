@@ -1,23 +1,13 @@
 package charusat.cognizance;
 
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import charusat.cognizance.events.EventsFragment;
 import charusat.cognizance.events.individual.EventsIndividualFragment;
@@ -25,12 +15,10 @@ import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
 import charusat.cognizance.helpers.events.GetEvents;
 import charusat.cognizance.home.HomeFragment;
 
-import java.util.Vector;
-
 public class Activity_Main extends AppCompatActivity
 {
-    TextView current_title;
     public Fragment cur_fragment;
+    TextView current_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -90,6 +78,7 @@ public class Activity_Main extends AppCompatActivity
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_layout, f);
         transaction.commit();
+
 
     }
     @Override
