@@ -52,7 +52,7 @@ public class TeamFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        clearHelper();
         final View view = inflater.inflate(R.layout.fragment_team, container, false);
 
         addAppTeamMembers();
@@ -395,8 +395,37 @@ public class TeamFragment extends Fragment {
         mCampZoneTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.camp_zone_yash_tejani_label));
         mCampZoneTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.camp_zone_digant_limbani_label));
         mCampZoneTeamMembersList.add(new MemberInfo(R.drawable.man, R.string.camp_zone_rahul_ravichandran_label));
-
     }
 
+    private void clearHelper() {
+        mCampZoneTeamMembersList.clear();
+        mAdhyayTeamMembersList.clear();
+        mWebTeamMembersList.clear();
+        mCouncilTeamMembersList.clear();
+        mAppTeamMembersList.clear();
+//        mCampZoneTeamArrowImageView.clearAnimation();
+//        mAdhyayTeamArrowImageView.clearAnimation();
+//        mWebTeamArrowImageView.clearAnimation();
+//        mCouncilTeamArrowImageView.clearAnimation();
+//        mAppTeamArrowImageView.clearAnimation();
+    }
+
+    public void onStop() {
+        super.onStop();
+        if (isAppDetailExpanded) {
+            hideAppTeamMembers();
+        } else if (isCouncilDetailExpanded) {
+            hideCouncilTeamMembers();
+        } else if (isWebDetailExpanded) {
+            hideWebTeamMembers();
+        } else if (isAdhyayDetailExpanded) {
+            hideAdhyayTeamMembers();
+        } else if (isCampZoneDetailExpanded) {
+            hideCampZoneTeamMembers();
+        } else {
+            //nothing
+        }
+
+    }
 
 }

@@ -38,12 +38,13 @@
         <include layout="@layout/darkbar"/>
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
-            android:textSize="15sp"
             android:layout_width="fill_parent"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
             android:layout_height="fill_parent"
-            android:text="@string/content1"/>
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/content1"
+            android:textColor="#111"
+            android:textSize="16sp" />
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
@@ -56,7 +57,9 @@
             ext:documentView_text="@string/content1"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" /-->
@@ -88,12 +91,13 @@
 
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
-            android:textSize="15sp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="@string/content2"/>
+            android:paddingTop="10dp"
+            android:text="@string/content2"
+            android:textColor="#111"
+            android:textSize="16sp" />
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
@@ -107,7 +111,9 @@
             ext:documentView_text="@string/content2"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" /-->
@@ -134,12 +140,13 @@
         <include layout="@layout/darkbar"/>
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
-            android:textSize="15sp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="@string/content5"/>
+            android:paddingTop="10dp"
+            android:text="@string/content5"
+            android:textColor="#111"
+            android:textSize="16sp" />
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
@@ -152,7 +159,9 @@
             ext:documentView_text="@string/content5"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" /-->
 
@@ -167,7 +176,9 @@
             ext:documentView_text="@string/content3"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_wordSpacingMultiplier="1.4" /-->
 
@@ -183,13 +194,14 @@
         <include layout="@layout/darkbar"/>
 
 
-        <charusat.cognizance.helpers.customview.Textview_lato
+        <charusat.cognizance.helpers.customview.Textview_lato_thin
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
-            android:textSize="15sp"
             android:paddingBottom="10dp"
-            android:text="@string/content4"/>
+            android:paddingTop="10dp"
+            android:text="@string/content4"
+            android:textColor="#111"
+            android:textSize="16sp" />
 
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -203,7 +215,9 @@
             ext:documentView_text="@string/content4"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" /-->
@@ -232,10 +246,11 @@
         <charusat.cognizance.helpers.customview.Textview_lato_thin
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:textSize="15sp"
-            android:text="@string/content3"/>
+            android:paddingTop="10dp"
+            android:text="@string/content3"
+            android:textColor="#111"
+            android:textSize="16sp" />
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
@@ -248,7 +263,9 @@
             ext:documentView_text="@string/content3"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" /-->
 
@@ -263,7 +280,9 @@
             ext:documentView_text="@string/content4"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
-            ext:documentView_textSize="15sp"
+
+            android:textColor="#111"
+            ext:documentView_textSize="16sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_wordSpacingMultiplier="1.4" /-->
 
@@ -276,7 +295,7 @@
             android:layout_margin="10dp"
             android:gravity="left"
             android:text="Follow us On:"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <!--
         <Button

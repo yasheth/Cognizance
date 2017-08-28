@@ -1,6 +1,5 @@
 package charusat.cognizance;
 
-import android.app.usage.UsageEvents;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -94,11 +93,12 @@ public class Activity_Main extends AppCompatActivity
 
     public void setFragment(Fragment f)
     {
+        getSupportFragmentManager().popBackStack();
         /*if(cur_fragment!=null)
         cur_fragment.onDestroy();*/
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        //getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.frame_layout)).commit();
+
         if(f!=null)
         {
             transaction.replace(R.id.frame_layout, f);
