@@ -37,8 +37,11 @@
 
         <include layout="@layout/darkbar"/>
 
-        <TextView
+        <charusat.cognizance.helpers.customview.Textview_lato_thin
+            android:textSize="15sp"
             android:layout_width="fill_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:layout_height="fill_parent"
             android:text="@string/content1"/>
 
@@ -84,9 +87,12 @@
         <include layout="@layout/darkbar"/>
 
 
-        <TextView
+        <charusat.cognizance.helpers.customview.Textview_lato_thin
+            android:textSize="15sp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/content2"/>
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -127,9 +133,12 @@
             android:visibility="gone" />
         <include layout="@layout/darkbar"/>
 
-        <TextView
+        <charusat.cognizance.helpers.customview.Textview_lato_thin
+            android:textSize="15sp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:text="@string/content5"/>
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -174,10 +183,15 @@
         <include layout="@layout/darkbar"/>
 
 
-        <TextView
+        <charusat.cognizance.helpers.customview.Textview_lato
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingTop="10dp"
+            android:textSize="15sp"
+            android:paddingBottom="10dp"
             android:text="@string/content4"/>
+
+
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -215,9 +229,12 @@
 
         <include layout="@layout/darkbar" />
 
-        <TextView
+        <charusat.cognizance.helpers.customview.Textview_lato_thin
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textSize="15sp"
             android:text="@string/content3"/>
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
