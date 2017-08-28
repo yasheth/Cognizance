@@ -74,10 +74,11 @@ public class Activity_Main extends AppCompatActivity
 
     public void setFragment(Fragment f)
     {
-        cur_fragment = f;
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
         transaction.replace(R.id.frame_layout, f);
         transaction.commit();
+        cur_fragment = f;
 
 
     }

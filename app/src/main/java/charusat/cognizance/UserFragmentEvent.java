@@ -31,6 +31,7 @@ public class UserFragmentEvent extends EventsListViewDepartmentFragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)
     {
+
         View v = inflater.inflate(R.layout.events_department_listview_parent, container, false);
         TextView tv = (TextView) v.findViewById(R.id.textAtTop);
         tv.setVisibility(View.VISIBLE);

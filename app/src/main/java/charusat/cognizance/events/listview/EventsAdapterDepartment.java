@@ -56,14 +56,14 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
 
         holder.title.setText(event.name);
         holder.desc.setText(Html.fromHtml(event.one_line_description));
-        Log.i("Setting Descc1", event.one_line_description);
-        Log.i("Setting Descc2", holder.desc.getText().toString());
+        //Log.i("Setting Descc1", event.one_line_description);
+        //Log.i("Setting Descc2", holder.desc.getText().toString());
 
         holder.date.setText(event.date_time);
         holder.venue.setText(event.venue);
-        Log.i("Setting Eventsss", event.name);
-        Log.i("Setting Descc1", event.one_line_description);
-        Log.i("Setting Descc2", holder.desc.getText().toString());
+        //Log.i("Setting Eventsss", event.name);
+        //Log.i("Setting Descc1", event.one_line_description);
+        //Log.i("Setting Descc2", holder.desc.getText().toString());
 
     }
 
@@ -71,7 +71,7 @@ public class EventsAdapterDepartment extends RecyclerView.Adapter<EventsAdapterD
     @Override
     public int getItemCount()
     {
-        Log.i("Size", "" + events.size());
+        //Log.i("Size", "" + events.size());
         return events.size();
     }
 

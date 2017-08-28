@@ -24,7 +24,7 @@ public class UserFragmentDetail extends EventsIndividualFragment
     {
         for (EventHolder eee: aaaa)
         {
-            Log.i("ABC", eee.one_line_description);
+            //Log.i("ABC", eee.one_line_description);
 
         }
         return aaaa;

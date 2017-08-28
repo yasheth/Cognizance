@@ -95,7 +95,7 @@ public class EventsFragment extends Fragment/* implements LinearLayout.OnClickLi
 
                 EventsListViewDepartmentFragment ff = new EventsListViewDepartmentFragment();
                 ff.setDept(dh.sf);
-                Log.i("DEPT", dh.sf);
+                //Log.i("DEPT", dh.sf);
                 ((Activity_Main)getActivity()).setFragment(ff);
             }
         });

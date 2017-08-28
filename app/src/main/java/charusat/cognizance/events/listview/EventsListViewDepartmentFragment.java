@@ -80,7 +80,7 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
                 ALEH.clear();
                 ALEH.addAll(GetEvents.get(dept));
                 adapter.notifyDataSetChanged();
-                Log.i("Onccc", "OnChange in Depart ListView");
+                //Log.i("Onccc", "OnChange in Depart ListView");
             }
         };
 
@@ -90,7 +90,7 @@ public class EventsListViewDepartmentFragment extends Fragment implements Events
     public void setDept(String dept)
     {
         EventsListViewDepartmentFragment.dept = dept;
-        Log.i("DEPT set", dept);
+        //Log.i("DEPT set", dept);
     }
 
     @Override

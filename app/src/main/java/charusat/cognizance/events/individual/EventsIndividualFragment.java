@@ -88,7 +88,7 @@ public class EventsIndividualFragment extends EventsListViewDepartmentFragment
                 ALEH.clear();
                 ALEH.addAll(GetEvents.get(dept));
                 mCustomPagerAdapter.notifyDataSetChanged();
-                Log.i("Onccc", "OnChange in Individual ListView");
+                //Log.i("Onccc", "OnChange in Individual ListView");
             }
         };
 

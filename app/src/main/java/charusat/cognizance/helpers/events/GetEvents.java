@@ -52,13 +52,13 @@ public class GetEvents
                     s= dataSnapshot.getValue().toString();
                     s = s.substring(1, s.length()-1);
                     jj = s;
-                    Log.i("ABC", "Loading from Firebase");
+                    //Log.i("ABC", "Loading from Firebase");
                     init();
                 }
                 catch (Exception e)
                 {
                     jj = readJSONFromAsset("events.json");
-                    Log.i("ABC", "Loading from Asset");
+                    //Log.i("ABC", "Loading from Asset");
                 }
                 ocl.onChange();
                 //Log.wtf("H", s);
@@ -101,7 +101,7 @@ public class GetEvents
 
         ArrayList<EventHolder> TEMP = new ArrayList<>();
 
-        Log.i("Number", "" + AL.size());
+        //Log.i("Number", "" + AL.size());
         for (EventHolder eh: AL)
         {
             if(id.contains(eh.eventID)) TEMP.add(eh);
@@ -117,7 +117,7 @@ public class GetEvents
 
         ArrayList<EventHolder> TEMP = new ArrayList<>();
 
-        Log.i("Number", "" + AL.size());
+        //Log.i("Number", "" + AL.size());
         for (EventHolder eh: AL)
         {
             eh.dept = eh.dept.toLowerCase();
@@ -143,7 +143,7 @@ public class GetEvents
             ex.printStackTrace();
             return null;
         }
-        Log.i("JSON", jj);
+        //Log.i("JSON", jj);
         return jj;
     }
     public static void init()
@@ -153,7 +153,7 @@ public class GetEvents
         try
         {
             String JSON = jj;
-            Log.wtf("jj", jj);
+            //Log.wtf("jj", jj);
             JSONObject jo = new JSONObject(JSON);
             Iterator<String> keys = jo.keys();
 
@@ -163,12 +163,12 @@ public class GetEvents
                 if ( jo.get(key) instanceof JSONObject )
                 {
                     EventHolder eh = new EventHolder((JSONObject)jo.get(key));
-                    Log.i("Name", eh.name);
+                    //Log.i("Name", eh.name);
                     AL.add(eh);
                 }
                 else
                 {
-                    Log.wtf("WTF", "Not instance of JSOBObject");
+                    //Log.wtf("WTF", "Not instance of JSOBObject");
                 }
             }
         }

@@ -8,6 +8,7 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
@@ -46,13 +47,13 @@ public class HomeFragment extends Fragment {
         // Required empty public constructor
     }
 
+    View v;
+    
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-        // Inflate the layout for this fragment
-        //Load Videos of Youtube
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
+    {
+        super.onViewCreated(view, savedInstanceState);
 
         Par = (ImageView) v.findViewById(R.id.iv_paroma);
         Picasso.with(getContext()).load(R.drawable.paroma).into(Par);
@@ -141,6 +142,16 @@ public class HomeFragment extends Fragment {
                 startActivity(i);
             }
         });
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        container.removeAllViews();
+        v = inflater.inflate(R.layout.fragment_home, container, false);
+        // Inflate the layout for this fragment
+        //Load Videos of Youtube
+
 
         /*TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(mViewPager, true);*/
@@ -209,6 +220,13 @@ public class HomeFragment extends Fragment {
          return v;
 
        // return inflater.inflate(R.layout.fragment_home, container, false);
+    }
+
+    @Override
+    public void onDestroyView() {
+        //mContainer.removeAllViews();
+
+        super.onDestroyView();
     }
 
     public void setUpPager(View v)

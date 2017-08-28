@@ -63,6 +63,7 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
     }
@@ -99,7 +100,7 @@ public class UserFragment extends Fragment {
 
                 final String participant = ccc_id + "_" + ccc_mobile;
                 final String participantLowerCase = participant.toLowerCase();
-                Log.d(TAG, participant);
+                //Log.d(TAG, participant);
 
                 participantRefer = databaseReference.child("participant").child(participantLowerCase).child(eventStr);
 
@@ -114,7 +115,7 @@ public class UserFragment extends Fragment {
                         } else{
                             String re = dataSnapshot.getValue().toString();
                             String[] regEvents = re.split(",");
-                            Log.i("Events", Arrays.toString(regEvents));
+                            //Log.i("Events", Arrays.toString(regEvents));
                             ArrayList<String> arrayList = new ArrayList<String>(Arrays.asList(regEvents));
                             eventDetails = GetEvents.getByID(arrayList);
 
@@ -127,7 +128,7 @@ public class UserFragment extends Fragment {
                             if(am!=null)
                                 am.setFragment(ufe);
 
-                            Log.d(TAG, eventDetails.toString());
+                            //Log.d(TAG, eventDetails.toString());
                         }
 
 
