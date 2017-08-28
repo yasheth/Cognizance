@@ -122,7 +122,10 @@ public class UserFragment extends Fragment {
 
                             ufe.aaa = eventDetails;
 
-                            ((Activity_Main)getActivity()).setFragment(ufe);
+
+                            Activity_Main am = (Activity_Main)getActivity();
+                            if(am!=null)
+                                am.setFragment(ufe);
 
                             Log.d(TAG, eventDetails.toString());
                         }

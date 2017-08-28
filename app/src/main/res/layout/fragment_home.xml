@@ -17,7 +17,7 @@
             android:layout_gravity="center"
             android:focusableInTouchMode="true"
             android:scaleType="fitXY"
-            android:src="@drawable/cognizance" />
+            android:id="@+id/iv_cognizance" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:layout_gravity="center"
             android:focusableInTouchMode="true"
             android:scaleType="fitXY"
-            android:src="@drawable/cognizance1" />
+            android:id="@+id/iv_cognizance1" />
 
         <include layout="@layout/darkbar"/>
 
@@ -46,7 +46,7 @@
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" />
-<!--
+
         <include layout="@layout/darkbar"/>
 
         <FrameLayout
@@ -69,8 +69,8 @@
                 app:dotsSize="8dp"
                 app:dotsWidthFactor="2.5" />
         </FrameLayout>
--->
-        <include layout="@layout/darkbar"></include>
+
+        <include layout="@layout/darkbar"/>
 
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -91,7 +91,7 @@
             ext:documentView_wordSpacingMultiplier="1.1" />
 
 
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -105,11 +105,11 @@
             ext:documentView_textSize="15sp"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" /-->
+            ext:documentView_wordSpacingMultiplier="1.4" />
 
         <include layout="@layout/darkbar"></include>
 
-        <!--<WebView
+        <WebView
             android:id="@+id/webVideoView1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -118,14 +118,14 @@
             android:visibility="gone">
 
         </WebView>
--->
+
         <ImageView
             android:id="@+id/video_TV1"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/thumbnail"
             android:visibility="gone" />
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
@@ -163,17 +163,17 @@
 
         <include layout="@layout/darkbar"/>
 
-        <!--<ImageView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:padding="8dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/paroma" />
+            android:id="@+id/iv_paroma"
+            android:scaleType="fitXY"/>
 
         <include layout="@layout/darkbar"/>
--->
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
 
             android:layout_height="fill_parent"
@@ -192,6 +192,7 @@
             ext:documentView_wordSpacingMultiplier="1.1" />
 
         <include layout="@layout/darkbar" />
+        -->
 <!--
         <WebView
             android:id="@+id/webVideoView"

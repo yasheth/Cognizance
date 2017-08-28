@@ -12,7 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -28,6 +31,7 @@ public class Activity_Main extends AppCompatActivity
 {
     TextView current_title;
     public Fragment cur_fragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -38,7 +42,6 @@ public class Activity_Main extends AppCompatActivity
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         current_title = (TextView) findViewById(R.id.current_title);
-
 
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener() {

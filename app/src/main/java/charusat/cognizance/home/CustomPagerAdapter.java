@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import charusat.cognizance.R;
 
 /**
@@ -50,7 +52,8 @@ class CustomPagerAdapter extends PagerAdapter
     {
         View itemView = mLayoutInflater.inflate(R.layout.pager_item, container, false);
         ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-        imageView.setImageResource(mResources[position]);
+        Picasso.with(mContext).load(mResources[position]).into(imageView);
+        //imageView.setImageResource(mResources[position]);
         Log.wtf("Setting Resource", "Pos " + position);
         container.addView(itemView);
         return itemView;

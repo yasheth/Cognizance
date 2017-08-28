@@ -3,6 +3,7 @@ package charusat.cognizance.home;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -23,6 +24,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import java.util.Timer;
@@ -38,8 +40,8 @@ public class HomeFragment extends Fragment {
 
     //RECYCLER VIEW FIELDS
     RecyclerView recyclerView,recyclerView2;
-
-
+    ImageView Par;
+    ImageView c, c1;
     //VECTOR FOR VIDEO URLS
     //WebView webView, webView1;
 
@@ -55,6 +57,19 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
         // Inflate the layout for this fragment
         //Load Videos of Youtube
+
+        Par = (ImageView) v.findViewById(R.id.iv_paroma);
+
+        Picasso.with(getContext()).load(R.drawable.paroma).into(Par);
+
+        c = (ImageView) v.findViewById(R.id.iv_cognizance);
+
+        Picasso.with(getContext()).load(R.drawable.cognizance).into(c);
+
+        c1 = (ImageView) v.findViewById(R.id.iv_cognizance1);
+
+        Picasso.with(getContext()).load(R.drawable.cognizance1).into(c1);
+
 
         /*ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
@@ -204,20 +219,20 @@ public class HomeFragment extends Fragment {
     public void setUpPager(View v)
     {
         //SLIDE SHOW
-        /*CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
+        CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
         final ViewPager mViewPager = (ViewPager) v.findViewById(R.id.pager);
         mViewPager.setAdapter(mCustomPagerAdapter);
 
         DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager(mViewPager);
-        */
-        /*Timer timer;
+
+        Timer timer;
         final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
         final long PERIOD_MS = 5000; // time in milliseconds between successive task executions.*/
 
 
-        /*After setting the adapter use the timer */
-       /* final Handler handler = new Handler();
+        //After setting the adapter use the timer */
+        final Handler handler = new Handler();
         final int NUM_PAGES = mCustomPagerAdapter.getCount();
         Log.i("NUM_PAGES", "" +NUM_PAGES);
         final int[] currentPage = {0};
@@ -245,7 +260,7 @@ public class HomeFragment extends Fragment {
             public void run() {
                 handler.post(Update);
             }
-        }, DELAY_MS, PERIOD_MS);*/
+        }, DELAY_MS, PERIOD_MS);
 
     }
 
