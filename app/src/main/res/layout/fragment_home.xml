@@ -46,7 +46,7 @@
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
             ext:documentView_wordSpacingMultiplier="1.1" />
-
+<!--
         <include layout="@layout/darkbar"/>
 
         <FrameLayout
@@ -69,7 +69,7 @@
                 app:dotsSize="8dp"
                 app:dotsWidthFactor="2.5" />
         </FrameLayout>
-
+-->
         <include layout="@layout/darkbar"></include>
 
 
@@ -109,7 +109,7 @@
 
         <include layout="@layout/darkbar"></include>
 
-        <WebView
+        <!--<WebView
             android:id="@+id/webVideoView1"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -118,7 +118,7 @@
             android:visibility="gone">
 
         </WebView>
-
+-->
         <ImageView
             android:id="@+id/video_TV1"
             android:layout_width="match_parent"
@@ -163,7 +163,7 @@
 
         <include layout="@layout/darkbar"/>
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:padding="8dp"
@@ -171,7 +171,7 @@
             android:src="@drawable/paroma" />
 
         <include layout="@layout/darkbar"/>
-
+-->
 
         <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
@@ -192,7 +192,7 @@
             ext:documentView_wordSpacingMultiplier="1.1" />
 
         <include layout="@layout/darkbar" />
-
+<!--
         <WebView
             android:id="@+id/webVideoView"
             android:layout_width="match_parent"
@@ -202,17 +202,17 @@
             android:visibility="gone">
 
         </WebView>
-
-        <ImageView
+-->
+        <!--ImageView
             android:id="@+id/video_TV"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:src="@drawable/thumbnail"
-            android:visibility="gone" />
+            android:visibility="gone" /-->
 
         <include layout="@layout/darkbar" />
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
 
             android:layout_height="fill_parent"
@@ -228,7 +228,7 @@
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 

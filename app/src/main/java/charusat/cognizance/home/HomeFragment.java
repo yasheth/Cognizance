@@ -41,7 +41,7 @@ public class HomeFragment extends Fragment {
 
 
     //VECTOR FOR VIDEO URLS
-    WebView webView, webView1;
+    //WebView webView, webView1;
 
     public HomeFragment()
     {
@@ -56,14 +56,14 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         //Load Videos of Youtube
 
-        ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        /*ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (connec != null && (
                 (connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) ||
                         (connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED))) {
 
             //You are connected, do something online.
-            webView = (WebView) v.findViewById(R.id.webVideoView);
+            /*webView = (WebView) v.findViewById(R.id.webVideoView);
             webView1 = (WebView) v.findViewById(R.id.webVideoView1);
 
             webView.setVisibility(View.VISIBLE);
@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
             ImageView iv1 = (ImageView) v.findViewById(R.id.video_TV1);
             iv.setVisibility(View.VISIBLE);
             iv1.setVisibility(View.VISIBLE);
-        }
+        }*/
 
 
 
@@ -204,13 +204,13 @@ public class HomeFragment extends Fragment {
     public void setUpPager(View v)
     {
         //SLIDE SHOW
-        CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
+        /*CustomPagerAdapter mCustomPagerAdapter = new CustomPagerAdapter(getContext());
         final ViewPager mViewPager = (ViewPager) v.findViewById(R.id.pager);
         mViewPager.setAdapter(mCustomPagerAdapter);
 
         DotsIndicator dotsIndicator = (DotsIndicator) v.findViewById(R.id.dots_indicator);
         dotsIndicator.setViewPager(mViewPager);
-
+        */
         /*Timer timer;
         final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
         final long PERIOD_MS = 5000; // time in milliseconds between successive task executions.*/
@@ -279,7 +279,7 @@ public class HomeFragment extends Fragment {
                 }
             }
         });*/
-        webView.setWebViewClient(new WebViewClient()
+        /*webView.setWebViewClient(new WebViewClient()
         {
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error)
@@ -287,7 +287,7 @@ public class HomeFragment extends Fragment {
 
                 super.onReceivedError(view, request, error);
             }
-        });
+        });*/
 
 
     }
