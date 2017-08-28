@@ -1,5 +1,6 @@
 package charusat.cognizance;
 
+import android.app.usage.UsageEvents;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -20,6 +21,18 @@ public class Activity_Main extends AppCompatActivity
     public Fragment cur_fragment;
     TextView current_title;
 
+
+    HomeFragment homeFragment;
+    EventsFragment eventsFragment;
+    UserFragment userFragment;
+    QueryFragment queryFragment;
+    TeamFragment teamFragment;
+
+    UserFragmentEvent userFragmentEvent;
+    UserFragmentDetail userFragmentDetail;
+    EventsListViewDepartmentFragment eventsListViewDepartmentFragment;
+    EventsIndividualFragment eventsIndividualFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -32,26 +45,33 @@ public class Activity_Main extends AppCompatActivity
         current_title = (TextView) findViewById(R.id.current_title);
 
         bottomNavigationView.setOnNavigationItemSelectedListener
-                (new BottomNavigationView.OnNavigationItemSelectedListener() {
+                (new BottomNavigationView.OnNavigationItemSelectedListener()
+                {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item)
                     {
                         Fragment selectedFragment = null;
-                        switch (item.getItemId()) {
+                        switch (item.getItemId())
+                        {
                             case R.id.menu_home:
-                                selectedFragment = new HomeFragment();
+                                if(homeFragment==null) homeFragment = new HomeFragment();
+                                selectedFragment = homeFragment;
                                 break;
                             case R.id.menu_events:
-                                selectedFragment = new EventsFragment();
+                                if(eventsFragment==null) eventsFragment = new EventsFragment();
+                                selectedFragment = eventsFragment;
                                 break;
                             case R.id.menu_user:
-                                selectedFragment = new UserFragment();
+                                if(userFragment==null) userFragment = new UserFragment();
+                                selectedFragment = userFragment;
                                 break;
                             case R.id.menu_query:
-                                selectedFragment = new QueryFragment();
+                                if(queryFragment==null) queryFragment = new QueryFragment();
+                                selectedFragment = queryFragment;
                                 break;
                             case R.id.menu_team:
-                                selectedFragment = new TeamFragment();
+                                if(teamFragment==null) teamFragment = new TeamFragment();
+                                selectedFragment = teamFragment;
                                 break;
                         }
                         setFragment(selectedFragment);
@@ -74,11 +94,18 @@ public class Activity_Main extends AppCompatActivity
 
     public void setFragment(Fragment f)
     {
+        /*if(cur_fragment!=null)
+        cur_fragment.onDestroy();*/
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.frame_layout, f);
-        transaction.commit();
-        cur_fragment = f;
+        //getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.frame_layout)).commit();
+        if(f!=null)
+        {
+            transaction.replace(R.id.frame_layout, f);
+            transaction.commit();
+            cur_fragment = f;
+        }
+
 
 
     }
@@ -91,7 +118,8 @@ public class Activity_Main extends AppCompatActivity
         }
         else if(cur_fragment instanceof UserFragmentEvent)
         {
-            setFragment(new UserFragment());
+            if(userFragment==null) userFragment = new UserFragment();
+            setFragment(userFragment);
         }
         else if(cur_fragment instanceof EventsIndividualFragment)
         {
@@ -99,7 +127,8 @@ public class Activity_Main extends AppCompatActivity
         }
         else if(cur_fragment instanceof EventsListViewDepartmentFragment)
         {
-            setFragment(new EventsFragment());
+            if(eventsFragment==null) eventsFragment = new EventsFragment();
+            setFragment(eventsFragment);
         }
         else
         {

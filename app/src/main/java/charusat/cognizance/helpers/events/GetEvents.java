@@ -41,7 +41,7 @@ public class GetEvents
     public GetEvents(final EventOnChangeListener ocl)
     {
         //this.ocl = ocl;
-        databaseReference.addValueEventListener(new ValueEventListener()
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener()
         {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)

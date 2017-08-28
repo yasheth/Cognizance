@@ -37,23 +37,26 @@
 
         <include layout="@layout/darkbar"/>
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <TextView
             android:layout_width="fill_parent"
-
             android:layout_height="fill_parent"
-            ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="auto_quality"
+            android:text="@string/content1"/>
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
             ext:documentView_reverse="false"
+            ext:documentView_cacheConfig="no_cache"
             ext:documentView_text="@string/content1"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
         <include layout="@layout/darkbar"/>
 
@@ -81,11 +84,16 @@
         <include layout="@layout/darkbar"/>
 
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/content2"/>
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_cacheConfig="no_cache"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
@@ -96,10 +104,10 @@
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
 
-        <include layout="@layout/darkbar"></include>
+        <include layout="@layout/darkbar"/>
 
         <WebView
             android:id="@+id/webVideoView1"
@@ -119,24 +127,25 @@
             android:visibility="gone" />
         <include layout="@layout/darkbar"/>
 
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/content5"/>
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
 
             android:layout_height="fill_parent"
-            ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="auto_quality"
+            ext:documentView_cacheConfig="no_cache"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
             ext:documentView_text="@string/content5"
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
-            ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
         <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
 
@@ -165,15 +174,17 @@
         <include layout="@layout/darkbar"/>
 
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <TextView
             android:layout_width="fill_parent"
-
             android:layout_height="fill_parent"
-            ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="auto_quality"
+            android:text="@string/content4"/>
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
+            ext:documentView_cacheConfig="no_cache"
             ext:documentView_reverse="false"
             ext:documentView_text="@string/content4"
             ext:documentView_textAlignment="justified"
@@ -181,10 +192,9 @@
             ext:documentView_textSize="15sp"
             ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
         <include layout="@layout/darkbar" />
-        -->
 
         <WebView
             android:id="@+id/webVideoView"
@@ -205,12 +215,15 @@
 
         <include layout="@layout/darkbar" />
 
-        <com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+        <TextView
             android:layout_width="fill_parent"
-
             android:layout_height="fill_parent"
-            ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="auto_quality"
+            android:text="@string/content3"/>
+
+        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            ext:documentView_cacheConfig="no_cache"
             ext:documentView_insetPadding="10dp"
             ext:documentView_lineHeightMultiplier="1.0"
             ext:documentView_maxLines="100"
@@ -219,12 +232,11 @@
             ext:documentView_textAlignment="justified"
             ext:documentView_textFormat="plain"
             ext:documentView_textSize="15sp"
-            ext:documentView_textSubPixel="true"
             ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" />
+            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-
+        <!--
+        com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             ext:documentView_insetPadding="10dp"
