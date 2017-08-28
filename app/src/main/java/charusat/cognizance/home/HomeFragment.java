@@ -3,7 +3,6 @@ package charusat.cognizance.home;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -17,10 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -43,7 +39,7 @@ public class HomeFragment extends Fragment {
     ImageView Par;
     ImageView c, c1;
     //VECTOR FOR VIDEO URLS
-    //WebView webView, webView1;
+    WebView webView, webView1;
 
     public HomeFragment()
     {
@@ -59,26 +55,25 @@ public class HomeFragment extends Fragment {
         //Load Videos of Youtube
 
         Par = (ImageView) v.findViewById(R.id.iv_paroma);
-
         Picasso.with(getContext()).load(R.drawable.paroma).into(Par);
 
         c = (ImageView) v.findViewById(R.id.iv_cognizance);
+        Picasso.with(getContext()).load(R.drawable.cognizancemain).into(c);
 
-        Picasso.with(getContext()).load(R.drawable.cognizance).into(c);
+        c = (ImageView) v.findViewById(R.id.iv_cognizance1);
+        Picasso.with(getContext()).load(R.drawable.h1).into(c);
 
-        c1 = (ImageView) v.findViewById(R.id.iv_cognizance1);
+        c = (ImageView) v.findViewById(R.id.iv_cognizance2);
+        Picasso.with(getContext()).load(R.drawable.cognizance2).into(c);
 
-        Picasso.with(getContext()).load(R.drawable.cognizance1).into(c1);
-
-
-        /*ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connec = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
 
         if (connec != null && (
                 (connec.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) ||
                         (connec.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED))) {
 
             //You are connected, do something online.
-            /*webView = (WebView) v.findViewById(R.id.webVideoView);
+            webView = (WebView) v.findViewById(R.id.webVideoView);
             webView1 = (WebView) v.findViewById(R.id.webVideoView1);
 
             webView.setVisibility(View.VISIBLE);
@@ -107,7 +102,7 @@ public class HomeFragment extends Fragment {
             ImageView iv1 = (ImageView) v.findViewById(R.id.video_TV1);
             iv.setVisibility(View.VISIBLE);
             iv1.setVisibility(View.VISIBLE);
-        }*/
+        }
 
 
 

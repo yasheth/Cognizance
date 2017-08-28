@@ -18,5 +18,12 @@
         android:padding="2dp"
         android:src="@drawable/splash1" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@color/colorBackroundWhite"
+        android:padding="2dp"
+        android:src="@drawable/sponsor" />
 
 </LinearLayout>
