@@ -47,6 +47,12 @@ public class TeamFragment extends Fragment {
 
     public TeamFragment() {
         // Required empty public constructor
+
+        addAppTeamMembers();
+        addCouncilTeamMembers();
+        addWebTeamMembers();
+        addAdhyayTeamMembers();
+        addCampZoneTeamMembers();
     }
 
     @Override
@@ -54,12 +60,6 @@ public class TeamFragment extends Fragment {
                              Bundle savedInstanceState) {
         clearHelper();
         final View view = inflater.inflate(R.layout.fragment_team, container, false);
-
-        addAppTeamMembers();
-        addCouncilTeamMembers();
-        addWebTeamMembers();
-        addAdhyayTeamMembers();
-        addCampZoneTeamMembers();
 
         mAppTeamArrowImageView = (ImageView) view.findViewById(R.id.app_team_down_arrow);
         mAppTeamRecyclerView = (RecyclerView) view.findViewById(R.id.app_team_recycler_view);
