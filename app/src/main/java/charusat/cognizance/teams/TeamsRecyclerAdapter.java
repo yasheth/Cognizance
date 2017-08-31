@@ -19,7 +19,6 @@ import charusat.cognizance.R;
 public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdapter.TeamsHolder> {
 
     private ArrayList<TeamInfo> teamsArrayList;
-
     private GridLayoutManager gridLayoutManager;
 
 
@@ -41,8 +40,8 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
         holder.teamDownArrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.teamDownArrowImageView.animate().rotationBy(180).setDuration(90).start();
                 if (!currentTeam.isTeamDetailVisible()) {
+                    holder.teamDownArrowImageView.animate().rotationBy(180).setDuration(90).start();
                     gridLayoutManager = new GridLayoutManager(view.getContext(), 2);
                     MembersRecyclerAdapter membersRecyclerAdapter;
                     switch (currentTeam.getTeamLabel()) {
@@ -79,19 +78,28 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
                     currentTeam.setTeamDetailVisible(true);
 
                 } else if (currentTeam.isTeamDetailVisible()) {
+                    holder.teamDownArrowImageView.animate().rotationBy(180).setDuration(90).start();
                     holder.teamMemberRecyclerView.setVisibility(View.GONE);
                     currentTeam.setTeamDetailVisible(false);
                     onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
-                    new MembersInfo().releaseResources();
                 }
 
             }
         });
+
+        if (currentTeam.isTeamDetailVisible()) {
+            holder.teamMemberRecyclerView.setVisibility(View.GONE);
+            currentTeam.setTeamDetailVisible(false);
+            onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
+        }
+
     }
+
 
     @Override
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
+
     }
 
     @Override
@@ -123,7 +131,6 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
             teamLabelTextView = (TextView) itemView.findViewById(R.id.team_label);
             teamDownArrowImageView = (ImageView) itemView.findViewById(R.id.team_down_arrow);
             teamMemberRecyclerView = (RecyclerView) itemView.findViewById(R.id.team_members_recycler_view);
-
         }
     }
 }

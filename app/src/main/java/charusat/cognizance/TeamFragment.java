@@ -11,7 +11,6 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import charusat.cognizance.teams.MembersInfo;
 import charusat.cognizance.teams.TeamInfo;
 import charusat.cognizance.teams.TeamsRecyclerAdapter;
 
@@ -53,7 +52,6 @@ public class TeamFragment extends Fragment {
         TeamsRecyclerAdapter teamsRecyclerAdapter = new TeamsRecyclerAdapter(teamsArrayList);
         teamsRecyclerView.setAdapter(teamsRecyclerAdapter);
 
-
         return view;
 
     }
@@ -61,6 +59,5 @@ public class TeamFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        new MembersInfo().releaseResources();
     }
 }
