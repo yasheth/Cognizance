@@ -18,12 +18,25 @@ public class MembersInfo {
     private ArrayList<MembersInfo> mAdhyayTeamMembersList = new ArrayList<>();
     private ArrayList<MembersInfo> mCampZoneTeamMembersList = new ArrayList<>();
 
-    public MembersInfo() {
-        setCouncilMembersArrayList();
-        setAppTeamMembers();
-        setWebTeamMembers();
-        setAdhyayTeamMembers();
-        setCampZoneTeamMembers();
+    public MembersInfo(int position) {
+        //Default Constructor required
+        switch (position) {
+            case 1:
+                setCouncilMembersArrayList();
+                break;
+            case 2:
+                setAppTeamMembers();
+                break;
+            case 3:
+                setWebTeamMembers();
+                break;
+            case 4:
+                setAdhyayTeamMembers();
+                break;
+            case 5:
+                setCampZoneTeamMembers();
+                break;
+        }
     }
 
     public MembersInfo(int memberImageResourceId, int memberLabelResourceId) {

@@ -46,30 +46,30 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
                     MembersRecyclerAdapter membersRecyclerAdapter;
                     switch (currentTeam.getTeamLabel()) {
                         case "Council Members":
-                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo().getmCouncilTeamMembersList());
+                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(1).getmCouncilTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "App Team":
                             centerMember();
-                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo().getmAppTeamMembersList());
+                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(2).getmAppTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Web Team":
                             centerMember();
-                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo().getmWebTeamMembersList());
+                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(3).getmWebTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Adhyay Team":
                             centerMember();
-                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo().getmAdhyayTeamMembersList());
+                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(4).getmAdhyayTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Campaigning Zones Leaders":
-                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo().getmCampZoneTeamMembersList());
+                            membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(5).getmCampZoneTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
