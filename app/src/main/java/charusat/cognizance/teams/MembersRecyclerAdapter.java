@@ -12,14 +12,15 @@ import java.util.ArrayList;
 import charusat.cognizance.R;
 
 /**
- * Created by iharsh on 30/8/17.
+ * Created by Umang on 30/8/17.
+ *
  */
 
-public class MembersRecyclerAdapter extends RecyclerView.Adapter<MembersRecyclerAdapter.MembersHolder> {
+class MembersRecyclerAdapter extends RecyclerView.Adapter<MembersRecyclerAdapter.MembersHolder> {
 
     private ArrayList<MembersInfo> membersInfoArrayList;
 
-    public MembersRecyclerAdapter(ArrayList<MembersInfo> membersInfoArrayList) {
+    MembersRecyclerAdapter(ArrayList<MembersInfo> membersInfoArrayList) {
         this.membersInfoArrayList = membersInfoArrayList;
     }
 
@@ -42,12 +43,12 @@ public class MembersRecyclerAdapter extends RecyclerView.Adapter<MembersRecycler
         return membersInfoArrayList.size();
     }
 
-    public static class MembersHolder extends RecyclerView.ViewHolder {
+    static class MembersHolder extends RecyclerView.ViewHolder {
 
         ImageView memberImage;
         TextView memberLabel;
 
-        public MembersHolder(View itemView) {
+        MembersHolder(View itemView) {
             super(itemView);
             memberImage = (ImageView) itemView.findViewById(R.id.member_image);
             memberLabel = (TextView) itemView.findViewById(R.id.member_label);

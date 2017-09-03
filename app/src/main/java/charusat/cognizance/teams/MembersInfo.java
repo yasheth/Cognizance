@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import charusat.cognizance.R;
 
 /**
- * Created by iharsh on 30/8/17.
+ * Created by Umang on 30/8/17.
+ *
  */
 
-public class MembersInfo {
+class MembersInfo {
     private int memberImageResourceId;
     private int memberLabelResourceId;
 
@@ -18,7 +19,7 @@ public class MembersInfo {
     private ArrayList<MembersInfo> mAdhyayTeamMembersList = new ArrayList<>();
     private ArrayList<MembersInfo> mCampZoneTeamMembersList = new ArrayList<>();
 
-    public MembersInfo(int position) {
+    MembersInfo(int position) {
         //Default Constructor required
         switch (position) {
             case 1:
@@ -39,7 +40,7 @@ public class MembersInfo {
         }
     }
 
-    public MembersInfo(int memberImageResourceId, int memberLabelResourceId) {
+    private MembersInfo(int memberImageResourceId, int memberLabelResourceId) {
         this.memberLabelResourceId = memberLabelResourceId;
         this.memberImageResourceId = memberImageResourceId;
     }
@@ -103,39 +104,32 @@ public class MembersInfo {
         mCampZoneTeamMembersList.add(new MembersInfo(R.drawable.man, R.string.camp_zone_rahul_ravichandran_label));
     }
 
-    public ArrayList<MembersInfo> getmAppTeamMembersList() {
+    ArrayList<MembersInfo> getmAppTeamMembersList() {
         return mAppTeamMembersList;
     }
 
-    public ArrayList<MembersInfo> getmCouncilTeamMembersList() {
+    ArrayList<MembersInfo> getmCouncilTeamMembersList() {
         return mCouncilTeamMembersList;
     }
 
-    public ArrayList<MembersInfo> getmWebTeamMembersList() {
+    ArrayList<MembersInfo> getmWebTeamMembersList() {
         return mWebTeamMembersList;
     }
 
-    public ArrayList<MembersInfo> getmAdhyayTeamMembersList() {
+    ArrayList<MembersInfo> getmAdhyayTeamMembersList() {
         return mAdhyayTeamMembersList;
     }
 
-    public ArrayList<MembersInfo> getmCampZoneTeamMembersList() {
+    ArrayList<MembersInfo> getmCampZoneTeamMembersList() {
         return mCampZoneTeamMembersList;
     }
 
-    public int getMemberLabelResourceId() {
+    int getMemberLabelResourceId() {
         return memberLabelResourceId;
     }
 
-    public int getMemberImageResourceId() {
+    int getMemberImageResourceId() {
         return memberImageResourceId;
     }
 
-    public void releaseResources() {
-        mCouncilTeamMembersList.clear();
-        mAppTeamMembersList.clear();
-        mWebTeamMembersList.clear();
-        mAdhyayTeamMembersList.clear();
-        mCampZoneTeamMembersList.clear();
-    }
 }

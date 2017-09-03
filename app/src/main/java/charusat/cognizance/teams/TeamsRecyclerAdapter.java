@@ -13,7 +13,8 @@ import java.util.ArrayList;
 import charusat.cognizance.R;
 
 /**
- * Created by iharsh on 30/8/17.
+ * Created by Umang on 30/8/17.
+ *
  */
 
 public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdapter.TeamsHolder> {
@@ -82,15 +83,26 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
                     holder.teamMemberRecyclerView.setVisibility(View.GONE);
                     currentTeam.setTeamDetailVisible(false);
                     onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
+                    System.gc();
                 }
 
             }
         });
 
         if (currentTeam.isTeamDetailVisible()) {
-            holder.teamMemberRecyclerView.setVisibility(View.GONE);
-            currentTeam.setTeamDetailVisible(false);
-            onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
+            Thread clearDetailLayouts = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    holder.teamMemberRecyclerView.setVisibility(View.GONE);
+                    currentTeam.setTeamDetailVisible(false);
+                    holder.teamMemberRecyclerView.destroyDrawingCache();
+                    onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
+                    System.gc();
+                }
+            });
+
+            clearDetailLayouts.start();
+
         }
 
     }
@@ -99,6 +111,7 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
     @Override
     public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
         super.onDetachedFromRecyclerView(recyclerView);
+        System.gc();
 
     }
 
@@ -121,12 +134,12 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
     }
 
 
-    public static class TeamsHolder extends RecyclerView.ViewHolder {
+    static class TeamsHolder extends RecyclerView.ViewHolder {
         TextView teamLabelTextView;
         ImageView teamDownArrowImageView;
         RecyclerView teamMemberRecyclerView;
 
-        public TeamsHolder(View itemView) {
+        TeamsHolder(View itemView) {
             super(itemView);
             teamLabelTextView = (TextView) itemView.findViewById(R.id.team_label);
             teamDownArrowImageView = (ImageView) itemView.findViewById(R.id.team_down_arrow);

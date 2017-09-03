@@ -1,7 +1,8 @@
 package charusat.cognizance.teams;
 
 /**
- * Created by iharsh on 30/8/17.
+ * Created by Umang on 30/8/17.
+ *
  */
 
 public class TeamInfo {
@@ -13,15 +14,15 @@ public class TeamInfo {
         this.teamDetailVisible = teamDetailVisible;
     }
 
-    public String getTeamLabel() {
+    String getTeamLabel() {
         return teamLabel;
     }
 
-    public boolean isTeamDetailVisible() {
+    boolean isTeamDetailVisible() {
         return teamDetailVisible;
     }
 
-    public void setTeamDetailVisible(boolean teamDetailVisible) {
+    void setTeamDetailVisible(boolean teamDetailVisible) {
         this.teamDetailVisible = teamDetailVisible;
     }
 }

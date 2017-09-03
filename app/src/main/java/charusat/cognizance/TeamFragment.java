@@ -20,14 +20,14 @@ import charusat.cognizance.teams.TeamsRecyclerAdapter;
  */
 public class TeamFragment extends Fragment {
 
-    private ArrayList<TeamInfo> teamsArrayList = new ArrayList<>();
+    private ArrayList<TeamInfo> teamsArrayList;
 
 
     public TeamFragment() {
         // Required empty public constructor
+        teamsArrayList = new ArrayList<>();
         setTeamsArrayList();
     }
-
 
 
     private void setTeamsArrayList() {
@@ -43,6 +43,8 @@ public class TeamFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        System.gc();
+
         View view = inflater.inflate(R.layout.fragment_team, container, false);
 
         RecyclerView teamsRecyclerView = (RecyclerView) view.findViewById(R.id.team_members_recycler_view);
@@ -51,7 +53,7 @@ public class TeamFragment extends Fragment {
 
         TeamsRecyclerAdapter teamsRecyclerAdapter = new TeamsRecyclerAdapter(teamsArrayList);
         teamsRecyclerView.setAdapter(teamsRecyclerAdapter);
-
+        teamsRecyclerView.destroyDrawingCache();
         return view;
 
     }
