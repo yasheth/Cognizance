@@ -14,14 +14,13 @@ import charusat.cognizance.R;
 
 /**
  * Created by Umang on 30/8/17.
- *
+ * TeamsRecyclerAdapter for displaying cards of each team
  */
 
 public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdapter.TeamsHolder> {
 
     private ArrayList<TeamInfo> teamsArrayList;
     private GridLayoutManager gridLayoutManager;
-
 
     public TeamsRecyclerAdapter(ArrayList<TeamInfo> teamsArrayList) {
         this.teamsArrayList = teamsArrayList;
@@ -35,43 +34,48 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
     }
 
     @Override
-    public void onBindViewHolder(final TeamsHolder holder, int position) {
+    public void onBindViewHolder(final TeamsHolder holder, final int position) {
         final TeamInfo currentTeam = teamsArrayList.get(position);
         holder.teamLabelTextView.setText(currentTeam.getTeamLabel());
         holder.teamDownArrowImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!currentTeam.isTeamDetailVisible()) {
-                    holder.teamDownArrowImageView.animate().rotationBy(180).setDuration(90).start();
+                    holder.teamDownArrowImageView.setImageResource(R.drawable.ic_keyboard_arrow_up_white_24dp);
                     gridLayoutManager = new GridLayoutManager(view.getContext(), 2);
                     MembersRecyclerAdapter membersRecyclerAdapter;
                     switch (currentTeam.getTeamLabel()) {
                         case "Council Members":
                             membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(1).getmCouncilTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
+                            holder.teamMemberRecyclerView.setHasFixedSize(true);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "App Team":
                             centerMember();
                             membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(2).getmAppTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
+                            holder.teamMemberRecyclerView.setHasFixedSize(true);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Web Team":
                             centerMember();
                             membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(3).getmWebTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
+                            holder.teamMemberRecyclerView.setHasFixedSize(true);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Adhyay Team":
                             centerMember();
                             membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(4).getmAdhyayTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
+                            holder.teamMemberRecyclerView.setHasFixedSize(true);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                         case "Campaigning Zones Leaders":
                             membersRecyclerAdapter = new MembersRecyclerAdapter(new MembersInfo(5).getmCampZoneTeamMembersList());
                             holder.teamMemberRecyclerView.setLayoutManager(gridLayoutManager);
+                            holder.teamMemberRecyclerView.setHasFixedSize(true);
                             holder.teamMemberRecyclerView.setAdapter(membersRecyclerAdapter);
                             break;
                     }
@@ -79,7 +83,7 @@ public class TeamsRecyclerAdapter extends RecyclerView.Adapter<TeamsRecyclerAdap
                     currentTeam.setTeamDetailVisible(true);
 
                 } else if (currentTeam.isTeamDetailVisible()) {
-                    holder.teamDownArrowImageView.animate().rotationBy(180).setDuration(90).start();
+                    holder.teamDownArrowImageView.setImageResource(R.drawable.ic_keyboard_arrow_down_white_24dp);
                     holder.teamMemberRecyclerView.setVisibility(View.GONE);
                     currentTeam.setTeamDetailVisible(false);
                     onDetachedFromRecyclerView(holder.teamMemberRecyclerView);
