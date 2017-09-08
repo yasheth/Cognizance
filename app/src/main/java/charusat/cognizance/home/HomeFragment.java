@@ -26,6 +26,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -147,6 +148,7 @@ public class HomeFragment extends Fragment implements
 
         map.moveCamera(CameraUpdateFactory.zoomTo(16.5f));
 
+        map.getUiSettings().setZoomControlsEnabled(true);
         //private GoogleMap mMap;
 // Set a preference for minimum and maximum zoom.
         map.setMinZoomPreference(4.0f);
