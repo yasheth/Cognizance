@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import org.codechimp.apprater.AppRater;
+
 import charusat.cognizance.events.EventsFragment;
 import charusat.cognizance.events.individual.EventsIndividualFragment;
 import charusat.cognizance.events.listview.EventsListViewDepartmentFragment;
@@ -42,6 +44,11 @@ public class Activity_Main extends AppCompatActivity
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
         BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         current_title = (TextView) findViewById(R.id.current_title);
+
+        AppRater.setNumDaysForRemindLater(1);
+        AppRater.setDontRemindButtonVisible(false);
+        AppRater.app_launched(this);
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener
                 (new BottomNavigationView.OnNavigationItemSelectedListener()
