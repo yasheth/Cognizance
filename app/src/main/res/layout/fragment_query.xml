@@ -2,10 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin_less"
     tools:context="charusat.cognizance.QueryFragment">
 
     <LinearLayout
@@ -16,9 +15,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_less"
             android:gravity="center"
             android:text="Query"
-            android:textSize="36sp"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <!--android.support.design.widget.TextInputLayout
@@ -39,7 +39,7 @@
             android:layout_marginTop="15dp"
             android:text="Send Query via Email"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <android.support.design.widget.TextInputLayout
@@ -88,7 +88,7 @@
             android:layout_marginTop="15dp"
             android:text="Resolve your Query via Call"
             android:textAlignment="center"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -97,7 +97,7 @@
             android:layout_marginTop="15dp"
             android:text="Choose your nearest Zone"
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <LinearLayout

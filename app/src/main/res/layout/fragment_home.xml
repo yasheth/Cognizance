@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin_less"
+    android:paddingRight="@dimen/activity_horizontal_margin_less"
+    android:paddingTop="@dimen/activity_vertical_margin_less"
     tools:context="charusat.cognizance.home.HomeFragment">
 
     <LinearLayout
@@ -46,24 +48,6 @@
             android:textColor="#111"
             android:textSize="16sp" />
 
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
-            ext:documentView_cacheConfig="no_cache"
-            ext:documentView_text="@string/content1"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textSubPixel="true"
-            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" /-->
-
         <include layout="@layout/darkbar"/>
 
         <FrameLayout
@@ -95,29 +79,9 @@
             android:layout_height="fill_parent"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="@string/content2"
+            android:text="@string/web1"
             android:textColor="#111"
             android:textSize="16sp" />
-
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_antialias="true"
-            ext:documentView_cacheConfig="no_cache"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
-            ext:documentView_text="@string/content2"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textSubPixel="true"
-            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" /-->
-
 
         <include layout="@layout/darkbar"/>
 
@@ -148,39 +112,6 @@
             android:textColor="#111"
             android:textSize="16sp" />
 
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-
-            android:layout_height="fill_parent"
-            ext:documentView_cacheConfig="no_cache"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_text="@string/content5"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" /-->
-
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
-            ext:documentView_text="@string/content3"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" /-->
 
         <include layout="@layout/darkbar"/>
 
@@ -199,28 +130,9 @@
             android:layout_height="fill_parent"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="@string/content4"
+            android:text="@string/web2"
             android:textColor="#111"
             android:textSize="16sp" />
-
-
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_cacheConfig="no_cache"
-            ext:documentView_reverse="false"
-            ext:documentView_text="@string/content4"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textSubPixel="true"
-            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" /-->
 
         <include layout="@layout/darkbar" />
 
@@ -248,43 +160,10 @@
             android:layout_height="fill_parent"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
-            android:text="@string/content3"
+            android:text="@string/content4"
             android:textColor="#111"
             android:textSize="16sp" />
 
-        <!--com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_cacheConfig="no_cache"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
-            ext:documentView_text="@string/content3"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textTypefacePath="fonts/Lato-Regular.ttf"
-            ext:documentView_wordSpacingMultiplier="1.1" /-->
-
-        <!--
-        com.bluejamesbond.text.DocumentView xmlns:ext="http://schemas.android.com/apk/res-auto"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            ext:documentView_insetPadding="10dp"
-            ext:documentView_lineHeightMultiplier="1.0"
-            ext:documentView_maxLines="100"
-            ext:documentView_reverse="false"
-            ext:documentView_text="@string/content4"
-            ext:documentView_textAlignment="justified"
-            ext:documentView_textFormat="plain"
-
-            android:textColor="#111"
-            ext:documentView_textSize="16sp"
-            ext:documentView_textSubPixel="true"
-            ext:documentView_wordSpacingMultiplier="1.4" /-->
 
         <include layout="@layout/darkbar"/>
 
@@ -297,32 +176,6 @@
             android:text="Follow us On:"
             android:textSize="16sp" />
 
-        <!--
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shape_oval_facebook"
-            android:text="Facebook"
-            android:textColor="@color/colorWhite" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shape_oval_twitter"
-            android:text="Twitter"
-            android:textColor="@color/colorWhite" />
-
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/shape_oval_instagram"
-            android:text="Instagram"
-            android:textColor="@color/colorWhite" />
-        -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -362,5 +215,81 @@
                 android:src="@drawable/ninstagram" />
         </LinearLayout>
 
+        <include layout="@layout/darkbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:text="For food coupons during CZ17, Download:"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/sharkid"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/sharkid" />
+
+        <include layout="@layout/darkbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="left"
+            android:text="Our Sponsors:"
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1.0">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/sp1"
+                android:padding="10dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/sp3"
+                android:padding="10dp"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1.0">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/sp2"
+                android:padding="5dp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/sp4"
+                android:padding="5dp" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
