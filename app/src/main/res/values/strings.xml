@@ -5,7 +5,7 @@
     <string name="web_team_label">Web Team</string>
     <string name="adhyay_team_label">Adhyay Team</string>
     <string name="camp_zone_team_label">Campaigning Zones Leaders</string>
-
+    <string name="google_maps_key">AIzaSyAM00cWP3eYn2qDAthRQNE22uNA_wuyjhU</string>
     <string name="app_yash_sheth_label">Yash Sheth\nLeader\nIT Dept.</string>
     <string name="app_harsh_shah_label">Harsh Shah\nTeam Member\nIT Dept.</string>
     <string name="app_umang_patel_label">Umang Patel\nTeam Member\nIT Dept.</string>
