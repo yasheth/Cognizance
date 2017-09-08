@@ -11,9 +11,11 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
@@ -26,7 +28,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -125,29 +126,60 @@ public class HomeFragment extends Fragment implements
         mapFragment.getMapAsync(this);
 
         socialButtons();
+        final NestedScrollView mainScrollView = (NestedScrollView) v.findViewById(R.id.main_scrollview);
+        ImageView transparentImageView = (ImageView) v.findViewById(R.id.transparent_image);
+
+        transparentImageView.setOnTouchListener(new View.OnTouchListener() {
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int action = event.getAction();
+                switch (action) {
+                    case MotionEvent.ACTION_DOWN:
+                        // Disallow ScrollView to intercept touch events.
+                        mainScrollView.requestDisallowInterceptTouchEvent(true);
+                        // Disable touch on transparent view
+                        return false;
+
+                    case MotionEvent.ACTION_UP:
+                        // Allow ScrollView to intercept touch events.
+                        mainScrollView.requestDisallowInterceptTouchEvent(false);
+                        return true;
+
+                    case MotionEvent.ACTION_MOVE:
+                        mainScrollView.requestDisallowInterceptTouchEvent(true);
+                        return false;
+
+                    default:
+                        return true;
+                }
+            }
+        });
+
 
     }
     /** Called when the map is ready. */
     @Override
     public void onMapReady(GoogleMap map)
     {
-        LatLng COM_IT = new LatLng(22.6004606,72.8200085);
-        map.addMarker(new MarkerOptions().position(COM_IT)
-                .title("Com/IT Departmet"));
-        map.moveCamera(CameraUpdateFactory.newLatLng(COM_IT));
+        LatLng CE_IT = new LatLng(22.6004606, 72.8200085);
+        map.addMarker(new MarkerOptions().position(CE_IT)
+                .title("CE/IT Building"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(CE_IT));
 
         LatLng ME_CL = new LatLng(22.5994067,72.817951);
         map.addMarker(new MarkerOptions().position(ME_CL)
-                .title("ME/CL3 Departmet"));
+                .title("ME/CL Building"));
         map.moveCamera(CameraUpdateFactory.newLatLng(ME_CL));
 
         LatLng EE_EC = new LatLng(22.5999937,72.8193368);
         map.addMarker(new MarkerOptions().position(EE_EC)
-                .title("EE/EC Departmet"));
+                .title("EE/EC Building"));
         map.moveCamera(CameraUpdateFactory.newLatLng(EE_EC));
 
-        map.moveCamera(CameraUpdateFactory.zoomTo(16.5f));
-
+        map.moveCamera(CameraUpdateFactory.zoomTo(17f));
+        map.getUiSettings().setScrollGesturesEnabled(true);
+        map.getUiSettings().setRotateGesturesEnabled(true);
         map.getUiSettings().setZoomControlsEnabled(true);
         //private GoogleMap mMap;
 // Set a preference for minimum and maximum zoom.

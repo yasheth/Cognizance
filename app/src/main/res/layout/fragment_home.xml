@@ -1,6 +1,7 @@
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin_less"
@@ -37,7 +38,7 @@
             android:focusableInTouchMode="true"
             android:scaleType="fitXY" />
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
             android:layout_width="fill_parent"
@@ -48,7 +49,7 @@
             android:textColor="#111"
             android:textSize="16sp" />
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -57,7 +58,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:layout_height="250dp" />
 
             <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
                 android:id="@+id/dots_indicator"
@@ -71,7 +72,7 @@
                 app:dotsWidthFactor="2.5" />
         </FrameLayout>
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
@@ -83,7 +84,7 @@
             android:textColor="#111"
             android:textSize="16sp" />
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
         <WebView
             android:id="@+id/webVideoView1"
@@ -101,7 +102,8 @@
             android:layout_height="150dp"
             android:src="@drawable/thumbnail"
             android:visibility="gone" />
-        <include layout="@layout/darkbar"/>
+
+        <include layout="@layout/darkbar" />
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
             android:layout_width="fill_parent"
@@ -113,16 +115,16 @@
             android:textSize="16sp" />
 
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
         <ImageView
             android:id="@+id/iv_paroma"
             android:layout_width="match_parent"
             android:layout_height="450dp"
             android:padding="8dp"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY" />
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
 
         <charusat.cognizance.helpers.customview.Textview_lato_thin
@@ -165,7 +167,7 @@
             android:textSize="16sp" />
 
 
-        <include layout="@layout/darkbar"/>
+        <include layout="@layout/darkbar" />
 
         <TextView
             android:id="@+id/textView"
@@ -225,13 +227,25 @@
             android:text="Find Us:"
             android:textSize="16sp" />
 
-        <fragment
+        <RelativeLayout
+            android:id="@+id/map_layout"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:id="@+id/maps_id"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            tools:context="com.example.mapwithmarker.MapsMarkerActivity"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp">
+
+            <fragment
+                android:id="@+id/maps_id"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                tools:context="com.example.mapwithmarker.MapsMarkerActivity" />
+
+            <ImageView
+                android:id="@+id/transparent_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
 
         <include layout="@layout/darkbar" />
 
