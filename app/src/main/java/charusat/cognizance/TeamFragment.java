@@ -50,10 +50,10 @@ public class TeamFragment extends Fragment {
         RecyclerView teamsRecyclerView = (RecyclerView) view.findViewById(R.id.team_members_recycler_view);
         LinearLayoutManager teamsManager = new LinearLayoutManager(view.getContext());
         teamsRecyclerView.setLayoutManager(teamsManager);
-
+        teamsRecyclerView.setHasFixedSize(true);
         TeamsRecyclerAdapter teamsRecyclerAdapter = new TeamsRecyclerAdapter(teamsArrayList);
         teamsRecyclerView.setAdapter(teamsRecyclerAdapter);
-        teamsRecyclerView.destroyDrawingCache();
+
         return view;
 
     }

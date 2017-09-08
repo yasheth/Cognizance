@@ -22,11 +22,10 @@ class CustomPagerAdapter extends PagerAdapter
     LayoutInflater mLayoutInflater;
 
     int[] mResources = {
-            R.drawable.ss0,
-            R.drawable.ss1,
-            R.drawable.ss2,
             R.drawable.ss3,
+            R.drawable.ss1,
             R.drawable.ss4,
+            R.drawable.ss0,
 
     };
 

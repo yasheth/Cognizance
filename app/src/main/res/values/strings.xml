@@ -54,7 +54,7 @@
     <string name="camp_zone_rahul_ravichandran_label">Rahul Ravichandran\nVadodara\n960 157 4287\nEC Dept.</string>
 
 
-    <string name="content1">COGNIZANCE is the most awaited annual tech gala for every budding engineer in CHARUSAT.\nCognizance is a prism , where college students find an array of events and activities to participate and get valuable recognition. This time cognizance 2k17 is coming up with more exuberant experience like never before.
+    <string name="content1">COGNIZANCE is the most awaited annual tech gala for every budding engineer in CHARUSAT and Gujarat.\nCognizance is a prism , where college students find an array of events and activities to participate and get valuable recognition. This time cognizance 2k17 is coming up with more exuberant experience like never before.
     </string>
     <string name="content2">Be it the enchanting guest lectures or learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from discovering a new yourself in the crowd to becoming one united soul on the DJ eve, COGNIZANCE has it all.
     </string>
@@ -67,4 +67,8 @@
     <string name="user">Participants who have registered themselves in any Events, Workshops and Guest Lectures in COGNIZANCE 2k17 can use their CZ-ID and registered phone number to get confirmation and more information.
     </string>
     <string name="user2">NOTE : The information about registered events will be updated after 8th September, 2017. If you have any queries, reach us out via Query.</string>
+    <string name="web2">COGNIZANCE’17 has evolved into a significant event that reveals the opportunities to innovate and celebrate the essence of ‘COMICS’. It is the 2-day fest dedicated to give a stellar experience in the field of engineering. The fest offers a plethora of platforms; ranging from tech-events, workshops, guest lectures to offbeat contests and EDM night. Keep up the spirit and reveal the best part of your college life only with COGNIZANCE’17!! Let’s dream, explore and innovate.
+    </string>
+    <string name="web1">CHARUSAT is a recognized University aiming at excellence in Gujarat. Following the success of COGNIZANCE 2K16 we intend to organize COGNIZANCE 2017, a national level technical festival on 13th and 14th September, 2017. This festival will garner participants from various engineering colleges of the nation. The primary objective behind COGNIZANCE 2017 is to provide a platform to young engineers for the purpose of enhancing their technical abilities and to showcase their talents. Cognizance aims at attracting a bigger crowd this time with its innovativeness in events and its wide range of workshops and guest lectures
+    </string>
 </resources>
