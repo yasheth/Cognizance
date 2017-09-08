@@ -22,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -118,7 +119,8 @@ public class HomeFragment extends Fragment implements
         setUpPager(v);
 
 
-        SupportMapFragment mapFragment = (SupportMapFragment) view.findViewById(R.id.map);
+
+        SupportMapFragment mapFragment = (SupportMapFragment)getChildFragmentManager().findFragmentById(R.id.maps_id);
         mapFragment.getMapAsync(this);
 
         socialButtons();
@@ -126,7 +128,30 @@ public class HomeFragment extends Fragment implements
     }
     /** Called when the map is ready. */
     @Override
-    public void onMapReady(GoogleMap map) {
+    public void onMapReady(GoogleMap map)
+    {
+        LatLng COM_IT = new LatLng(22.6004606,72.8200085);
+        map.addMarker(new MarkerOptions().position(COM_IT)
+                .title("Com/IT Departmet"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(COM_IT));
+
+        LatLng ME_CL = new LatLng(22.5994067,72.817951);
+        map.addMarker(new MarkerOptions().position(ME_CL)
+                .title("ME/CL3 Departmet"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(ME_CL));
+
+        LatLng EE_EC = new LatLng(22.5999937,72.8193368);
+        map.addMarker(new MarkerOptions().position(EE_EC)
+                .title("EE/EC Departmet"));
+        map.moveCamera(CameraUpdateFactory.newLatLng(EE_EC));
+
+        map.moveCamera(CameraUpdateFactory.zoomTo(16.5f));
+
+        //private GoogleMap mMap;
+// Set a preference for minimum and maximum zoom.
+        map.setMinZoomPreference(4.0f);
+        map.setMaxZoomPreference(20.0f);
+
         /*mMap = map;
 
         // Add some markers to the map, and add a data object to each marker.

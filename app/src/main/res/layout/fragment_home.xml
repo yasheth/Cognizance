@@ -222,6 +222,24 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:gravity="left"
+            android:text="Find Us:"
+            android:textSize="16sp" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/maps_id"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            tools:context="com.example.mapwithmarker.MapsMarkerActivity"
+            android:layout_marginBottom="10dp"/>
+
+        <include layout="@layout/darkbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="left"
             android:text="For food coupons during CZ17, Download:"
             android:textSize="16sp" />
 
@@ -291,5 +309,6 @@
                 android:background="@drawable/sp4"
                 android:padding="5dp" />
         </LinearLayout>
+
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
